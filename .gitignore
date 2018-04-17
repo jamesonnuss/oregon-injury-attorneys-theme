@@ -1,4 +1,30 @@
+####### Local Config Files #######
+/tmp/
+/log
+
+####### Asset Files #######
+*.psd
+*.ai
+*.ae
+*.zip
+*_twimple.txt
+
+####### Misc Files #######
 .DS_Store
-node_modules/
-bower_components/
+.DS_Store?
+._*
+.Trashes
+ehthumbs.db
+*[Tt]humbs.db
+*.Trashes
+*.lock
+*.DS_Store
+*.swp
+*.out
+*.log
+error_log
+access_log
+.sass-cache
+node_modules
+bower_components
 npm-debug.log

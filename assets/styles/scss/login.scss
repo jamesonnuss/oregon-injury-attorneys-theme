@@ -15,33 +15,57 @@ http://codex.wordpress.org/Creating_Admin_Themes
 ******************************************************************/
 
 body.login {
-	
+	background-color:#f8faf5;
+	.button-primary{
+		background-color: #193257;
+		border-color: #193257;
+		box-shadow: 0 1px 0 #193257;
+		text-shadow: none;
+		&:hover{
+			background-color: #1f5b2e;
+			border-color: #1f5b2e;
+			box-shadow: 0 1px 0 #1f5b2e;
+		}
+	}
+	a{
+		color: #193257;
+		&:hover{
+			color: #1f5b2e;
+		}
+		&:active{
+			color: #1f5b2e;
+		}
+		&:visited{
+			color: #193257;
+		}
+	}
+	input[type=checkbox]:checked:before{
+		color: #193257;
+	}
+	input[type=text]:focus, input[type=search]:focus, input[type=radio]:focus, input[type=tel]:focus, input[type=time]:focus, input[type=url]:focus, input[type=week]:focus, input[type=password]:focus, input[type=checkbox]:focus, input[type=color]:focus, input[type=date]:focus, input[type=datetime]:focus, input[type=datetime-local]:focus, input[type=email]:focus, input[type=month]:focus, input[type=number]:focus, select:focus, textarea:focus{
+		border-color: #193257;
+		box-shadow: 0 0 2px rgba(25, 50, 87, .8);
+	}
+	.login form{
+		margin-top: 10px;
+	}
 }
 
-#login {
-	
+.login #backtoblog a:hover, .login #nav a:hover, .login h1 a:hover{
+	color: #1f5b2e;
 }
 
-// Change the login logo
 .login h1 a {
-	background: url(../images/login-logo.png) no-repeat top center;
-	width: 326px;
-	height: 67px;
+	background: url(../images/logo.svg) no-repeat top center;
+	width: 320px;
+	height: 129px;
 	text-indent: -9999px;
 	overflow: hidden;
 	padding-bottom: 15px;
 	display: block;
+	margin-bottom: 0
 }
 
-form {
-
-}
-
-body form .input {
-
-}
-
-// Login Button Style
-#wp-submit {
-	
+.login h1{
+	margin-top: 0;
 }
