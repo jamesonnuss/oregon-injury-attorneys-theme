@@ -7,7 +7,6 @@
 	<?php if( have_rows('content_blocks') ): ?>
 		<article class="content-blocks-container">
 		    <?php while ( have_rows('content_blocks') ) : the_row(); ?>
-
 		        <?php if( get_row_layout() == 'text_block' ): ?>
 					<div class="block text-block row">
 						<div class="large-12 medium-12 small-12 columns">
@@ -114,27 +113,115 @@
 								<?php if( get_sub_field('tab_block_section_title') ): ?>
 									<h1><?php the_sub_field('tab_block_section_title'); ?></h1>
 								<?php endif; ?>
-								<?php if( have_rows('tab_block_tab') ): ?>
-									<div class="row tab-block-container">
-									    <?php while ( have_rows('tab_block_tab') ) : the_row(); ?>
-											<div class="tab">
-												<?php the_sub_field('tab_block_title'); ?>
+								<?php if( have_rows('tab_block_tab') ): $i = 0; ?>
+									<script type="text/javascript">
+										jQuery(document).ready(function($) {
+											var randomID = Math.Random();
+										    jQuery('.tabs').attr("id","id" + randomID);
+										    jQuery('.tabs-content').attr("data-tabs-content","id" + randomID);
+										});
+									</script>
+									<ul class="tabs" data-tabs id="">
+									    <?php while ( have_rows('tab_block_tab') ) : the_row(); $i++; ?>
+											<li class="tabs-title">
+												<a href="#panel-<?php echo $i; ?>"><?php the_sub_field('tab_block_title'); ?></a>
+											</li>
+									    <?php endwhile; ?>
+									</ul>
+								<?php endif; ?>
+								<?php if( have_rows('tab_block_tab') ):  $i = 0; ?>
+									<div class="tabs-content" data-tabs-content="example-tabs">
+										<?php while ( have_rows('tab_block_tab') ) : the_row(); $i++; ?>
+											<div class="tabs-panel" id="panel-<?php echo $i; ?>">
 												<div>
 													<?php the_sub_field('tab_block_content'); ?>
 												</div>
 											</div>
-									    <?php endwhile; ?>
+										<?php endwhile; ?>
 									</div>
 								<?php endif; ?>
 							</div>
 						</div>
 					</div>
-
-
-
-
-		        <?php endif; ?>
-
+				<?php elseif( get_row_layout() == 'team_block' ): ?>
+					<div class="block team-block">
+						<div class="row">
+							<div class="large-12 medium-12 small-12 columns">
+								<?php if( get_sub_field('team_block_title') ): ?>
+									<h1><?php the_sub_field('team_block_title'); ?></h1>
+								<?php endif; ?>
+								<?php $members = get_sub_field('team_block_members'); if( $members ): ?>
+								    <ul>
+									    <?php foreach( $members as $member): // variable must be called $member (IMPORTANT) ?>
+									        <?php setup_postdata($member); ?>
+									        <li>
+									            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+									        </li>
+									    <?php endforeach; ?>
+								    </ul>
+								    <?php wp_reset_postdata(); // IMPORTANT - reset the $member object so the rest of the page works correctly ?>
+								<?php endif; ?>
+							</div>
+						</div>
+					</div>
+				<?php elseif( get_row_layout() == 'faq_block' ): ?>
+					<div class="block faq-block">
+						<div class="row">
+							<div class="large-12 medium-12 small-12 columns">
+								<?php if( get_sub_field('faq_block_title') ): ?>
+									<h1><?php the_sub_field('faq_block_title'); ?></h1>
+								<?php endif; ?>
+								<?php
+				    		    $args = array(
+				    		    	'post_type' => 'rehab-region',
+				    		    	'post_status' => 'publish',
+				    		    	'posts_per_page' => -1,
+				    		    	'orderby' => 'title',
+				    		    	'order' => 'ASC'
+				    		    );
+				    		    $the_query = new WP_Query( $args );
+				    		    if ( $the_query->have_posts() ) { $i = 0; ?>
+				    		    	<?php while ( $the_query->have_posts() ) { $i++;
+				    		    		$the_query->the_post(); ?>
+			    		    			<li class="accordion-item" data-accordion-item="0<?php echo $i; ?>">
+					    		    		<a href="#" class="accordion-title"><?php the_title(); ?></a>
+					    		    		<?php
+		    								$facilities = get_posts(array(
+		    									'post_type' => 'rehab-facilities',
+		    									'post_status' => 'publish',
+		    									'posts_per_page' => -1,
+		    									'orderby' => 'title',
+		    									'order' => 'ASC',
+		    									'meta_query' => array(
+		    										array(
+		    											'key' => 'facility_location', // name of custom field
+		    											'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
+		    											'compare' => 'LIKE'
+		    										)
+		    									)
+		    								));
+		    								?>
+		    								<?php if( $facilities ): ?>
+		    									<?php foreach( $facilities as $facility ): ?>
+		    										<div class="accordion-content" data-tab-content>
+			    										<?php $city = get_field('facility_city', $facility->ID); ?>
+			    										<?php $state = get_field('facility_state', $facility->ID); ?>
+														<a href="<?php echo get_permalink( $facility->ID ); ?>">
+															<?php echo get_the_title( $facility->ID ); ?>
+														</a>
+														<h3 class="city-state"><span class="city"><?php echo $city ?>,</span> <span class="state"><?php echo $state ?></span></h3>
+													</div>
+		    									<?php endforeach; ?>
+		    								<?php endif; ?>
+										</li>
+					    		    <?php } ?> <!-- End While -->
+			    		    	<?php } wp_reset_postdata(); ?><!-- End IF and Reset Post Data -->
+							</div>
+						</div>
+					</div>
+				<?php elseif( get_row_layout() == 'spacer_block' ): ?>
+					<div class="block spacer-block"></div>
+				<?php endif; ?>
 		    <?php endwhile; ?>
 		</article>
 	<?php else : ?>
