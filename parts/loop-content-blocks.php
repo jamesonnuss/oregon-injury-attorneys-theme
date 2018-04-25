@@ -116,34 +116,35 @@
 								<?php if( have_rows('tab_block_tab') ): $i = 0; ?>
 									<script type="text/javascript">
 										jQuery(document).ready(function($) {
-											var randomID = Math.Random();
-										    jQuery('.tabs').attr("id","id" + randomID);
-										    jQuery('.tabs-content').attr("data-tabs-content","id" + randomID);
+											var randomNum = Math.floor(Math.random() * 1000);
+											var randomRange = Math.random().toString(36).substring(7);
+										    jQuery('.tabs').attr("id","tab_" + randomNum + randomRange);
+										    jQuery('.tabs-content').attr("data-tabs-content","tab_" + randomNum + randomRange);
 										});
 									</script>
 									<ul class="tabs" data-tabs id="">
-									    <?php while ( have_rows('tab_block_tab') ) : the_row(); $i++; ?>
-											<li class="tabs-title">
-												<a href="#panel-<?php echo $i; ?>"><?php the_sub_field('tab_block_title'); ?></a>
+									    <?php while ( have_rows('tab_block_tab') ) : the_row(); ?>
+											<li class="tabs-title <?php if (!$i) { ?>is-active<?php } ?>">
+												<a href="#tabs-panel-<?php echo $i; ?>"><?php the_sub_field('tab_block_title'); ?></a>
 											</li>
-									    <?php endwhile; ?>
+									    <?php $i++; endwhile;?>
 									</ul>
 								<?php endif; ?>
 								<?php if( have_rows('tab_block_tab') ):  $i = 0; ?>
-									<div class="tabs-content" data-tabs-content="example-tabs">
-										<?php while ( have_rows('tab_block_tab') ) : the_row(); $i++; ?>
-											<div class="tabs-panel" id="panel-<?php echo $i; ?>">
+									<div class="tabs-content" data-tabs-content="">
+										<?php while ( have_rows('tab_block_tab') ) : the_row(); ?>
+											<div class="tabs-panel <?php if (!$i) { ?>is-active<?php } ?>" id="tabs-panel-<?php echo $i; ?>">
 												<div>
 													<?php the_sub_field('tab_block_content'); ?>
 												</div>
 											</div>
-										<?php endwhile; ?>
+										<?php $i++; endwhile;?>
 									</div>
 								<?php endif; ?>
 							</div>
 						</div>
 					</div>
-				<?php elseif( get_row_layout() == 'team_block' ): ?>
+				<?php elseif( get_row_layout() == 'employee_block' ): ?>
 					<div class="block team-block">
 						<div class="row">
 							<div class="large-12 medium-12 small-12 columns">
@@ -171,54 +172,40 @@
 								<?php if( get_sub_field('faq_block_title') ): ?>
 									<h1><?php the_sub_field('faq_block_title'); ?></h1>
 								<?php endif; ?>
-								<?php
-				    		    $args = array(
-				    		    	'post_type' => 'rehab-region',
-				    		    	'post_status' => 'publish',
-				    		    	'posts_per_page' => -1,
-				    		    	'orderby' => 'title',
-				    		    	'order' => 'ASC'
-				    		    );
-				    		    $the_query = new WP_Query( $args );
-				    		    if ( $the_query->have_posts() ) { $i = 0; ?>
-				    		    	<?php while ( $the_query->have_posts() ) { $i++;
-				    		    		$the_query->the_post(); ?>
-			    		    			<li class="accordion-item" data-accordion-item="0<?php echo $i; ?>">
-					    		    		<a href="#" class="accordion-title"><?php the_title(); ?></a>
-					    		    		<?php
-		    								$facilities = get_posts(array(
-		    									'post_type' => 'rehab-facilities',
-		    									'post_status' => 'publish',
-		    									'posts_per_page' => -1,
-		    									'orderby' => 'title',
-		    									'order' => 'ASC',
-		    									'meta_query' => array(
-		    										array(
-		    											'key' => 'facility_location', // name of custom field
-		    											'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
-		    											'compare' => 'LIKE'
-		    										)
-		    									)
-		    								));
-		    								?>
-		    								<?php if( $facilities ): ?>
-		    									<?php foreach( $facilities as $facility ): ?>
-		    										<div class="accordion-content" data-tab-content>
-			    										<?php $city = get_field('facility_city', $facility->ID); ?>
-			    										<?php $state = get_field('facility_state', $facility->ID); ?>
-														<a href="<?php echo get_permalink( $facility->ID ); ?>">
-															<?php echo get_the_title( $facility->ID ); ?>
-														</a>
-														<h3 class="city-state"><span class="city"><?php echo $city ?>,</span> <span class="state"><?php echo $state ?></span></h3>
-													</div>
-		    									<?php endforeach; ?>
-		    								<?php endif; ?>
-										</li>
-					    		    <?php } ?> <!-- End While -->
-			    		    	<?php } wp_reset_postdata(); ?><!-- End IF and Reset Post Data -->
+								<?php if( have_rows('faq_block_repeater') ):  $i = 0; ?>
+
+										<?php while ( have_rows('faq_block_repeater') ) : the_row(); ?>
+											<li class="accordion-item" data-accordion-item="accordion-item_<?php echo $i; ?>">
+												<a href="#" class="accordion-title"><?php the_sub_field('faq_block_question'); ?></a>
+												<div class="accordion-content" data-tab-content>
+											    	<?php the_sub_field('faq_block_answer'); ?>
+											    </div>
+
+											</li>
+										<?php $i++; endwhile;?>
+									
+									<script type="text/javascript">
+									jQuery(document).ready(function($) {
+										// Accordion Splitting
+										var $li = $('li.accordion-item');
+										if ($li.length % 2 == 0) {
+											half = Math.floor($li.length/2);
+											$li.filter(function(i){ return i < half; }).wrapAll('<ul class="left-accordion" data-accordion="one" data-multi-expand="true" data-allow-all-closed="true">');
+											$li.filter(function(i){ return i >= half; }).wrapAll('<ul class="right-accordion" data-accordion="two" data-multi-expand="true" data-allow-all-closed="true">');
+										} else {
+											half = Math.floor($li.length/2 + 1);
+											$li.filter(function(i){ return i < half; }).wrapAll('<ul class="left-accordion" data-accordion="one" data-multi-expand="true" data-allow-all-closed="true">');
+											$li.filter(function(i){ return i >= half; }).wrapAll('<ul class="right-accordion" data-accordion="two" data-multi-expand="true" data-allow-all-closed="true">');
+										}
+										$('.left-accordion').foundation();
+										$('.right-accordion').foundation();
+									});
+									</script>
+								<?php endif; ?>
 							</div>
 						</div>
 					</div>
+
 				<?php elseif( get_row_layout() == 'spacer_block' ): ?>
 					<div class="block spacer-block"></div>
 				<?php endif; ?>
