@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Full Width (No Sidebar)
+Template Name: Contact Us
 */
 
 get_header(); ?>
@@ -15,7 +15,16 @@ get_header(); ?>
 
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-					<?php get_template_part( 'parts/loop', 'content-blocks' ); ?>
+					<div class="intro-content-container">
+						<?php the_field('contact_us_main_content'); ?>
+					</div>
+					
+					<div class="form-container">
+						<?php echo do_shortcode("[gravityform id=1 title=false description=false ajax=true tabindex=49]"); ?>
+						<div class="terms-conditions-container">
+							<?php the_field('contact_us_terms_and_conditions'); ?>
+						</div>
+					</div>
 
 				<?php endwhile; endif; ?>
 

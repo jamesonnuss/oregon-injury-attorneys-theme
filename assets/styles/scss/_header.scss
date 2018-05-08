@@ -1,0 +1,26 @@
+/************************************************
+
+Stylesheet: Header Stylesheet
+
+*************************************************/
+
+.content-header{
+    .content-header-image{
+        width: 100%;
+        @include bgSize(cover);
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    .content-header-image-row,.content-header-video-row{
+        display: -ms-flexbox;
+    	display: -webkit-flex;
+    	display: flex;
+    	-ms-flex-align: center;
+    	-webkit-align-items: center;
+    	-webkit-box-align: center;
+    	align-items: center;
+        min-height:rem-calc(375);
+        padding:6.25rem 0;
+        color: $white;
+    }
+}

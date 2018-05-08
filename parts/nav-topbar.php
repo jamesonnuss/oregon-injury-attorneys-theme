@@ -6,13 +6,18 @@
  */
 ?>
 
-<div class="top-bar" id="main-menu">
-	<div class="top-bar-left">
-		<ul class="menu">
-			<li><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></li>
-		</ul>
+<div class="row" id="main-menu">
+	<div class="large-3 medium-3 small-12 columns">
+		<div class="top-bar-left">
+			<ul class="menu">
+				<li><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></li>
+			</ul>
+		</div>
 	</div>
-	<div class="top-bar-right">
-		<?php joints_top_nav(); ?>
+	<div class="large-9 medium-9 small-12 columns">
+		<div class="top-bar-right">
+			<?php joints_top_nav(); ?>
+		</div>
+		<div class="mobile-menu-container"><!-- Mobile Menu Populated Here --></div>
 	</div>
 </div>

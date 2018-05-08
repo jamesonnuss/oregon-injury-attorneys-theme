@@ -22,3 +22,9 @@ function joints_custom_admin_footer() {
 }
 // adding it to the admin area
 add_filter('admin_footer_text', 'joints_custom_admin_footer');
+
+// lower gravity forms menu position
+add_filter( 'gform_menu_position', 'my_gform_menu_position' );
+function my_gform_menu_position( $position ) {
+    return 22;
+}

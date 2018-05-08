@@ -24,7 +24,7 @@
 							<?php if( get_sub_field('video_block_title') ): ?>
 								<h1><?php the_sub_field('video_block_title'); ?></h1>
 							<?php endif; ?>
-							<video width="100%" controls poster="<?php the_sub_field('video_poster'); ?>">
+							<video class="video-js" controls preload="auto" width="100%" poster="<?php the_sub_field('video_poster'); ?>" data-setup="{}">
 							  <source src="<?php the_sub_field('video_block_url'); ?>" type="video/mp4">
 							  Your browser does not support HTML5 video.
 							</video>
@@ -152,12 +152,19 @@
 									<h1><?php the_sub_field('team_block_title'); ?></h1>
 								<?php endif; ?>
 								<?php $members = get_sub_field('team_block_members'); if( $members ): ?>
-								    <ul>
+									<div class="row small-up-1 medium-up-2 large-up-3">
 									    <?php foreach( $members as $member): // variable must be called $member (IMPORTANT) ?>
 									        <?php setup_postdata($member); ?>
-									        <li>
-									            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-									        </li>
+									        <div class="column column-block">
+												<?php $memberPhoto = get_field('employee_photo', $member->ID); ?>
+												<a href="<?php echo get_permalink( $member->ID ); ?>"><img src="<?php echo $memberPhoto['url']; ?>" alt="<?php echo $memberPhoto['alt']; ?>" /></a>
+									            <a href="<?php echo get_permalink( $member->ID ); ?>" class="team-member-name"><?php echo get_the_title( $member->ID ); ?></a>
+												<span class="team-member-position"><?php the_field('employee_position', $member->ID); ?></span>
+												<p class="team-member-introduction">
+													<?php the_field('employee_introduction', $member->ID); ?>
+												</p>
+												<a href="<?php echo get_permalink( $member->ID ); ?>" class="team-member-profile-link">View Profile</a>
+									        </div>
 									    <?php endforeach; ?>
 								    </ul>
 								    <?php wp_reset_postdata(); // IMPORTANT - reset the $member object so the rest of the page works correctly ?>
@@ -173,17 +180,14 @@
 									<h1><?php the_sub_field('faq_block_title'); ?></h1>
 								<?php endif; ?>
 								<?php if( have_rows('faq_block_repeater') ):  $i = 0; ?>
-
-										<?php while ( have_rows('faq_block_repeater') ) : the_row(); ?>
-											<li class="accordion-item" data-accordion-item="accordion-item_<?php echo $i; ?>">
-												<a href="#" class="accordion-title"><?php the_sub_field('faq_block_question'); ?></a>
-												<div class="accordion-content" data-tab-content>
-											    	<?php the_sub_field('faq_block_answer'); ?>
-											    </div>
-
-											</li>
-										<?php $i++; endwhile;?>
-									
+									<?php while ( have_rows('faq_block_repeater') ) : the_row(); ?>
+										<li class="accordion-item" data-accordion-item="accordion-item_<?php echo $i; ?>">
+											<a href="#" class="accordion-title"><?php the_sub_field('faq_block_question'); ?></a>
+											<div class="accordion-content" data-tab-content>
+										    	<?php the_sub_field('faq_block_answer'); ?>
+										    </div>
+										</li>
+									<?php $i++; endwhile;?>
 									<script type="text/javascript">
 									jQuery(document).ready(function($) {
 										// Accordion Splitting
@@ -205,7 +209,6 @@
 							</div>
 						</div>
 					</div>
-
 				<?php elseif( get_row_layout() == 'spacer_block' ): ?>
 					<div class="block spacer-block"></div>
 				<?php endif; ?>
