@@ -7,37 +7,142 @@ header.header{
     background-color: $white;
     position: relative;
     z-index: 1;
-}
-.main-menu{
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
     -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
     -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
     -ms-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
     -o-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+}
+.main-menu{
+    .logo-container{
+        @media screen and (min-width: 768px) and (max-width:59.375em){
+            width: 100%;
+        }
+    }
     .navigation-container{
-        @include breakpoint (medium down) {
+        @media screen and (min-width: 768px) and (max-width:59.375em){
+            width: 100%;
+            margin-top: rem-calc(-80);
+            .top-bar-right{
+                float: none;
+            }
+            .top-menu{
+                position: relative;
+                top: rem-calc(-60);
+            }
+            #menu-main-menu{
+                margin:0 auto;
+            }
+        }
+        @include breakpoint (small down) {
             padding:0;
         }
     }
+    .mobile-menu-button{
+        @include breakpoint (small down) {
+            display: block;
+            padding-right: 1rem;
+            position: relative;
+            top:rem-calc(-23.31);
+        }
+    }
+    .menu-icon{
+        outline:0;
+        width:auto;
+        height:auto;
+        padding-right: 25px;
+        font-size: rem-calc(18);
+        margin-left: auto;
+        display: none;
+        @include breakpoint (small down) {
+            display: block;
+        }
+        &:after{
+            width: 20px;
+            right: 0;
+            top: 2px;
+            left: inherit;
+            box-shadow: 0 6px 0 $black, 0 12px 0 $black;
+        }
+        &:hover{
+            &:after{
+                box-shadow:0 6px 0 $black, 0 12px 0 $black;
+                background-color: $black;
+            }
+        }
+        &.active-menu{
+            &:after{
+                color: $blue;
+                content:'\d7';
+                box-shadow: none;
+                background-color: transparent;
+                height: auto;
+                font-size: rem-calc(30);
+                top: rem-calc(-10);
+            }
+        }
+    }
     #menu-main-menu{
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+        -moz-transform: translateY(0px);
+        -o-transform: translateY(0px);
+        opacity: 1;
+        @media screen and (min-width: 768px){
+            display: flex !important;
+        }
+        @include breakpoint (small down) {
+            display: none;
+            transform: translateY(0px);
+            -webkit-transform: translateY(0px);
+            -ms-transform: translateY(0px);
+            -moz-transform: translateY(0px);
+            -o-transform: translateY(0px);
+        }
         li{
             a{
                 background-color: $white;
                 color: $blue;
                 padding-bottom:rem-calc(23.31);
                 border-bottom:3px solid transparent;
+                @include breakpoint (small down) {
+                    padding:1rem;
+                    border-bottom: 0;
+                }
             }
             a:hover{
                 color: $dark-gray;
                 border-bottom:3px solid transparent;
+                @include breakpoint (small down) {
+                    border-bottom: 0;
+                    background-color: $blue;
+                    color: $white;
+                }
             }
             a.sf-with-ul{
                 padding-right: 1rem;
             }
             a.sf-with-ul:after{
                 display: none;
-                @include breakpoint (medium down) {
+                @include breakpoint (small down) {
                     display: block;
+                }
+            }
+            &.current-menu-item a{
+                color: $dark-gray;
+                @include breakpoint (small down) {
+                    color: $white;
+                    background-color: $blue;
+                }
+            }
+            &.menu-item-has-children a{
+                padding-right: 1rem;
+                &:after{
+                    display: none;
+                    @include breakpoint (small down) {
+                        display: block;
+                    }
                 }
             }
             .submenu{
@@ -55,8 +160,11 @@ header.header{
                 -o-transform: translate(-50%, 0);
                 z-index: -1;
                 background-color:$white;
-                @include breakpoint (medium down) {
+                @include breakpoint (small down) {
+                    z-index: 1;
                     position: relative;
+                    display: none;
+                    top: 0;
                 }
                 li{
                     a{
@@ -68,6 +176,13 @@ header.header{
                     a:hover{
                         background-color: $blue;
                         color: $white;
+                    }
+                    &.current-menu-item a{
+                        color: $dark-gray;
+                        @include breakpoint (small down) {
+                            color: $white;
+                            background-color: $blue;
+                        }
                     }
                 }
             }
@@ -82,13 +197,21 @@ header.header{
         text-align: center;
         height: 135px;
         float: right;
-        @include breakpoint (medium down) {
+        @include breakpoint (small down) {
             width: 100%;
+            display: block;
+            float: none;
+            height: auto;
         }
         .top-menu{
             padding-top:rem-calc(23.31);
             padding-bottom:rem-calc(10);
             padding-right: 1rem;
+            @include breakpoint (small down) {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
             h1{
                 visibility: hidden;
                 text-indent: -9999px;
@@ -112,10 +235,19 @@ header.header{
                 flex-direction: column;
                 text-align: center;
                 height: rem-calc(135);
+                z-index: 1;
+                position: relative;
+                @include breakpoint (small down) {
+                    height: rem-calc(110);
+                    padding-top: rem-calc(18)
+                }
             }
             img{
                 width: 100%;
                 max-width: rem-calc(300);
+                @include breakpoint (small down) {
+                    max-width:rem-calc(220);
+                }
             }
         }
     }
