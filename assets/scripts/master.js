@@ -2,6 +2,7 @@ jQuery( document ).ready(function($) {
     function mainMenu(){
         if ($(window).innerWidth() > 752) {
             $('ul#menu-main-menu').superfish();
+            $("button.menu-icon").removeClass('active-menu');
         } else {
             $('ul#menu-main-menu').superfish('hide');
             $('ul#menu-main-menu').find('li.sfHover').removeClass('sfHover');

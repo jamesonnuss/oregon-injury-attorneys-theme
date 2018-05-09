@@ -145,6 +145,9 @@ header.header{
                     }
                 }
             }
+            &.is-dropdown-submenu-parent.is-active a.sf-with-ul{
+                color: $dark-gray;
+            }
             .submenu{
                 border-top: 0;
                 position: absolute;

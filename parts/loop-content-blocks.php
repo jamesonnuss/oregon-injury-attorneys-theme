@@ -25,8 +25,10 @@
 								<h1><?php the_sub_field('video_block_title'); ?></h1>
 							<?php endif; ?>
 							<video class="video-js" controls preload="auto" width="100%" poster="<?php the_sub_field('video_poster'); ?>" data-setup="{}">
-							  <source src="<?php the_sub_field('video_block_url'); ?>" type="video/mp4">
-							  Your browser does not support HTML5 video.
+								<source src="<?php the_sub_field('video_block_url'); ?>" type="video/mp4">
+								<p class="vjs-no-js">
+									Your browser does not support HTML5 video.
+								</p>
 							</video>
 						</div>
 					</div>
@@ -72,6 +74,20 @@
 							<?php endif; ?>
 						</div>
 					</div>
+					<script type="text/javascript">
+						jQuery(document).ready(function($) {
+							var randomNum = Math.floor(Math.random() * 1000);
+							var randomRange = Math.random().toString(36).substring(7);
+						    jQuery('.testimonial-slide-container').attr("id","testimonial_" + randomNum + randomRange);
+							jQuery("#testimonial_" + randomNum + randomRange).slick({
+								dots: true,
+								infinite: true,
+								speed: 300,
+								slidesToShow: 1,
+								adaptiveHeight: true
+							});
+						});
+					</script>
 				<?php elseif( get_row_layout() == 'call_to_action_block' ): ?>
 					<div class="block call-to-action-block" style="background-image:url('<?php the_sub_field('call_to_action_block_bg_image'); ?>');">
 						<div class="row">
@@ -134,9 +150,14 @@
 									<div class="tabs-content" data-tabs-content="">
 										<?php while ( have_rows('tab_block_tab') ) : the_row(); ?>
 											<div class="tabs-panel <?php if (!$i) { ?>is-active<?php } ?>" id="tabs-panel-<?php echo $i; ?>">
-												<div>
-													<?php the_sub_field('tab_block_content'); ?>
-												</div>
+												<?php if( have_rows('tab_block_content_repeater') ): ?>
+													<?php while ( have_rows('tab_block_content_repeater') ) : the_row(); ?>
+														<div>
+															<?php the_sub_field('tab_block_title'); ?>
+															<?php the_sub_field('tab_block_content'); ?>
+														</div>
+													<?php endwhile; ?>
+												<?php endif; ?>
 											</div>
 										<?php $i++; endwhile;?>
 									</div>

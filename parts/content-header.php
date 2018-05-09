@@ -56,7 +56,9 @@
 			<?php if( get_field('header_video')): ?>
 				<video class="video-js" controls preload="auto" width="100%" poster="<?php the_field('header_video_poster'); ?>" data-setup="{}">
 					<source src="<?php the_field('header_video'); ?>" type="video/mp4">
-					Your browser does not support HTML5 video.
+					<p class="vjs-no-js">
+						Your browser does not support HTML5 video.
+					</p>
 				</video>
 			<?php endif; ?>
 		</div>
