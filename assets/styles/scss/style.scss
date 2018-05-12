@@ -65,6 +65,7 @@ CSS file.
 @include foundation-float-classes;
 
 // Import your custom styles
+@import "typography";
 @import "wordpress";
 @import "superfish";
 @import "slick";
@@ -73,4 +74,5 @@ CSS file.
 @import "global";
 @import "nav";
 @import "header";
+@import "footer";
 @import "blocks";
