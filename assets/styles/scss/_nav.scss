@@ -58,13 +58,8 @@ header.header{
         margin-left: auto;
         display: none;
         color: $blue;
-<<<<<<< HEAD
         font-weight: 700;
         font-family: $overpass;
-=======
-        font-family: $overpass;
-        font-weight: 700;
->>>>>>> c1fe151179a0aa85a5ffb2c887e4ecfb4cbc6446
         @include breakpoint (small down) {
             display: block;
         }
@@ -89,13 +84,7 @@ header.header{
                 background-color: transparent;
                 height: auto;
                 font-size: rem-calc(30);
-<<<<<<< HEAD
                 top: -.375rem;
-=======
-                top: rem-calc(-6.05);
-                right: rem-calc(2);
-                font-weight: 400;
->>>>>>> c1fe151179a0aa85a5ffb2c887e4ecfb4cbc6446
             }
         }
     }
@@ -122,7 +111,6 @@ header.header{
                 background-color: $white;
                 color: $blue;
                 border-bottom:3px solid transparent;
-<<<<<<< HEAD
                 font-family: $overpass;
                 font-size:rem-calc(17);
                 line-height:1;
@@ -132,32 +120,10 @@ header.header{
                 @media only screen and (max-width:60.938rem){
                     font-size:rem-calc(16);
                 }
-=======
-                font-size:rem-calc(16.5);
-                font-family: $overpass;
-                font-weight: 600;
-                transition-property: all;
-                transition-duration: 400ms;
-                transition-timing-function: linear;
-
->>>>>>> c1fe151179a0aa85a5ffb2c887e4ecfb4cbc6446
                 @include breakpoint (small down) {
                     padding:1rem;
                     border-bottom: 0;
                     font-size:rem-calc(17);
-                }
-                @media screen and (min-width: 768px){
-                    &:after{
-                        content: " ";
-                        width:100%;
-                        height: rem-calc(2);
-                        background-color: transparent;
-                        display: block;
-                        margin-top: rem-calc(5);
-                        transition-property: all;
-                        transition-duration: 400ms;
-                        transition-timing-function: linear;
-                    }
                 }
             }
             a:hover{
@@ -168,13 +134,9 @@ header.header{
                     background-color: $green;
                     color: $white;
                 }
-                &:after{
-                    background-color: $green;
-                }
             }
             a.sf-with-ul{
                 padding-right: 1rem;
-                display: block;
             }
             a.sf-with-ul:after{
                 display: none;
@@ -184,67 +146,19 @@ header.header{
             }
             &.current-menu-item a{
                 color: $green;
-<<<<<<< HEAD
                 font-weight: bold;
-=======
->>>>>>> c1fe151179a0aa85a5ffb2c887e4ecfb4cbc6446
                 @include breakpoint (small down) {
                     color: $white;
                     background-color: $green;
                     border-bottom: none;
-                }
-                &:after{
-                    background-color: $green !important;
                 }
             }
             &.menu-item-has-children a{
                 padding-right: 1rem;
                 &:after{
                     display: none;
-                    @media screen and (min-width: 768px){
-                        content: " ";
-                        width:100%;
-                        height: rem-calc(2);
-                        background-color: transparent;
-                        display: block;
-                        margin-top: rem-calc(5);
-                        top: initial;
-                        bottom: initial;
-                        left: initial;
-                        right: initial;
-                        margin-bottom: 0;
-                        margin-left: 0;
-                        margin-right: 0;
-                        padding: 0;
-                        border: 0;
-                        position: relative;
-                        transition-property: all;
-                        transition-duration: 300ms;
-                        transition-timing-function: linear;
-                    }
                     @include breakpoint (small down) {
                         display: block;
-                        border:0;
-                        font-family: 'icomoon' !important;
-                        content: "\e900";
-                        color: $blue;
-                        height: auto;
-                        width: auto;
-                        top: 39%;
-                    }
-                }
-                &:hover{
-                    color: $green;
-                    @include breakpoint (small down) {
-                        color: $white;
-                    }
-                    &:after{
-                        background-color: $green;
-                        @include breakpoint (small down) {
-                            background-color: transparent;
-                            border:0;
-                            color: $white;
-                        }
                     }
                 }
             }
@@ -256,7 +170,7 @@ header.header{
                 position: absolute;
                 margin: auto;
                 bottom: 0;
-                top: 101%;
+                top: 100%;
                 left: 50%;
                 right:initial;
                 transform: translate(-50%, 0);
@@ -265,8 +179,7 @@ header.header{
                 -ms-transform: translate(-50%, 0);
                 -o-transform: translate(-50%, 0);
                 z-index: -1;
-                background-color:transparent;
-                border:0;
+                background-color:$white;
                 @include breakpoint (small down) {
                     z-index: 1;
                     position: relative;
@@ -279,29 +192,14 @@ header.header{
                         border-bottom: 0;
                         background-color: $light-gray;
                         color: $blue;
-<<<<<<< HEAD
                         font-size: rem-calc(16)
-=======
-                        font-size:rem-calc(16);
-                        transition-property: all;
-                        transition-duration: 100ms;
-                        transition-timing-function: ease;
-                        &:after{
-                            display: none;
-                        }
->>>>>>> c1fe151179a0aa85a5ffb2c887e4ecfb4cbc6446
                     }
                     a:hover{
                         background-color: $green;
                         color: $white;
                     }
                     &.current-menu-item a{
-<<<<<<< HEAD
                         color: $green;
-=======
-                        color: $white;
-                        background-color: $blue;
->>>>>>> c1fe151179a0aa85a5ffb2c887e4ecfb4cbc6446
                         @include breakpoint (small down) {
                             color: $white;
                             background-color: $green;
@@ -330,15 +228,9 @@ header.header{
             height: auto;
         }
         .top-menu{
-<<<<<<< HEAD
             padding-top:1.35rem;
             padding-bottom:rem-calc(10);
             padding-right: 1rem;
-=======
-            padding-top:rem-calc(23.31);
-            padding-bottom:rem-calc(14);
-            padding-right: rem-calc(16);
->>>>>>> c1fe151179a0aa85a5ffb2c887e4ecfb4cbc6446
             @include breakpoint (small down) {
                 position: absolute;
                 top: 0;
@@ -357,7 +249,6 @@ header.header{
                 display: block;
                 text-align: right;
                 font-family: $overpass;
-<<<<<<< HEAD
                 font-weight: 700;
                 font-style: italic;
                 font-size: rem-calc(14);
@@ -375,24 +266,6 @@ header.header{
                 top: rem-calc(-2);
                 @media only screen and (max-width:25.000em){
                     font-size: rem-calc(15);
-=======
-                font-size:rem-calc(14);
-                font-weight: 600;
-                font-style: italic;
-                color: $blue;
-                @media screen and (max-width:20.000em){
-                    font-size: rem-calc(13);
-                }
-                a{
-                    font-family: $overpass;
-                    font-size:rem-calc(17);
-                    font-weight: 700;
-                    font-style:normal;
-                    color: $green;
-                    @media screen and (max-width:20.000em){
-                        font-size: rem-calc(15);
-                    }
->>>>>>> c1fe151179a0aa85a5ffb2c887e4ecfb4cbc6446
                 }
             }
         }
@@ -419,7 +292,6 @@ header.header{
                 width: 100%;
                 max-width: rem-calc(300);
                 @include breakpoint (small down) {
-<<<<<<< HEAD
                     max-width:16rem;
                     position: relative;
                     left: -.5rem;
@@ -429,17 +301,6 @@ header.header{
                 }
                 @media only screen and (max-width: 22.000rem){
                     left: -.75rem;
-=======
-                    max-width:rem-calc(255);
-                    left: rem-calc(-8);
-                    position: relative;
-                }
-                @media screen and (max-width:26.250em){
-                    max-width: rem-calc(225);
-                }
-                @media screen and (max-width:20.000em){
-                    max-width: rem-calc(205);
->>>>>>> c1fe151179a0aa85a5ffb2c887e4ecfb4cbc6446
                 }
             }
         }

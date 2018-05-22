@@ -4,7 +4,6 @@ Stylesheet: Footer Stylesheet
 
 *************************************************/
 
-<<<<<<< HEAD
 .pre-footer{
     .column-block{
         height: 200px;
@@ -65,107 +64,5 @@ footer.footer{
         display: flex;
         justify-content: center;
         align-items: center;
-=======
-section.pre-footer{
-    text-align: left;
-    span{
-        font-family: $overpass;
-        font-weight: normal;
-        color: $blue;
-        font-size: rem-calc(16);
-        display: block;
-        &.city{
-            font-size: rem-calc(24);
-            color: $blue;
-            @include rosario-font;
-            margin-bottom: rem-calc(12);
-        }
-    }
-    p{
-        font-family: $overpass;
-        font-weight: normal;
-        color: $blue;
-        font-size: rem-calc(16);
-    }
-    .column-block{
-        border-right: 2px solid $light-gray;
-        margin-bottom: 1rem;
-        &:last-child{
-            border-right: 2px solid transparent;
-        }
-    }
-    .column-block-inner{
-        max-width: rem-calc(200);
-        margin:0 auto;
-    }
-}
-
-footer.footer{
-    text-align: center;
-    #menu-footer-menu{
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        li{
-            border-right: 2px solid $blue;
-            &:last-child{
-                border-right: 2px solid transparent;
-            }
-        }
-        a{
-            color: $blue;
-            font-family: $overpass;
-            font-weight: normal;
-            font-size: rem-calc(16);
-            padding-top: 0;
-            padding-bottom: 0;
-            &:hover{
-                color: $green;
-            }
-        }
-    }
-    .footer-navigation{
-        border-top: 2px solid $light-gray;
-        padding-top:1.5rem;
-    }
-    p{
-        margin-bottom: 0;
-        padding-bottom:1.5rem;
-        color: $blue;
-        font-family: $overpass;
-        font-weight: normal;
-        font-size: rem-calc(16);
-        padding-top:.7rem;
-    }
-    .social-media{
-        ul{
-            display: -webkit-box;
-            display: -moz-box;
-            display: -ms-flexbox;
-            display: -webkit-flex;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            list-style-type: none;
-            margin: 0;
-            padding-bottom:.7rem;
-        }
-        li{
-            color: $blue;
-            font-size: rem-calc(32);
-            line-height:1;
-            padding:.7rem;
-            a:before{
-                color: $blue;
-            }
-            a:hover:before{
-                color: $green;
-            }
-        }
->>>>>>> c1fe151179a0aa85a5ffb2c887e4ecfb4cbc6446
     }
 }
