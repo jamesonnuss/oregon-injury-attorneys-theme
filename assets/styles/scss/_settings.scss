@@ -75,15 +75,20 @@ $foundation-palette: (
   warning: #ffae00,
   alert: #cc4b37,
 );
-$light-gray: #e6e6e6;
+$light-gray: #e5e5e5;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
-$blue: #1a2e51;
+// $blue: #193258;
+$blue: #183258;
+$green: #225e2f;
+$cream: #c6c5b9;
 $body-background: $white;
 $body-font-color: $black;
 $body-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$rosario: 'Rosario', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$overpass: 'Overpass', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
