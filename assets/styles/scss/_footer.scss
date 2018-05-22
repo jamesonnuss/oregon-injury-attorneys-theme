@@ -1,0 +1,68 @@
+/************************************************
+
+Stylesheet: Footer Stylesheet
+
+*************************************************/
+
+.pre-footer{
+    .column-block{
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        div{
+            max-width: 250px;
+        }
+        &:first-child{
+            border-right: 1px solid $grey;
+        }
+        &:last-child{
+            border-left: 1px solid $grey;
+        }
+        span.city{
+            font-family: $rosario;
+            font-size: rem-calc(24);
+            color: $blue;
+            font-weight: 700;
+            display: block;
+        }
+        span,p{
+            font-family: $overpass;
+            font-size: rem-calc(16);
+            color: $blue;
+            font-weight: 400;
+            margin-bottom: 0;
+            display: block;
+        }
+    }
+}
+
+footer.footer{
+    padding:1rem 0 2rem 0;
+    text-align: center;
+    margin-top: 0;
+    &:before{
+        max-width: 75rem;
+        margin-right: auto;
+        margin-left: auto;
+        background-color:transparent;
+        border-top: rem-calc(1) solid $grey;
+        content: ' ';
+        width: 100%;
+        height: 2rem;
+        position: relative;
+        top: 0;
+        display: block;
+    }
+    .columns:first-child{
+        position: relative;
+    }
+    p{
+        margin-bottom: 0;
+    }
+    ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

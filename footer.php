@@ -13,12 +13,14 @@
             	<div class="row small-up-1 medium-up-3 large-up-3">
             		<?php while ( have_rows('global_locations','option') ) : the_row(); ?>
             			<div class="column column-block">
-                            <span class="city"><?php the_sub_field('city', 'option'); ?></span>
-                            <span class="phone"><?php the_sub_field('phone_number', 'option'); ?></span>
-                            <span class="email"><?php the_sub_field('email_address', 'option'); ?></span>
-                            <p class="address">
-                                <?php the_sub_field('address', 'option'); ?>
-                            </p>
+                            <div>
+                                <span class="city"><?php the_sub_field('city', 'option'); ?></span>
+                                <span class="phone"><?php the_sub_field('phone_number', 'option'); ?></span>
+                                <span class="email"><?php the_sub_field('email_address', 'option'); ?></span>
+                                <p class="address">
+                                    <?php the_sub_field('address', 'option'); ?>
+                                </p>
+                            </div>
                         </div>
             		<?php endwhile; ?>
             	</div>

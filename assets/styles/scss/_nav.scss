@@ -45,6 +45,9 @@ header.header{
             position: relative;
             top:rem-calc(-23.31);
         }
+        @media only screen and (max-width: 22.000rem){
+            padding-right: .5rem;
+        }
     }
     .menu-icon{
         outline:0;
@@ -54,6 +57,9 @@ header.header{
         font-size: rem-calc(18);
         margin-left: auto;
         display: none;
+        color: $blue;
+        font-weight: 700;
+        font-family: $overpass;
         @include breakpoint (small down) {
             display: block;
         }
@@ -62,12 +68,12 @@ header.header{
             right: 0;
             top: 2px;
             left: inherit;
-            box-shadow: 0 6px 0 $black, 0 12px 0 $black;
+            box-shadow: 0 6px 0 $blue, 0 12px 0 $blue;
         }
         &:hover{
             &:after{
-                box-shadow:0 6px 0 $black, 0 12px 0 $black;
-                background-color: $black;
+                box-shadow:0 6px 0 $blue, 0 12px 0 $blue;
+                background-color: $blue;
             }
         }
         &.active-menu{
@@ -78,7 +84,7 @@ header.header{
                 background-color: transparent;
                 height: auto;
                 font-size: rem-calc(30);
-                top: rem-calc(-10);
+                top: -.375rem;
             }
         }
     }
@@ -104,19 +110,28 @@ header.header{
             a{
                 background-color: $white;
                 color: $blue;
-                padding-bottom:rem-calc(23.31);
                 border-bottom:3px solid transparent;
+                font-family: $overpass;
+                font-size:rem-calc(17);
+                line-height:1;
+                font-weight: 700;
+                color: $blue;
+                padding:1rem 1rem 1.35rem 1rem;
+                @media only screen and (max-width:60.938rem){
+                    font-size:rem-calc(16);
+                }
                 @include breakpoint (small down) {
                     padding:1rem;
                     border-bottom: 0;
+                    font-size:rem-calc(17);
                 }
             }
             a:hover{
-                color: $dark-gray;
+                color: $green;
                 border-bottom:3px solid transparent;
                 @include breakpoint (small down) {
                     border-bottom: 0;
-                    background-color: $blue;
+                    background-color: $green;
                     color: $white;
                 }
             }
@@ -130,10 +145,12 @@ header.header{
                 }
             }
             &.current-menu-item a{
-                color: $dark-gray;
+                color: $green;
+                font-weight: bold;
                 @include breakpoint (small down) {
                     color: $white;
-                    background-color: $blue;
+                    background-color: $green;
+                    border-bottom: none;
                 }
             }
             &.menu-item-has-children a{
@@ -146,7 +163,7 @@ header.header{
                 }
             }
             &.is-dropdown-submenu-parent.is-active a.sf-with-ul{
-                color: $dark-gray;
+                color: $green;
             }
             .submenu{
                 border-top: 0;
@@ -175,16 +192,20 @@ header.header{
                         border-bottom: 0;
                         background-color: $light-gray;
                         color: $blue;
+                        font-size: rem-calc(16)
                     }
                     a:hover{
-                        background-color: $blue;
+                        background-color: $green;
                         color: $white;
                     }
                     &.current-menu-item a{
-                        color: $dark-gray;
+                        color: $green;
                         @include breakpoint (small down) {
                             color: $white;
-                            background-color: $blue;
+                            background-color: $green;
+                        }
+                        &:hover{
+                            color: $white;
                         }
                     }
                 }
@@ -207,13 +228,16 @@ header.header{
             height: auto;
         }
         .top-menu{
-            padding-top:rem-calc(23.31);
+            padding-top:1.35rem;
             padding-bottom:rem-calc(10);
             padding-right: 1rem;
             @include breakpoint (small down) {
                 position: absolute;
                 top: 0;
                 right: 0;
+            }
+            @media only screen and (max-width: 22.000rem){
+                padding-right: .5rem;
             }
             h1{
                 visibility: hidden;
@@ -224,6 +248,25 @@ header.header{
             span{
                 display: block;
                 text-align: right;
+                font-family: $overpass;
+                font-weight: 700;
+                font-style: italic;
+                font-size: rem-calc(14);
+                letter-spacing:rem-calc(.5);
+                color:$blue;
+            }
+            a{
+                font-family: $overpass;
+                font-weight: 700;
+                font-style: normal;
+                font-size: rem-calc(17);
+                letter-spacing:rem-calc(.5);
+                color:$green;
+                position: relative;
+                top: rem-calc(-2);
+                @media only screen and (max-width:25.000em){
+                    font-size: rem-calc(15);
+                }
             }
         }
     }
@@ -249,9 +292,30 @@ header.header{
                 width: 100%;
                 max-width: rem-calc(300);
                 @include breakpoint (small down) {
-                    max-width:rem-calc(220);
+                    max-width:16rem;
+                    position: relative;
+                    left: -.5rem;
+                }
+                @media only screen and (max-width: 25.000rem){
+                    max-width: rem-calc(220);
+                }
+                @media only screen and (max-width: 22.000rem){
+                    left: -.75rem;
                 }
             }
         }
     }
+}
+.accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle)>a:after{
+    content: "\e907";
+    font-family: 'icomoon' !important;
+    border:0;
+    margin-top: rem-calc(-9);
+    right: rem-calc(37);
+    font-size:rem-calc(14);
+}
+.accordion-menu .is-accordion-submenu-parent[aria-expanded=true]>a:after{
+    content: "\e908";
+    transform: rotate(0);
+    transform-origin: 0;
 }
