@@ -23,6 +23,41 @@
 							</div>
 						</div>
 					</div>
+				<?php elseif( get_row_layout() == 'list_block' ): ?>
+					<div class="block list-block">
+						<div class="row">
+							<div class="large-12 medium-12 small-12 columns">
+								<?php if( get_sub_field('list_block_title') ): ?>
+									<h1><?php the_sub_field('list_block_title'); ?></h1>
+								<?php endif; ?>
+								<?php if( have_rows('list') ): ?>
+									<div class="row small-up-1 medium-up-2 large-up-2">
+										<?php while ( have_rows('list') ) : the_row(); ?>
+											<div class="column column-block">
+												<?php the_sub_field('list_item'); ?>
+											</div>
+										<?php endwhile; ?>
+									</div>
+								<?php endif; ?>
+							</div>
+						</div>
+					</div>
+				<?php elseif( get_row_layout() == 'contact_block' ): ?>
+					<div class="block contact-block">
+						<div class="row">
+							<div class="large-12 medium-12 small-12 columns">
+								<?php if( get_sub_field('contact_block_title') ): ?>
+									<h1><?php the_sub_field('contact_block_title'); ?></h1>
+								<?php endif; ?>
+								<div class="contact-block-content">
+									<?php the_sub_field('contact_block_content'); ?>
+								</div>
+								<div class="contact-block-contact-form">
+									<?php echo do_shortcode("[gravityform id=1 title=false description=false ajax=true tabindex=49]"); ?>
+								</div>
+							</div>
+						</div>
+					</div>
 		        <?php elseif( get_row_layout() == 'video_block' ): ?>
 					<div class="block video-block row">
 						<div class="large-12 medium-12 small-12 columns">
@@ -259,6 +294,41 @@
 					</div>
 				<?php elseif( get_row_layout() == 'spacer_block' ): ?>
 					<div class="block spacer-block"></div>
+				<?php elseif( get_row_layout() == 'slider_block' ): ?>
+					<div class="block slider-block row">
+						<div class="large-12 medium-12 small-12 columns">
+							<?php if( get_sub_field('slider_block_title') ): ?>
+								<h1><?php the_sub_field('slider_block_title'); ?></h1>
+							<?php endif; ?>
+							<?php if( have_rows('slider') ): ?>
+								<div class="row slider-slide-container">
+								    <?php while ( have_rows('slider') ) : the_row(); ?>
+										<div class="slider-slide">
+											<?php $image = get_sub_field('slide');
+											if( !empty($image) ): ?>
+												<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+											<?php endif; ?>
+										</div>
+								    <?php endwhile; ?>
+								</div>
+							<?php endif; ?>
+						</div>
+					</div>
+					<script type="text/javascript">
+						jQuery(document).ready(function($) {
+							var randomNum = Math.floor(Math.random() * 1000);
+							var randomRange = Math.random().toString(36).substring(7);
+						    jQuery('.slider-slide-container').attr("id","slide_" + randomNum + randomRange);
+							jQuery("#slide_" + randomNum + randomRange).slick({
+								dots: true,
+								infinite: true,
+								arrows:true,
+								speed: 300,
+								slidesToShow: 1,
+								adaptiveHeight: true
+							});
+						});
+					</script>
 				<?php endif; ?>
 		    <?php endwhile; ?>
 		</article>
