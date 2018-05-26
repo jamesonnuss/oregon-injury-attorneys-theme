@@ -10,14 +10,32 @@ Stylesheet: Footer Stylesheet
         display: flex;
         align-items: center;
         justify-content: center;
+        @media #{$medium}{
+            height: auto;
+            margin-top: 1.25rem;
+            display: block;
+        }
         div{
             max-width: 250px;
+            @media #{$medium}{
+                width: auto;
+                max-width:220px;
+                margin:0 auto;
+            }
         }
         &:first-child{
             border-right: 1px solid $grey;
+            @media #{$medium}{
+                border-right: 0;
+                // border-bottom: 1px solid $grey;
+            }
         }
         &:last-child{
             border-left: 1px solid $grey;
+            @media #{$medium}{
+                border-left: 0;
+                // border-top: 1px solid $grey;
+            }
         }
         span.city{
             font-family: $rosario;
@@ -59,10 +77,53 @@ footer.footer{
     }
     p{
         margin-bottom: 0;
+        font-family: $overpass;
+        font-size: rem-calc(16);
+        font-weight: 400;
+        color: $blue;
     }
     ul{
         display: flex;
         justify-content: center;
         align-items: center;
+        padding:1rem 0;
+        li{
+            border-right: 1px solid $blue;
+            &:last-child{
+                border-right: 0;
+            }
+        }
+        a{
+            font-family: $overpass;
+            font-size: rem-calc(16);
+            font-weight: 400;
+            padding:0 1.5rem;
+        }
+    }
+    .social-media{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: .5rem;
+        ul{
+            list-style-type: none;
+            margin:0;
+            padding:0;
+        }
+        li{
+            border:0;
+            list-style-type: none;
+            a{
+                font-size: rem-calc(36);
+                padding:0 .75rem;
+                &:hover{
+                    text-decoration: none;
+                    color: $green;
+                    &:before{
+                        color: $green;
+                    }
+                }
+            }
+        }
     }
 }

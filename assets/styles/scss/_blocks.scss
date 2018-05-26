@@ -4,9 +4,512 @@ Stylesheet: Blocks Global Stylesheet
 
 *************************************************/
 
-.content-blocks-container{
-    padding:3.25rem 0;
-}
-.block{
-    padding:3.25rem 0;
+.content .content-blocks{
+    .content-blocks-container{
+        padding:2.5rem 0;
+    }
+    .block{
+        padding:2.5rem 0;
+    }
+    .text-block{
+        &.half-width{
+            max-width:rem-calc(725);
+        }
+        &.full-width{
+            max-width:none;
+        }
+        margin:0 auto;
+        h1{
+            text-align: center;
+            color: $blue;
+        }
+        p{
+            color: $blue;
+            font-size: rem-calc(20);
+            font-weight: 400;
+            line-height: rem-calc(30);
+            margin-bottom: 0;
+            font-family:$overpass;
+        }
+    }
+    .video-block{
+        padding:2.5rem 0 5rem 0;
+        .video-js{
+            max-width:rem-calc(725);
+            margin:0 auto;
+            position: relative;
+            &:before{
+                content:' ';
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                bottom: 0;
+                top: 0;
+                left: 0;
+                right: 0;
+                margin:auto;
+                margin-right:-1.25rem;
+                margin-bottom:-1.25rem;
+                background-color:$grey;
+            }
+        }
+        .video-js .vjs-big-play-button{
+            background-color: transparent;
+            background-image:url('../images/play.svg');
+            background-size:contain;
+            width:rem-calc(130);
+            height:rem-calc(130);
+            border:0;
+            transition: all .2s ease-in-out;
+            span:before{
+                display: none;
+            }
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+        .video-js .vjs-control-bar{
+            background-color: $blue;
+        }
+        .vjs-poster{
+            background-size:cover;
+        }
+    }
+    .box-block{
+        background-color: $blue;
+        color: $white;
+        padding:5rem 0;
+        h1{
+            text-align: center;
+            color: $white;
+        }
+        h3{
+            font-size: rem-calc(28);
+            color: $blue;
+        }
+        p{
+            font-size: rem-calc(17);
+        }
+        a.box-block-link{
+            margin-top: rem-calc(32);
+            font-size: rem-calc(17);
+            font-weight: 600;
+            display: block;
+            text-decoration: none;
+            transition: all .2s ease-in-out;
+            &:after{
+                padding-left:rem-calc(10);
+                content: "\e905";
+                font-family: 'icomoon' !important;
+                font-size: rem-calc(14);
+                top: 0.06rem;
+                position: relative;
+                text-decoration: none;
+                right: 0;
+                transition: all .2s ease-in-out;
+            }
+            &:hover{
+                text-decoration: none;
+                &:after{
+                    right:rem-calc(-2);
+                }
+            }
+        }
+        .column-block{
+            margin-bottom: 0;
+            div.column-block-inner-container{
+                background-color: $white;
+                display: flex;
+                align-items: flex-star;
+                justify-content: center;
+                border-radius: 3px;
+                border:1px solid $grey;
+                -webkit-box-shadow: 0px 4px 6px 0px rgba(76,76,77,0.25);
+                -moz-box-shadow: 0px 4px 6px 0px rgba(76,76,77,0.25);
+                box-shadow: 0px 4px 6px 0px rgba(76,76,77,0.25);
+                div{
+                    text-align: center;
+                    color:$blue;
+                    padding:5.25rem 1.25rem;
+                }
+            }
+        }
+    }
+    .testimonials-block{
+        padding:5rem 0;
+        h1{
+            text-align: center;
+        }
+        p{
+            font-size: rem-calc(24);
+            text-align: center;
+            position: relative;
+            &:before{
+                content:' ';
+                width:rem-calc(16);
+                height: rem-calc(12);
+                display: block;
+                background-image: url('../images/ldquo.svg');
+                background-repeat: no-repeat;
+                background-size: contain;
+                position: absolute;
+                left: rem-calc(-20);
+                top: 0;
+            }
+            &:after{
+                content:' ';
+                width:rem-calc(16);
+                height: rem-calc(12);
+                display: block;
+                background-image: url('../images/rdquo.svg');
+                background-repeat: no-repeat;
+                background-size: contain;
+                position: absolute;
+                right: rem-calc(-20);
+                top: 0;
+            }
+        }
+        span.author{
+            margin-top: 2rem;
+            font-weight: 600;
+        }
+        span.author-title{
+            padding-bottom: 2rem;
+        }
+        span.author,span.author-title{
+            display: block;
+            text-align: center;
+            color: $blue;
+            -webkit-backface-visibility: hidden;
+        }
+        .testimonial-slide{
+            max-width: rem-calc(625);
+            display:none;
+            margin:0 auto;
+        }
+        .slick-dots li button{
+            transition: all .2s ease-in-out;
+            &:before{
+                color: $grey;
+                transform: scale(1.5);
+                opacity: 1;
+            }
+        }
+        .slick-dots li.slick-active button:before{
+            color: $blue;
+            transform: scale(2);
+            opacity: 1;
+        }
+        .slick-slide > div{
+            text-align: center;
+        }
+        .slick-prev .slick-arrow{
+            color: $blue;
+        }
+        .slick-next .slick-arrow{
+            color: $blue;
+            background-color: pink;
+        }
+        .slick-prev{
+            left: rem-calc(30);
+            z-index: 1;
+            transition: all .2s ease-in-out;
+            top: 40%;
+            &:before{
+                content: "\e906";
+                font-family: 'icomoon' !important;
+                color:$blue;
+                opacity: 1;
+                font-size: rem-calc(28);
+            }
+            &:hover{
+                &:before{
+                    color: $green;
+                }
+                left:rem-calc(28);
+            }
+        }
+        .slick-next{
+            right: rem-calc(30);
+            z-index: 1;
+            transition: all .2s ease-in-out;
+            top: 40%;
+            &:before{
+                content: "\e905";
+                font-family: 'icomoon' !important;
+                color:$blue;
+                opacity: 1;
+                font-size: rem-calc(28);
+            }
+            &:hover{
+                &:before{
+                    color: $green;
+                }
+                right: rem-calc(28);
+            }
+        }
+        .slick-track,
+        .slick-list {
+            -webkit-perspective: 2000;
+            -webkit-backface-visibility: hidden;
+        }
+        .slick-slide { -webkit-backface-visibility: hidden; }
+    }
+    .call-to-action-block-container{
+        position: relative;
+        .call-to-action-block{
+            padding:5rem 0;
+            background-size:cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        .call-to-action-block > div {
+            position: relative;
+            z-index: 1;
+            text-align:center;
+            max-width:43.75rem;
+            margin:0 auto;
+            h1{
+                color:$white;
+            }
+            p{
+                font-size: 1.25rem;
+                color: $white;
+                text-align: center;
+
+            }
+        }
+    }
+    .tab-block{
+        padding:5rem 0;
+        h1{
+            text-align: center;
+        }
+        .tabs{
+            border:0;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        .tabs-content{
+            border:0;
+            margin-top: 2rem;
+        }
+        .tabs-title>a{
+            color: $blue;
+            padding:1.25rem 1.5625rem 1.375rem;
+            border-radius: 3px;
+            border:1px solid $grey;
+            margin:0 .5rem;
+            min-width: rem-calc(205);
+            font-weight: 600;
+            text-align: center;
+            outline:0;
+            text-decoration: none;
+            transition: all .2s ease-in-out;
+            font-size:1rem;
+            &:hover{
+                text-decoration: none;
+                color: $blue;
+                border-color:$blue;
+            }
+            &:focus{
+                outline:0;
+            }
+        }
+        .tabs-title>a:focus, .tabs-title>a[aria-selected=true]{
+            background-color: transparent;
+            border-color: $blue;
+            color: $blue;
+        }
+        @-webkit-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .tabs-content > .tabs-panel{
+            display: none;
+            opacity: 0;
+        }
+        .tabs-content > .tabs-panel.is-active {
+            display: block;
+            -webkit-animation: fadeIn 1s;
+            animation: fadeIn 1s;
+            opacity: 1;
+        }
+    }
+    .team-block{
+        background-color: $blue;
+        color: $white;
+        padding:5rem 0;
+        h1{
+            text-align: center;
+            color: $white;
+        }
+        h3{
+            font-size: rem-calc(28);
+            color: $blue;
+            margin-bottom: 0;
+        }
+        span.team-member-position{
+            display: block;
+            font-size: rem-calc(17);
+            font-weight: bold;
+            font-family: $overpass;
+            padding-bottom: 1.25rem;
+        }
+        p{
+            font-size: rem-calc(17);
+        }
+        span,a,h3,p{
+            padding-left:1.25rem;
+            padding-right:1.25rem;
+        }
+        a.team-member-profile-link{
+            margin-top: rem-calc(32);
+            font-size: rem-calc(17);
+            font-weight: 600;
+            display: block;
+            text-decoration: none;
+            transition: all .2s ease-in-out;
+            &:after{
+                padding-left:rem-calc(10);
+                content: "\e905";
+                font-family: 'icomoon' !important;
+                font-size: rem-calc(14);
+                top: 0.06rem;
+                position: relative;
+                text-decoration: none;
+                right: 0;
+                transition: all .2s ease-in-out;
+            }
+            &:hover{
+                text-decoration: none;
+                &:after{
+                    right:rem-calc(-2);
+                }
+            }
+        }
+        .column-block{
+            margin-bottom: 0;
+            div.column-block-inner-container{
+                background-color: $white;
+                display: flex;
+                align-items: flex-star;
+                justify-content: center;
+                border-radius: 3px;
+                border:0;
+                -webkit-box-shadow: 0px 4px 6px 0px rgba(76,76,77,0.25);
+                -moz-box-shadow: 0px 4px 6px 0px rgba(76,76,77,0.25);
+                box-shadow: 0px 4px 6px 0px rgba(76,76,77,0.25);
+                max-width: rem-calc(475);
+                margin:0 auto;
+                div{
+                    text-align: center;
+                    color:$blue;
+                    padding:0 0 2.75rem 0;
+                    overflow: hidden;
+                    img{
+                        border-top-left-radius: 3px;
+                        border-top-right-radius: 3px;
+                    }
+                    a.team-member-profile-img-link{
+                        display: block;
+                        position: relative;
+                        padding:0;
+                        &:before{
+                            content:' ';
+                            background-color: transparent;
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            margin:auto;
+                            display: block;
+                            transition: all .2s ease-in-out;
+                        }
+                        &:hover{
+                            &:before{
+                                cursor: pointer;
+                                background-color:rgba(24, 50, 88, 0.6);
+                            }
+                        }
+                    }
+                    .team-member-name{
+                        padding-top: 2.75rem;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+    .faq-block{
+        padding:5rem 0;
+        h1{
+            text-align: center;
+        }
+        .left-accordion{
+            margin: 0;
+            list-style-type: none;
+            .accordion-item{
+                padding-left: .9375rem;
+            }
+        }
+        .right-accordion{
+            margin: 0;
+            list-style-type: none;
+            .accordion-item{
+                padding-right: .9375rem;
+            }
+        }
+        .accordion-title{
+            border:0;
+            color: $blue;
+            font-size: rem-calc(18);
+            padding:0;
+            margin:4rem 0 0 0;
+            font-weight: 600;
+            padding-right: rem-calc(50);
+            &:before{
+                font-size: rem-calc(16);
+                content: "\e907";
+                font-family: 'icomoon' !important;
+            }
+            &:hover,&:focus{
+                color: $green;
+                text-decoration: none;
+                background: transparent;
+                border:0;
+            }
+        }
+        .accordion-item.is-active{
+            a:before{
+                content: "\e908";
+                font-family: 'icomoon' !important;
+            }
+        }
+        .accordion-content{
+            border:0;
+            background: transparent;
+            padding:1.25rem 0;
+            font-size: rem-calc(17);
+            color: $blue;
+            p{
+                font-size: rem-calc(17);
+            }
+        }
+    }
 }

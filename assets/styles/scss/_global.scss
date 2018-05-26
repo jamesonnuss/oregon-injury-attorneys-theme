@@ -11,6 +11,51 @@ Stylesheet: Global Stylesheet
 	align-items: center;
 }
 
+.screen {
+	position: absolute;
+	z-index: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	top: 0;
+
+	&[data-opacity="1"] {
+		background-color: rgba($black, .1);
+	}
+
+	&[data-opacity="2"] {
+		background-color: rgba($black, .2);
+	}
+
+	&[data-opacity="3"] {
+		background-color: rgba($black, .3);
+	}
+
+	&[data-opacity="4"] {
+		background-color: rgba($black, .4);
+	}
+
+	&[data-opacity="5"] {
+		background-color: rgba($black, .5);
+	}
+
+	&[data-opacity="6"] {
+		background-color: rgba($black, .6);
+	}
+
+	&[data-opacity="7"] {
+		background-color: rgba($black, .7);
+	}
+
+	&[data-opacity="8"] {
+		background-color: rgba($black, .8);
+	}
+
+	&[data-opacity="9"] {
+		background-color: rgba($black, .9);
+	}
+}
+
 /*********************
 ANIMATION
 *********************/

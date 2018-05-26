@@ -4,6 +4,9 @@
  */
 ?>
 <section class="content-header">
+	<?php if( get_field('header_image_overlay_opacity')): ?>
+		<div class="screen" data-opacity="<?php the_field('header_image_overlay_opacity'); ?>"></div>
+	<?php endif; ?>
 	<?php if( get_field('image_or_video') == 'Image' ): ?>
 		<div class="content-header-image" style="background-image:url('<?php the_field('header_image'); ?>');">
 			<div class="row content-header-image-row">

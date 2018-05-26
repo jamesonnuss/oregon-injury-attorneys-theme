@@ -8,7 +8,12 @@
 		<article class="content-blocks-container">
 		    <?php while ( have_rows('content_blocks') ) : the_row(); ?>
 		        <?php if( get_row_layout() == 'text_block' ): ?>
-					<div class="block text-block row">
+					<?php if( get_sub_field('text_box_width') == 'full-width' ): ?>
+						<?php $tWidth = 'full-width'; ?>
+					<?php else: ?>
+						<?php $tWidth = 'half-width'; ?>
+					<?php endif; ?>
+					<div class="block text-block row <?php echo $tWidth; ?>">
 						<div class="large-12 medium-12 small-12 columns">
 							<?php if( get_sub_field('text_block_title') ): ?>
 								<h1><?php the_sub_field('text_block_title'); ?></h1>
@@ -24,33 +29,41 @@
 							<?php if( get_sub_field('video_block_title') ): ?>
 								<h1><?php the_sub_field('video_block_title'); ?></h1>
 							<?php endif; ?>
-							<video class="video-js" controls preload="auto" width="100%" poster="<?php the_sub_field('video_poster'); ?>" data-setup="{}">
-								<source src="<?php the_sub_field('video_block_url'); ?>" type="video/mp4">
-								<p class="vjs-no-js">
-									Your browser does not support HTML5 video.
-								</p>
-							</video>
+							<div class="video-js-container">
+								<video class="video-js" controls preload="auto" width="100%" poster="<?php the_sub_field('video_poster'); ?>" data-setup="{}">
+									<source src="<?php the_sub_field('video_block_url'); ?>" type="video/mp4">
+									<p class="vjs-no-js">
+										Your browser does not support HTML5 video.
+									</p>
+								</video>
+							</div>
 						</div>
 					</div>
 				<?php elseif( get_row_layout() == 'box_block' ): ?>
-					<div class="block box-block row">
-						<div class="large-12 medium-12 small-12 columns">
-							<?php if( get_sub_field('box_block_section_title') ): ?>
-								<h1><?php the_sub_field('box_block_section_title'); ?></h1>
-							<?php endif; ?>
-							<?php if( have_rows('box') ): ?>
-								<div class="row small-up-1 medium-up-2 large-up-3">
-								    <?php while ( have_rows('box') ) : the_row(); ?>
-										<div class="column column-block">
-								        	<h3><?php the_sub_field('box_block_title'); ?></h3>
-											<p>
-												<?php the_sub_field('box_block_content'); ?>
-											</p>
-											<a href="<?php the_sub_field('box_block_link'); ?>"><?php the_sub_field('box_block_link_text'); ?></a>
-										</div>
-								    <?php endwhile; ?>
-								</div>
-							<?php endif; ?>
+					<div class="block box-block">
+						<div class="row">
+							<div class="large-12 medium-12 small-12 columns">
+								<?php if( get_sub_field('box_block_section_title') ): ?>
+									<h1><?php the_sub_field('box_block_section_title'); ?></h1>
+								<?php endif; ?>
+								<?php if( have_rows('box') ): ?>
+									<div class="row small-up-1 medium-up-2 large-up-3" data-equalizer>
+									    <?php while ( have_rows('box') ) : the_row(); ?>
+											<div class="column column-block">
+												<div class="column-block-inner-container" data-equalizer-watch>
+													<div>
+														<h3><a href="<?php the_sub_field('box_block_link'); ?>"><?php the_sub_field('box_block_title'); ?></a></h3>
+														<p>
+															<?php the_sub_field('box_block_content'); ?>
+														</p>
+														<a href="<?php the_sub_field('box_block_link'); ?>" class="box-block-link"><?php the_sub_field('box_block_link_text'); ?></a>
+													</div>
+												</div>
+											</div>
+									    <?php endwhile; ?>
+									</div>
+								<?php endif; ?>
+							</div>
 						</div>
 					</div>
 				<?php elseif( get_row_layout() == 'testimonials_block' ): ?>
@@ -82,6 +95,7 @@
 							jQuery("#testimonial_" + randomNum + randomRange).slick({
 								dots: true,
 								infinite: true,
+								arrows:true,
 								speed: 300,
 								slidesToShow: 1,
 								adaptiveHeight: true
@@ -89,35 +103,40 @@
 						});
 					</script>
 				<?php elseif( get_row_layout() == 'call_to_action_block' ): ?>
-					<div class="block call-to-action-block" style="background-image:url('<?php the_sub_field('call_to_action_block_bg_image'); ?>');">
-						<div class="row">
-							<div class="large-12 medium-12 small-12 columns">
-								<?php if( get_sub_field('call_to_action_block_title') ): ?>
-									<h1><?php the_sub_field('call_to_action_block_title'); ?></h1>
-								<?php endif; ?>
-								<p>
-									<?php the_sub_field('call_to_action_block_content'); ?>
-								</p>
-								<div class="flexible-button-container">
-								 	<?php if( have_rows('call_to_action_block_button') ): ?>
-								 		<div class="flexible-button-inner-container">
-								 			<?php while ( have_rows('call_to_action_block_button') ) : the_row(); ?>
-												<?php if( get_row_layout() == 'call_to_action_block_page_link_button' ): ?>
-													<div class="btn-center">
-														<a href="<?php the_sub_field('button_link'); ?>" class="button"><?php the_sub_field('button_text'); ?></a>
-													</div>
-												<?php elseif( get_row_layout() == 'call_to_action_block_url_link_button' ): ?>
-													<div class="btn-center">
-														<a href="<?php the_sub_field('button_link'); ?>" class="button" target="_blank"><?php the_sub_field('button_text'); ?></a>
-													</div>
-												<?php elseif( get_row_layout() == 'call_to_action_block_pdf_button' ): ?>
-													<div class="btn-center">
-														<a href="<?php the_sub_field('button_file'); ?>" class="button" target="_blank"><?php the_sub_field('button_text'); ?></a>
-													</div>
-												<?php endif; ?>
-								 			<?php endwhile; ?>
-								 		</div>
-								 	<?php endif; ?>
+					<div class="call-to-action-block-container">
+						<?php if( get_sub_field('call_to_action_block_bg_image_overlay_opacity')): ?>
+							<div class="screen" data-opacity="<?php the_sub_field('call_to_action_block_bg_image_overlay_opacity'); ?>"></div>
+						<?php endif; ?>
+						<div class="block call-to-action-block" style="background-image:url('<?php the_sub_field('call_to_action_block_bg_image'); ?>');">
+							<div class="row">
+								<div class="large-12 medium-12 small-12 columns">
+									<?php if( get_sub_field('call_to_action_block_title') ): ?>
+										<h1><?php the_sub_field('call_to_action_block_title'); ?></h1>
+									<?php endif; ?>
+									<p>
+										<?php the_sub_field('call_to_action_block_content'); ?>
+									</p>
+									<div class="flexible-button-container">
+									 	<?php if( have_rows('call_to_action_block_button') ): ?>
+									 		<div class="flexible-button-inner-container">
+									 			<?php while ( have_rows('call_to_action_block_button') ) : the_row(); ?>
+													<?php if( get_row_layout() == 'call_to_action_block_page_link_button' ): ?>
+														<div class="btn-center">
+															<a href="<?php the_sub_field('button_link'); ?>" class="button"><?php the_sub_field('button_text'); ?></a>
+														</div>
+													<?php elseif( get_row_layout() == 'call_to_action_block_url_link_button' ): ?>
+														<div class="btn-center">
+															<a href="<?php the_sub_field('button_link'); ?>" class="button" target="_blank"><?php the_sub_field('button_text'); ?></a>
+														</div>
+													<?php elseif( get_row_layout() == 'call_to_action_block_pdf_button' ): ?>
+														<div class="btn-center">
+															<a href="<?php the_sub_field('button_file'); ?>" class="button" target="_blank"><?php the_sub_field('button_text'); ?></a>
+														</div>
+													<?php endif; ?>
+									 			<?php endwhile; ?>
+									 		</div>
+									 	<?php endif; ?>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -151,12 +170,14 @@
 										<?php while ( have_rows('tab_block_tab') ) : the_row(); ?>
 											<div class="tabs-panel <?php if (!$i) { ?>is-active<?php } ?>" id="tabs-panel-<?php echo $i; ?>">
 												<?php if( have_rows('tab_block_content_repeater') ): ?>
-													<?php while ( have_rows('tab_block_content_repeater') ) : the_row(); ?>
-														<div>
-															<?php the_sub_field('tab_block_title'); ?>
-															<?php the_sub_field('tab_block_content'); ?>
-														</div>
-													<?php endwhile; ?>
+													<div class="row small-up-1 medium-up-2 large-up-2">
+														<?php while ( have_rows('tab_block_content_repeater') ) : the_row(); ?>
+															<div class="column column-block">
+																<?php the_sub_field('tab_block_title'); ?>
+																<?php the_sub_field('tab_block_content'); ?>
+															</div>
+														<?php endwhile; ?>
+													</div>
 												<?php endif; ?>
 											</div>
 										<?php $i++; endwhile;?>
@@ -173,21 +194,25 @@
 									<h1><?php the_sub_field('team_block_title'); ?></h1>
 								<?php endif; ?>
 								<?php $members = get_sub_field('team_block_members'); if( $members ): ?>
-									<div class="row small-up-1 medium-up-2 large-up-3">
+									<div class="row small-up-1 medium-up-2 large-up-3" data-equalizer>
 									    <?php foreach( $members as $member): // variable must be called $member (IMPORTANT) ?>
 									        <?php setup_postdata($member); ?>
 									        <div class="column column-block">
-												<?php $memberPhoto = get_field('employee_photo', $member->ID); ?>
-												<a href="<?php echo get_permalink( $member->ID ); ?>"><img src="<?php echo $memberPhoto['url']; ?>" alt="<?php echo $memberPhoto['alt']; ?>" /></a>
-									            <a href="<?php echo get_permalink( $member->ID ); ?>" class="team-member-name"><?php echo get_the_title( $member->ID ); ?></a>
-												<span class="team-member-position"><?php the_field('employee_position', $member->ID); ?></span>
-												<p class="team-member-introduction">
-													<?php the_field('employee_introduction', $member->ID); ?>
-												</p>
-												<a href="<?php echo get_permalink( $member->ID ); ?>" class="team-member-profile-link">View Profile</a>
+												<div class="column-block-inner-container" data-equalizer-watch>
+													<div>
+														<?php $memberPhoto = get_field('employee_photo', $member->ID); ?>
+														<a href="<?php echo get_permalink( $member->ID ); ?>" class="team-member-profile-img-link"><img src="<?php echo $memberPhoto['url']; ?>" alt="<?php echo $memberPhoto['alt']; ?>" /></a>
+											            <h3><a href="<?php echo get_permalink( $member->ID ); ?>" class="team-member-name"><?php echo get_the_title( $member->ID ); ?></a></h3>
+														<span class="team-member-position"><?php the_field('employee_position', $member->ID); ?></span>
+														<p class="team-member-introduction">
+															<?php the_field('employee_introduction', $member->ID); ?>
+														</p>
+														<a href="<?php echo get_permalink( $member->ID ); ?>" class="team-member-profile-link">View Profile</a>
+													</div>
+												</div>
 									        </div>
 									    <?php endforeach; ?>
-								    </ul>
+								    </div>
 								    <?php wp_reset_postdata(); // IMPORTANT - reset the $member object so the rest of the page works correctly ?>
 								<?php endif; ?>
 							</div>
@@ -201,26 +226,28 @@
 									<h1><?php the_sub_field('faq_block_title'); ?></h1>
 								<?php endif; ?>
 								<?php if( have_rows('faq_block_repeater') ):  $i = 0; ?>
-									<?php while ( have_rows('faq_block_repeater') ) : the_row(); ?>
-										<li class="accordion-item" data-accordion-item="accordion-item_<?php echo $i; ?>">
-											<a href="#" class="accordion-title"><?php the_sub_field('faq_block_question'); ?></a>
-											<div class="accordion-content" data-tab-content>
-										    	<?php the_sub_field('faq_block_answer'); ?>
-										    </div>
-										</li>
-									<?php $i++; endwhile;?>
+									<div class="row">
+										<?php while ( have_rows('faq_block_repeater') ) : the_row(); ?>
+											<li class="accordion-item" data-accordion-item="accordion-item_<?php echo $i; ?>">
+												<a href="#" class="accordion-title"><?php the_sub_field('faq_block_question'); ?></a>
+												<div class="accordion-content" data-tab-content>
+											    	<?php the_sub_field('faq_block_answer'); ?>
+											    </div>
+											</li>
+										<?php $i++; endwhile;?>
+									</div>
 									<script type="text/javascript">
 									jQuery(document).ready(function($) {
 										// Accordion Splitting
 										var $li = $('li.accordion-item');
 										if ($li.length % 2 == 0) {
 											half = Math.floor($li.length/2);
-											$li.filter(function(i){ return i < half; }).wrapAll('<ul class="left-accordion" data-accordion="one" data-multi-expand="true" data-allow-all-closed="true">');
-											$li.filter(function(i){ return i >= half; }).wrapAll('<ul class="right-accordion" data-accordion="two" data-multi-expand="true" data-allow-all-closed="true">');
+											$li.filter(function(i){ return i < half; }).wrapAll('<ul class="left-accordion large-6 medium-6 small-12 columns" data-accordion="one" data-multi-expand="true" data-allow-all-closed="true">');
+											$li.filter(function(i){ return i >= half; }).wrapAll('<ul class="right-accordion large-6 medium-6 small-12 columns" data-accordion="two" data-multi-expand="true" data-allow-all-closed="true">');
 										} else {
 											half = Math.floor($li.length/2 + 1);
-											$li.filter(function(i){ return i < half; }).wrapAll('<ul class="left-accordion" data-accordion="one" data-multi-expand="true" data-allow-all-closed="true">');
-											$li.filter(function(i){ return i >= half; }).wrapAll('<ul class="right-accordion" data-accordion="two" data-multi-expand="true" data-allow-all-closed="true">');
+											$li.filter(function(i){ return i < half; }).wrapAll('<ul class="left-accordion large-6 medium-6 small-12 columns" data-accordion="one" data-multi-expand="true" data-allow-all-closed="true">');
+											$li.filter(function(i){ return i >= half; }).wrapAll('<ul class="right-accordion large-6 medium-6 small-12 columns" data-accordion="two" data-multi-expand="true" data-allow-all-closed="true">');
 										}
 										$('.left-accordion').foundation();
 										$('.right-accordion').foundation();

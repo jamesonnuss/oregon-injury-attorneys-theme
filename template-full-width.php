@@ -9,19 +9,11 @@ get_header(); ?>
 
 		<?php get_template_part( 'parts/content', 'header' ); ?>
 
-		<div class="inner-content row">
+			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		    <main class="main small-12 medium-12 large-12 columns" role="main">
+				<?php get_template_part( 'parts/loop', 'content-blocks' ); ?>
 
-				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-					<?php get_template_part( 'parts/loop', 'content-blocks' ); ?>
-
-				<?php endwhile; endif; ?>
-
-			</main> <!-- end #main -->
-
-		</div> <!-- end #inner-content -->
+			<?php endwhile; endif; ?>
 
 	</div> <!-- end #content -->
 
