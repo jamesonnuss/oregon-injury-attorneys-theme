@@ -69,9 +69,18 @@ $overpass: 'Overpass', sans-serif;
 
 a{
     color: $blue;
-    &:hover{
+    text-decoration: underline;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    &:hover,&:focus{
         color: $green;
         text-decoration: underline;
+    }
+    &:visited{
+        color: $blue;
     }
 }
 
@@ -87,18 +96,25 @@ a{
     border-radius: rem-calc(3);
     padding:rem-calc(20) rem-calc(25) rem-calc(22) rem-calc(25);
     margin:0;
+    text-decoration: none;
     &:hover{
         color: $white;
         background-color:$green;
+        text-decoration: none;
     }
     &:focus{
         background-color: $blue;
+        color: $white;
+        text-decoration: none;
     }
     &:active{
         background-color: $blue;
+        color: $white;
+        text-decoration: none;
     }
     &:visited{
-        background-color: $blue;
+        color: $white;
+        text-decoration: none;
     }
 }
 
@@ -118,14 +134,30 @@ h1{
 }
 
 h2,h3,h4,h5,h6{
-    font-family: $overpass;
+    font-family: $rosario;
     letter-spacing: rem-calc(.5);
     color: $blue;
-    font-weight: 600;
+    font-weight: 700;
 }
 
-p,span{
+p,span,li{
     font-family: $overpass;
     color: $blue;
     font-weight: 400;
+}
+
+blockquote{
+    font-family: $overpass;
+    color: $blue;
+    font-weight: 400;
+    border-left: rem-calc(1) solid $blue;
+    p{
+        font-family: $overpass;
+        color: $blue;
+        font-weight: 400;
+    }
+}
+
+hr{
+    border-bottom: rem-calc(1) solid $grey;
 }

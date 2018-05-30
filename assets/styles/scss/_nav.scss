@@ -84,7 +84,7 @@ header.header{
                 background-color: transparent;
                 height: auto;
                 font-size: rem-calc(30);
-                top: -.375rem;
+                top: -.460rem;
             }
         }
     }
@@ -116,7 +116,8 @@ header.header{
                 line-height:1;
                 font-weight: 700;
                 color: $blue;
-                padding:1rem 1rem 1.35rem 1rem;
+                padding:1rem 1rem 1.5rem 1rem;
+                text-decoration: none;
                 @media only screen and (max-width:60.938rem){
                     font-size:rem-calc(16);
                 }
@@ -129,6 +130,7 @@ header.header{
             a:hover{
                 color: $green;
                 border-bottom:3px solid transparent;
+                text-decoration: none;
                 @include breakpoint (small down) {
                     border-bottom: 0;
                     background-color: $green;
@@ -192,11 +194,21 @@ header.header{
                         border-bottom: 0;
                         background-color: $light-gray;
                         color: $blue;
-                        font-size: rem-calc(16)
+                        font-size: rem-calc(16);
+                        transition:none;
+                        -webkit-transition:none;
+                        -moz-transition:none;
+                        -o-transition:none;
+                        -ms-transition:none;
                     }
                     a:hover{
                         background-color: $green;
                         color: $white;
+                        transition:none;
+                        -webkit-transition:none;
+                        -moz-transition:none;
+                        -o-transition:none;
+                        -ms-transition:none;
                     }
                     &.current-menu-item a{
                         color: $green;
@@ -264,6 +276,7 @@ header.header{
                 color:$green;
                 position: relative;
                 top: rem-calc(-2);
+                text-decoration: none;
                 @media only screen and (max-width:25.000em){
                     font-size: rem-calc(15);
                 }

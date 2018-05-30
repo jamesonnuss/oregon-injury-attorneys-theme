@@ -56,6 +56,81 @@ Stylesheet: Global Stylesheet
 	}
 }
 
+.slick-dots li button{
+	transition: all .2s ease-in-out;
+	&:before{
+		color: $grey;
+		transform: scale(1.5);
+		opacity: 1;
+	}
+}
+.slick-dots li.slick-active button:before{
+	color: $blue;
+	transform: scale(2);
+	opacity: 1;
+}
+.slick-slide > div{
+	text-align: center;
+}
+.slick-prev .slick-arrow{
+	color: $blue;
+}
+.slick-next .slick-arrow{
+	color: $blue;
+	background-color: pink;
+}
+.slick-prev{
+	left: rem-calc(30);
+	z-index: 1;
+	transition: all .2s ease-in-out;
+	&:before{
+		content: "\e906";
+		font-family: 'icomoon' !important;
+		color:$blue;
+		opacity: 1;
+		font-size: rem-calc(28);
+	}
+	&:hover{
+		&:before{
+			color: $green;
+		}
+		left:rem-calc(28);
+	}
+}
+.slick-next{
+	right: rem-calc(30);
+	z-index: 1;
+	transition: all .2s ease-in-out;
+	&:before{
+		content: "\e905";
+		font-family: 'icomoon' !important;
+		color:$blue;
+		opacity: 1;
+		font-size: rem-calc(28);
+	}
+	&:hover{
+		&:before{
+			color: $green;
+		}
+		right: rem-calc(28);
+	}
+}
+.slick-track,
+.slick-list {
+	-webkit-perspective: 2000;
+	-webkit-backface-visibility: hidden;
+}
+.slick-slide { -webkit-backface-visibility: hidden; }
+.slick-slider .slick-track,
+.slick-slider .slick-list{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+.slick-slide { will-change: transform; }
+
 /*********************
 ANIMATION
 *********************/
@@ -504,4 +579,8 @@ PLUGIN STYLES
 .gform_body ul {
     list-style: none outside none;
     margin: 0;
+}
+
+span.display-name{
+	color: $white;
 }

@@ -6,7 +6,7 @@ Stylesheet: Footer Stylesheet
 
 .pre-footer{
     .column-block{
-        height: 200px;
+        height: rem-calc(200);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -16,25 +16,23 @@ Stylesheet: Footer Stylesheet
             display: block;
         }
         div{
-            max-width: 250px;
+            max-width: rem-calc(250);
             @media #{$medium}{
                 width: auto;
-                max-width:220px;
+                max-width:rem-calc(220);
                 margin:0 auto;
             }
         }
         &:first-child{
-            border-right: 1px solid $grey;
+            border-right: rem-calc(1) solid $grey;
             @media #{$medium}{
                 border-right: 0;
-                // border-bottom: 1px solid $grey;
             }
         }
         &:last-child{
-            border-left: 1px solid $grey;
+            border-left: rem-calc(1) solid $grey;
             @media #{$medium}{
                 border-left: 0;
-                // border-top: 1px solid $grey;
             }
         }
         span.city{
@@ -82,13 +80,19 @@ footer.footer{
         font-weight: 400;
         color: $blue;
     }
+    a{
+        color: $blue;
+        &:hover{
+            color: $green;
+        }
+    }
     ul{
         display: flex;
         justify-content: center;
         align-items: center;
         padding:1rem 0;
         li{
-            border-right: 1px solid $blue;
+            border-right: rem-calc(1) solid $blue;
             &:last-child{
                 border-right: 0;
             }
@@ -116,6 +120,7 @@ footer.footer{
             a{
                 font-size: rem-calc(36);
                 padding:0 .75rem;
+                text-decoration: none;
                 &:hover{
                     text-decoration: none;
                     color: $green;

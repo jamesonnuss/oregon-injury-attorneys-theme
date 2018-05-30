@@ -325,7 +325,8 @@
 								arrows:true,
 								speed: 300,
 								slidesToShow: 1,
-								adaptiveHeight: true
+								adaptiveHeight: true,
+								useTransform: false
 							});
 						});
 					</script>

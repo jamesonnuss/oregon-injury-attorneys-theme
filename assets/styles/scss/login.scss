@@ -21,7 +21,7 @@ body.login {
 		border-color: #193257;
 		box-shadow: 0 1px 0 #193257;
 		text-shadow: none;
-		&:hover{
+		&:hover,&:active,&:focus{
 			background-color: #1f5b2e;
 			border-color: #1f5b2e;
 			box-shadow: 0 1px 0 #1f5b2e;

@@ -15,10 +15,10 @@ Stylesheet: WordPress Admin
 
 .admin-bar{
   .gn-menu-main{
-    top: 32px;
+    top: rem-calc(32);
   }
   .gn-menu-wrapper {
 		position: fixed;
-		top: 92px;
+		top: rem-calc(92);
   }
 }
