@@ -116,6 +116,9 @@ a{
         color: $white;
         text-decoration: none;
     }
+    @include breakpoint (small down) {
+        padding:rem-calc(16) rem-calc(21) rem-calc(18) rem-calc(21);
+    }
 }
 
 .btn-center{
@@ -126,18 +129,19 @@ a{
 h1{
     font-family: $rosario;
     font-size: rem-calc(42);
-    line-height:rem-calc(50);
+    line-height:rem-calc(48);
     font-weight: 700;
     letter-spacing: rem-calc(.5);
     margin-bottom: 2rem;
     color: $blue;
     @include breakpoint (medium down) {
         font-size: rem-calc(38);
-        line-height: rem-calc(46);
+        line-height: rem-calc(44);
+        margin-bottom: 1.5rem;
     }
     @include breakpoint (small down) {
         font-size: rem-calc(34);
-        line-height: rem-calc(42);
+        line-height: rem-calc(40);
     }
 }
 

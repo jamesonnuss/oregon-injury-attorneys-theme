@@ -43,18 +43,19 @@ Stylesheet: Header Stylesheet
         color: $white;
         font-family: $rosario;
         font-size: rem-calc(48);
-        line-height:rem-calc(56);
+        line-height:rem-calc(54);
         font-weight: 700;
         text-align: center;
         letter-spacing: rem-calc(.5);
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         @include breakpoint (medium down) {
             font-size: rem-calc(44);
-            line-height: rem-calc(52);
+            line-height: rem-calc(50);
+            margin-bottom: 1.5rem;
         }
         @include breakpoint (small down) {
             font-size: rem-calc(40);
-            line-height: rem-calc(48);
+            line-height: rem-calc(46);
         }
     }
     p{
@@ -66,7 +67,7 @@ Stylesheet: Header Stylesheet
         margin-bottom: 0;
         @include breakpoint (medium down) {
             font-size: rem-calc(18);
-            line-height: rem-calc(26);
+            line-height: rem-calc(24);
         }
     }
 }
