@@ -56,6 +56,10 @@ Stylesheet: Global Stylesheet
 	}
 }
 
+.slick-dots{
+	bottom: rem-calc(-35);
+}
+
 .slick-dots li button{
 	transition: all .2s ease-in-out;
 	&:before{
@@ -83,6 +87,9 @@ Stylesheet: Global Stylesheet
 	left: rem-calc(30);
 	z-index: 1;
 	transition: all .2s ease-in-out;
+	@include breakpoint (small down) {
+		left: 0;
+	}
 	&:before{
 		content: "\e906";
 		font-family: 'icomoon' !important;
@@ -95,12 +102,18 @@ Stylesheet: Global Stylesheet
 			color: $green;
 		}
 		left:rem-calc(28);
+		@include breakpoint (small down) {
+			left: 0;
+		}
 	}
 }
 .slick-next{
 	right: rem-calc(30);
 	z-index: 1;
 	transition: all .2s ease-in-out;
+	@include breakpoint (small down) {
+		right: 0;
+	}
 	&:before{
 		content: "\e905";
 		font-family: 'icomoon' !important;
@@ -113,6 +126,9 @@ Stylesheet: Global Stylesheet
 			color: $green;
 		}
 		right: rem-calc(28);
+		@include breakpoint (small down) {
+			right: 0;
+		}
 	}
 }
 .slick-track,

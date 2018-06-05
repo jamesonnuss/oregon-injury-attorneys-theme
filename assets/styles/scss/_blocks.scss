@@ -6,10 +6,25 @@ Stylesheet: Blocks Global Stylesheet
 
 .content .content-blocks{
     .content-blocks-container{
-        padding:$padding;
+        padding:3.5rem 0;
+        @include breakpoint (small down) {
+            .column, .columns{
+                padding:$columnPadding;
+                .column,.columns{
+                    padding:0;
+                }
+                .row{
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+            }
+        }
     }
     .block{
-        padding:$padding;
+        padding:0 0 3.5rem 0;
+        &:last-child{
+            padding:0 !important;
+        }
     }
     .text-block{
         &.half-width{
@@ -27,13 +42,42 @@ Stylesheet: Blocks Global Stylesheet
             color: $blue;
             font-size: rem-calc(20);
             font-weight: 400;
-            line-height: rem-calc(30);
-            margin-bottom: 0;
+            line-height: rem-calc(28);
             font-family:$overpass;
+            @include breakpoint (small down) {
+                font-size: rem-calc(16);
+                line-height: rem-calc(24);
+            }
         }
     }
     .video-block{
-        padding:$paddingBG;
+        .half-width{
+            max-width:rem-calc(725);
+            margin:0 auto;
+            padding:0 0 2.5rem 0;
+        }
+        .full-width{
+            max-width:none;
+            margin:0 auto;
+            padding:0 0 2.5rem 0;
+        }
+        h1{
+            text-align: center;
+            color: $blue;
+        }
+        p{
+            color: $blue;
+            font-size: rem-calc(20);
+            font-weight: 400;
+            line-height: rem-calc(28);
+            font-family:$overpass;
+            @include breakpoint (small down) {
+                font-size: rem-calc(16);
+                line-height: rem-calc(24);
+            }
+        }
+        padding:0 0 3.5rem 0;
+        margin-bottom: 1.25rem;
         .video-js{
             max-width:rem-calc(725);
             margin:0 auto;
@@ -68,6 +112,10 @@ Stylesheet: Blocks Global Stylesheet
             &:hover{
                 transform: scale(1.1);
             }
+            @include breakpoint (small down) {
+                width:rem-calc(100);
+                height:rem-calc(100);
+            }
         }
         .video-js .vjs-control-bar{
             background-color: $blue;
@@ -82,7 +130,7 @@ Stylesheet: Blocks Global Stylesheet
     .box-block{
         background-color: $blue;
         color: $white;
-        padding:$paddingBG;
+        padding:3.5rem 0;
         h1{
             text-align: center;
             color: $white;
@@ -90,9 +138,15 @@ Stylesheet: Blocks Global Stylesheet
         h3{
             font-size: rem-calc(28);
             color: $blue;
+            @include breakpoint (small down) {
+                font-size: rem-calc(24);
+            }
         }
         p{
             font-size: rem-calc(17);
+            @include breakpoint (small down) {
+                font-size: rem-calc(16);
+            }
         }
         a{
             color:$blue;
@@ -110,6 +164,9 @@ Stylesheet: Blocks Global Stylesheet
             text-decoration: none;
             transition: all .2s ease-in-out;
             color: $blue;
+            @include breakpoint (small down) {
+                font-size: rem-calc(16);
+            }
             &:after{
                 padding-left:rem-calc(10);
                 content: "\e905";
@@ -132,6 +189,12 @@ Stylesheet: Blocks Global Stylesheet
         }
         .column-block{
             margin-bottom: 0;
+            @include breakpoint (small down) {
+                margin-bottom:$marginBottom;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
             div.column-block-inner-container{
                 background-color: $white;
                 display: flex;
@@ -151,12 +214,15 @@ Stylesheet: Blocks Global Stylesheet
         }
     }
     .testimonials-block{
-        padding:$paddingBG;
+        padding:3.5rem 0;
         h1{
             text-align: center;
         }
         p{
             font-size: rem-calc(24);
+            @include breakpoint (small down) {
+                font-size: rem-calc(20);
+            }
             text-align: center;
             position: relative;
             &:before{
@@ -170,6 +236,9 @@ Stylesheet: Blocks Global Stylesheet
                 position: absolute;
                 left: rem-calc(-20);
                 top: 0;
+                @include breakpoint (medium down) {
+                    left:0;
+                }
             }
             &:after{
                 content:' ';
@@ -182,6 +251,9 @@ Stylesheet: Blocks Global Stylesheet
                 position: absolute;
                 right: rem-calc(-20);
                 top: 0;
+                @include breakpoint (medium down) {
+                    right:0;
+                }
             }
         }
         span.author{
@@ -201,15 +273,33 @@ Stylesheet: Blocks Global Stylesheet
             max-width:rem-calc(725);
             display:none;
             margin:0 auto;
+            padding:0 1.5rem;
+            @media only screen and (max-width:29.250em){
+                padding:0 !important;
+            }
+            p{
+                padding:0 3rem;
+                @include breakpoint (small down) {
+                    padding:0 2rem;
+                }
+                @media only screen and (max-width:29.250em){
+                    padding:0 !important;
+                }
+            }
         }
         .slick-next,.slick-prev{
             top: 40%;
+            @media only screen and (max-width:29.250em){
+                display: none !important;
+            }
         }
     }
     .call-to-action-block-container{
         position: relative;
+        padding:0;
         .call-to-action-block{
-            padding:$paddingBG;
+            padding:3.5rem 0;
+            margin-bottom: 3.5rem;
             background-size:cover;
             background-repeat: no-repeat;
             background-position: center center;
@@ -232,7 +322,7 @@ Stylesheet: Blocks Global Stylesheet
         }
     }
     .tab-block{
-        padding:$paddingBG;
+        padding:0 0 3.5rem 0;
         h1{
             text-align: center;
         }
@@ -241,17 +331,24 @@ Stylesheet: Blocks Global Stylesheet
             display: flex;
             justify-content: center;
             margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        .tabs-panel{
+            padding: 0;
         }
         .tabs-content{
             border:0;
             margin-top: 2rem;
+        }
+        .tabs-title{
+            float: none !important;
         }
         .tabs-title>a{
             color: $blue;
             padding:1.25rem 1.5625rem 1.375rem;
             border-radius: rem-calc(3);
             border:rem-calc(1) solid $grey;
-            margin:0 .5rem;
+            margin:.5rem;
             min-width: rem-calc(205);
             font-weight: 600;
             text-align: center;
@@ -303,13 +400,17 @@ Stylesheet: Blocks Global Stylesheet
     .team-block{
         background-color: $blue;
         color: $white;
-        padding:$paddingBG;
+        padding:3.5rem 0;
+        margin-bottom: 3.5rem;
         h1{
             text-align: center;
             color: $white;
         }
         h3{
             font-size: rem-calc(28);
+            @include breakpoint (small down) {
+                font-size: rem-calc(24);
+            }
             color: $blue;
             margin-bottom: 0;
         }
@@ -319,9 +420,15 @@ Stylesheet: Blocks Global Stylesheet
             font-weight: bold;
             font-family: $overpass;
             padding-bottom: 1.25rem;
+            @include breakpoint (small down) {
+                font-size: rem-calc(16);
+            }
         }
         p{
             font-size: rem-calc(17);
+            @include breakpoint (small down) {
+                font-size: rem-calc(16);
+            }
         }
         span,a,h3,p{
             padding-left:1.25rem;
@@ -343,6 +450,9 @@ Stylesheet: Blocks Global Stylesheet
             display: block;
             text-decoration: none;
             transition: all .2s ease-in-out;
+            @include breakpoint (small down) {
+                font-size: rem-calc(16);
+            }
             &:after{
                 padding-left:rem-calc(10);
                 content: "\e905";
@@ -366,6 +476,12 @@ Stylesheet: Blocks Global Stylesheet
         }
         .column-block{
             margin-bottom: 0;
+            @include breakpoint (medium down) {
+                margin-bottom:$marginBottom;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
             div.column-block-inner-container{
                 background-color: $white;
                 display: flex;
@@ -381,7 +497,7 @@ Stylesheet: Blocks Global Stylesheet
                 div{
                     text-align: center;
                     color:$blue;
-                    padding:0 0 2.75rem 0;
+                    padding:0 0 2.25rem 0;
                     overflow: hidden;
                     img{
                         border-top-left-radius: 3px;
@@ -391,7 +507,7 @@ Stylesheet: Blocks Global Stylesheet
                         display: block;
                         position: relative;
                         padding:0;
-                        max-height:rem-calc(300);
+                        max-height:14.75rem;
                         overflow: hidden;
                         &:before{
                             content:' ';
@@ -413,7 +529,9 @@ Stylesheet: Blocks Global Stylesheet
                         }
                     }
                     .team-member-name{
-                        padding-top: 2.75rem;
+                        padding-left: 0;
+                        padding-right: 0;
+                        padding-top: 2.25rem;
                         display: block;
                     }
                 }
@@ -421,7 +539,7 @@ Stylesheet: Blocks Global Stylesheet
         }
     }
     .faq-block{
-        padding:$paddingBG;
+        padding:0 0 3.5rem 0;
         h1{
             text-align: center;
         }
@@ -430,6 +548,9 @@ Stylesheet: Blocks Global Stylesheet
             list-style-type: none;
             .accordion-item{
                 padding-left: .9375rem;
+                @include breakpoint (medium down) {
+                    padding-left: 0;
+                }
             }
         }
         .right-accordion{
@@ -437,6 +558,9 @@ Stylesheet: Blocks Global Stylesheet
             list-style-type: none;
             .accordion-item{
                 padding-right: .9375rem;
+                @include breakpoint (medium down) {
+                    padding-right: 0;
+                }
             }
         }
         .accordion-title{
@@ -448,6 +572,13 @@ Stylesheet: Blocks Global Stylesheet
             font-weight: 700;
             padding-right: rem-calc(50);
             text-decoration: none;
+            @include breakpoint (small down) {
+                font-size: rem-calc(16);
+                margin:3rem 0 0 0;
+                &:before{
+                    right: 0;
+                }
+            }
             &:before{
                 font-size: rem-calc(16);
                 content: "\e907";
@@ -472,18 +603,27 @@ Stylesheet: Blocks Global Stylesheet
             padding:1.25rem 0 0 0;
             font-size: rem-calc(17);
             color: $blue;
+            @include breakpoint (small down) {
+                font-size: rem-calc(16);
+            }
             p{
                 font-size: rem-calc(17);
+                @include breakpoint (small down) {
+                    font-size: rem-calc(16);
+                }
             }
         }
     }
     .slider-block{
-        padding:$paddingBG;
+        padding:0 0 3.5rem 0;
         h1{
             text-align: center;
         }
         .slider-slide{
             max-width: calc(100% - 240px);
+            @include breakpoint (medium down) {
+                max-width:100%;
+            }
         }
         .slick-slide { -webkit-backface-visibility: hidden; }
         .slick-dotted.slick-slider{
@@ -494,7 +634,7 @@ Stylesheet: Blocks Global Stylesheet
         }
     }
     .contact-block{
-        padding:$paddingBG;
+        padding:0 0 3.5rem 0;
         h1{
             text-align: center;
             max-width:rem-calc(725);
@@ -503,13 +643,39 @@ Stylesheet: Blocks Global Stylesheet
         }
         p{
             max-width:rem-calc(725);
-            margin:0 auto;
+            margin-left: auto;
+            margin-right: auto;
         }
         .gform_body{
             margin-left: 0;
             margin-right: 0;
-            max-width: calc(100% - 240px);
+            max-width: rem-calc(725);
             margin:0 auto;
+        }
+        .gform_wrapper ul.gform_fields li.gfield{
+            padding-left: 0;
+            padding-right: 0;
+        }
+        ul.gform_fields{
+            @include breakpoint (small down) {
+                width: 100%;
+                float: none;
+            }
+            &:first-child{
+                padding-right: rem-calc(8);
+                @include breakpoint (small down) {
+                    padding-right: 0;
+                }
+            }
+            &:last-child{
+                padding-left:rem-calc(8);
+                @include breakpoint (small down) {
+                    padding-left: 0;
+                }
+            }
+        }
+        .gform_wrapper{
+            margin:0 auto !important;
         }
         .gform_wrapper .top_label div.ginput_container{
             margin-top: 0;
@@ -529,6 +695,9 @@ Stylesheet: Blocks Global Stylesheet
             align-items: flex-start;
             justify-content: center;
             padding:2rem 0 1rem 0;
+            @include breakpoint (small down) {
+                display: block;
+            }
         }
         .gform_fields{
             width: 50%;
@@ -537,11 +706,13 @@ Stylesheet: Blocks Global Stylesheet
         }
         .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]){
             padding:rem-calc(5) rem-calc(9);
+            color: $blue;
         }
         textarea{
             height: rem-calc(204);
             margin-bottom: 0;
             padding:rem-calc(5) rem-calc(9);
+            color: $blue;
         }
         li#field_1_6{
             margin-top:0;
@@ -556,9 +727,19 @@ Stylesheet: Blocks Global Stylesheet
             padding-left: rem-calc(16);
             margin-top: 0;
             padding-top: 0;
+            padding-bottom: 0;
             text-align:center;
             input#gform_submit_button_1{
                 margin:0 auto;
+                @include breakpoint (small down) {
+                    display: inline;
+                    min-height:0;
+                    width: auto;
+                    line-height: 1;
+                }
+            }
+            @include breakpoint (small down) {
+                padding-left: 0;
             }
         }
         .gform_wrapper .validation_message{
@@ -602,7 +783,7 @@ Stylesheet: Blocks Global Stylesheet
         }
     }
     .list-block{
-        padding:$paddingBG;
+        padding:0 0 3.5rem 0;
         h1{
             text-align: center;
             max-width:rem-calc(725);

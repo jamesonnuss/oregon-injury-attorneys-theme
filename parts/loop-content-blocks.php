@@ -61,9 +61,21 @@
 		        <?php elseif( get_row_layout() == 'video_block' ): ?>
 					<div class="block video-block row">
 						<div class="large-12 medium-12 small-12 columns">
-							<?php if( get_sub_field('video_block_title') ): ?>
-								<h1><?php the_sub_field('video_block_title'); ?></h1>
+							<?php if( get_sub_field('video_block_width') == 'full-width' ): ?>
+								<?php $vWidth = 'full-width'; ?>
+							<?php else: ?>
+								<?php $vWidth = 'half-width'; ?>
 							<?php endif; ?>
+							<div class="<?php echo $vWidth; ?>">
+								<?php if( get_sub_field('video_block_title') ): ?>
+									<h1><?php the_sub_field('video_block_title'); ?></h1>
+								<?php endif; ?>
+								<?php if( get_sub_field('video_block_content') ): ?>
+									<div>
+										<?php the_sub_field('video_block_content'); ?>
+									</div>
+								<?php endif; ?>
+							</div>
 							<div class="video-js-container">
 								<video class="video-js" controls preload="auto" width="100%" poster="<?php the_sub_field('video_poster'); ?>" data-setup="{}">
 									<source src="<?php the_sub_field('video_block_url'); ?>" type="video/mp4">
@@ -82,7 +94,7 @@
 									<h1><?php the_sub_field('box_block_section_title'); ?></h1>
 								<?php endif; ?>
 								<?php if( have_rows('box') ): ?>
-									<div class="row small-up-1 medium-up-2 large-up-3" data-equalizer>
+									<div class="row small-up-1 medium-up-3 large-up-3" data-equalizer>
 									    <?php while ( have_rows('box') ) : the_row(); ?>
 											<div class="column column-block">
 												<div class="column-block-inner-container" data-equalizer-watch>
@@ -138,11 +150,11 @@
 						});
 					</script>
 				<?php elseif( get_row_layout() == 'call_to_action_block' ): ?>
-					<div class="call-to-action-block-container">
+					<div class="block call-to-action-block-container">
 						<?php if( get_sub_field('call_to_action_block_bg_image_overlay_opacity')): ?>
 							<div class="screen" data-opacity="<?php the_sub_field('call_to_action_block_bg_image_overlay_opacity'); ?>"></div>
 						<?php endif; ?>
-						<div class="block call-to-action-block" style="background-image:url('<?php the_sub_field('call_to_action_block_bg_image'); ?>');">
+						<div class="call-to-action-block" style="background-image:url('<?php the_sub_field('call_to_action_block_bg_image'); ?>');">
 							<div class="row">
 								<div class="large-12 medium-12 small-12 columns">
 									<?php if( get_sub_field('call_to_action_block_title') ): ?>

@@ -126,11 +126,19 @@ a{
 h1{
     font-family: $rosario;
     font-size: rem-calc(42);
-    line-height:rem-calc(52);
+    line-height:rem-calc(50);
     font-weight: 700;
     letter-spacing: rem-calc(.5);
     margin-bottom: 2rem;
     color: $blue;
+    @include breakpoint (medium down) {
+        font-size: rem-calc(38);
+        line-height: rem-calc(46);
+    }
+    @include breakpoint (small down) {
+        font-size: rem-calc(34);
+        line-height: rem-calc(42);
+    }
 }
 
 h2,h3,h4,h5,h6{
