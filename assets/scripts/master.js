@@ -1,4 +1,10 @@
 jQuery( document ).ready(function($) {
+    $('.anchor-button').on( "click", function() {
+        $('html, body').animate({
+            scrollTop: $( $.attr(this, 'href') ).offset().top
+        }, 800);
+        return false;
+    })
     function mainMenu(){
         if ($(window).innerWidth() > 752) {
             $('ul#menu-main-menu').superfish();
@@ -35,4 +41,17 @@ jQuery( document ).ready(function($) {
 	           mainMenu();
 	    }, 250);
 	});
+    var headerHeight = $('.content-header').height();
+    var navHeight = $('header.header').height();
+    var showPosition = headerHeight + navHeight;
+    console.log(showPosition);
+    $(window).scroll(function() {
+        var scrollPosition = window.pageYOffset;
+        console.log(scrollPosition);
+        if (scrollPosition >= showPosition) {
+            $('.live-chat').show();
+        } else {
+            $('.live-chat').hide();
+        }
+    });
 });

@@ -23,7 +23,7 @@ Stylesheet: Blocks Global Stylesheet
     .block{
         padding:0 0 3.5rem 0;
         &:last-child{
-            padding:0 !important;
+            border-bottom: .0625rem solid $grey;
         }
     }
     .text-block{
@@ -41,7 +41,7 @@ Stylesheet: Blocks Global Stylesheet
         p{
             color: $blue;
             font-weight: 400;
-            font-family:$overpass; 
+            font-family:$overpass;
         }
     }
     .video-block{
@@ -396,6 +396,12 @@ Stylesheet: Blocks Global Stylesheet
             animation: fadeIn 1s;
             opacity: 1;
         }
+        .columns{
+            max-width: rem-calc(1000);
+            margin-left: auto;
+            margin-right: auto;
+            float: none;
+        }
     }
     .team-block{
         background-color: $blue;
@@ -613,6 +619,12 @@ Stylesheet: Blocks Global Stylesheet
                 }
             }
         }
+        .row{
+            max-width: rem-calc(1000);
+            margin-left: auto;
+            margin-right: auto;
+            float: none;
+        }
     }
     .slider-block{
         padding:0 0 3.5rem 0;
@@ -621,8 +633,17 @@ Stylesheet: Blocks Global Stylesheet
             padding:0 1.5rem;
         }
         .slick-slide {
-            // max-width: calc(100% - 3rem);
             -webkit-backface-visibility: hidden;
+            cursor: -webkit-grab;
+            cursor: grab;
+            &:hover{
+                cursor: -webkit-grab;
+                cursor: grab;
+            }
+            img{
+                cursor: -webkit-grab;
+                cursor: grab;
+            }
         }
         .slick-slide img{ margin:0 auto; }
         .slick-dotted.slick-slider{
@@ -678,6 +699,9 @@ Stylesheet: Blocks Global Stylesheet
             margin-left: auto;
             margin-right: auto;
         }
+        .layoutArea .column{
+            padding:0;
+        }
         p{
             max-width:rem-calc(725);
             margin-left: auto;
@@ -686,7 +710,7 @@ Stylesheet: Blocks Global Stylesheet
         .gform_body{
             margin-left: 0;
             margin-right: 0;
-            max-width: rem-calc(725);
+            max-width: rem-calc(1000);
             margin:0 auto;
         }
         .gform_wrapper ul.gform_fields li.gfield{
@@ -779,6 +803,12 @@ Stylesheet: Blocks Global Stylesheet
                 padding-left: 0;
             }
         }
+        .gform_wrapper.gform_validation_error .gform_body ul li.gfield.gfield_error:not(.gf_left_half):not(.gf_right_half){
+            max-width: 100% !important;
+        }
+        .gform_wrapper ul.gform_fields li.gfield.gfield_error+li.gfield.gfield_error{
+            margin-top: 0 !important;
+        }
         .gform_wrapper .validation_message{
             display: none;
         }
@@ -810,6 +840,13 @@ Stylesheet: Blocks Global Stylesheet
             display: block;
             margin:2rem auto 0 auto;
         }
+        @include breakpoint (small down) {
+            ul#gform_fields_1{
+                li#field_1_1{
+                    padding-top: 2rem;
+                }
+            }
+        }
         @keyframes spinner {
         	0% {
         		transform: rotate(0deg);
@@ -823,9 +860,18 @@ Stylesheet: Blocks Global Stylesheet
         padding:0 0 3.5rem 0;
         h1{
             text-align: center;
-            max-width:rem-calc(725);
+            max-width: rem-calc(1000);
             margin-left: auto;
             margin-right: auto;
+        }
+        a:hover{
+            color:$green;
+        }
+        .columns{
+            max-width: rem-calc(1000);
+            margin-left: auto;
+            margin-right: auto;
+            float: none;
         }
     }
 }

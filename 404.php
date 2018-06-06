@@ -8,7 +8,7 @@
 get_header(); ?>
 	<div class="content">
 		<section class="content-header">
-			<div class="content-header-image" style="background-image:url('https://www.placecage.com/1400/700');">
+			<div class="content-header-image" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/oia-bg-fallback.jpg');">
 				<div class="row content-header-image-row">
 					<div class="large-12 medium-12 small-12 columns">
 						<h1><?php _e( '404 - Page Not Found', 'jointswp' ); ?></h1>

@@ -5,7 +5,7 @@
 ?>
 <section class="content-blocks">
 	<?php if( have_rows('content_blocks') ): ?>
-		<article class="content-blocks-container">
+		<article class="content-blocks-container" id="index">
 		    <?php while ( have_rows('content_blocks') ) : the_row(); ?>
 		        <?php if( get_row_layout() == 'text_block' ): ?>
 					<?php if( get_sub_field('text_box_width') == 'full-width' ): ?>

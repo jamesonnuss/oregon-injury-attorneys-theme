@@ -42,3 +42,7 @@
     		<?php get_template_part( 'parts/nav', 'main-menu' ); ?>
 
     	</header> <!-- end .header -->
+
+        <div class="live-chat">
+            <a href="#">Live Chat</a>
+        </div>

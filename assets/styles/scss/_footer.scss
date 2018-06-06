@@ -10,6 +10,8 @@ Stylesheet: Footer Stylesheet
         display: flex;
         align-items: center;
         justify-content: center;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
         @media #{$medium}{
             height: auto;
             margin-top: 1.25rem;
@@ -27,12 +29,17 @@ Stylesheet: Footer Stylesheet
             border-right: rem-calc(1) solid $grey;
             @media #{$medium}{
                 border-right: 0;
+                border-bottom:rem-calc(1) solid $grey;
+                padding-bottom: 2.50rem;
+                margin-top: -1rem;
             }
         }
         &:last-child{
             border-left: rem-calc(1) solid $grey;
             @media #{$medium}{
                 border-left: 0;
+                border-top:rem-calc(1) solid $grey;
+                padding-top: 2.50rem;
             }
         }
         span.city{
@@ -58,7 +65,6 @@ footer.footer{
     text-align: center;
     margin-top: 0;
     &:before{
-        max-width: 75rem;
         margin-right: auto;
         margin-left: auto;
         background-color:transparent;
