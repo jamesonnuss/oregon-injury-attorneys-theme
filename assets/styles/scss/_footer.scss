@@ -5,6 +5,8 @@ Stylesheet: Footer Stylesheet
 *************************************************/
 
 .pre-footer{
+    padding-top: 3.5rem;
+    border-top: rem-calc(1) solid $grey;
     .column-block{
         height: rem-calc(200);
         display: flex;

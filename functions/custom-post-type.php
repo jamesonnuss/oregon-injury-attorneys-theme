@@ -22,7 +22,7 @@ function cpt_employee() {
 			'add_new' => __('Add New', 'jointswp'), /* The add new menu item */
 			'add_new_item' => __('Add New Employee', 'jointswp'), /* Add New Display Title */
 			'edit' => __( 'Edit', 'jointswp' ), /* Edit Dialog */
-			'edit_item' => __('Edit Employees', 'jointswp'), /* Edit Display Title */
+			'edit_item' => __('Edit Employee', 'jointswp'), /* Edit Display Title */
 			'new_item' => __('New Employee', 'jointswp'), /* New Display Title */
 			'view_item' => __('View Employee', 'jointswp'), /* View Display Title */
 			'search_items' => __('Search Employees', 'jointswp'), /* Search Custom Type Title */

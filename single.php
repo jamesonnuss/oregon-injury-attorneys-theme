@@ -1,32 +1,28 @@
-<?php 
-/**
- * The template for displaying all single posts and attachments
- */
+<?php get_header(); ?>
 
-get_header(); ?>
-			
-<div class="content">
+	<div class="content">
 
-	<div class="inner-content grid-x grid-margin-x grid-padding-x">
+		<?php get_template_part( 'parts/content', 'header' ); ?>
 
-		<main class="main small-12 medium-8 large-8 cell" role="main">
-		
-		    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		
-		    	<?php get_template_part( 'parts/loop', 'single' ); ?>
-		    	
-		    <?php endwhile; else : ?>
-		
-		   		<?php get_template_part( 'parts/content', 'missing' ); ?>
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		    <?php endif; ?>
+			<section class="content-blocks">
+				<p class="byline">
+					Posted on <?php the_time('F j, Y') ?> by <?php the_author_posts_link(); ?>  - <?php the_category(', ') ?>
+				</p>	
+				<article class="content-blocks-container" id="index">
+					<div class="block text-block">
+						<div class="row">
+							<div class="large-12 medium-12 small-12 columns">
+								<?php the_content(); ?>
+							</div>
+						</div>
+					</div>
+				</article>
+			</section>
 
-		</main> <!-- end #main -->
+		<?php endwhile; endif; ?>
 
-		<?php get_sidebar(); ?>
-
-	</div> <!-- end #inner-content -->
-
-</div> <!-- end #content -->
+	</div> <!-- end #content -->
 
 <?php get_footer(); ?>

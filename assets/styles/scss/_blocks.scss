@@ -3,10 +3,12 @@
 Stylesheet: Blocks Global Stylesheet
 
 *************************************************/
-
+// .single-employee .content .content-blocks .block{
+//     padding:0;
+// }
 .content .content-blocks{
     .content-blocks-container{
-        padding:3.5rem 0;
+        padding:3.5rem 0 0 0;
         @include breakpoint (small down) {
             .column, .columns{
                 padding:$columnPadding;
@@ -22,9 +24,9 @@ Stylesheet: Blocks Global Stylesheet
     }
     .block{
         padding:0 0 3.5rem 0;
-        &:last-child{
-            border-bottom: .0625rem solid $grey;
-        }
+        // &:last-child{
+        //     border-bottom: .0625rem solid $grey;
+        // }
     }
     .text-block{
         &.half-width{

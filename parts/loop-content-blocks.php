@@ -346,8 +346,6 @@
 		    <?php endwhile; ?>
 		</article>
 	<?php else : ?>
-		<article class="content-blocks-container">
-			<h1>No Blocks Found</h1>
-		</article>
+		<div class="block spacer-block"></div>
 	<?php endif; ?>
 </section>

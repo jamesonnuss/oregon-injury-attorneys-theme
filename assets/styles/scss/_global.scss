@@ -4,6 +4,24 @@ Stylesheet: Global Stylesheet
 
 *************************************************/
 
+.single-employee{
+	h1{
+		margin-bottom: 0;
+	}
+	h5{
+		text-align: center;
+	}
+	.employee-title-container{
+		padding-bottom: 2.5rem;
+	}
+	.employee-photo{
+		display: block;
+		margin:0 auto;
+	}
+	.content-blocks-employee .block{
+		padding-bottom: 0 !important;
+	}
+}
 
 .align-middle {
 	-webkit-align-items: center;
