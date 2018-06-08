@@ -94,6 +94,9 @@ a{
     letter-spacing: rem-calc(.5);
     text-align: center;
     border-radius: rem-calc(3);
+    -webkit-border-radius: rem-calc(3);
+    -moz-border-radius: rem-calc(3);
+    -ms-border-radius: rem-calc(3);
     padding:rem-calc(20) rem-calc(25) rem-calc(22) rem-calc(25);
     margin:0;
     text-decoration: none;

@@ -3,9 +3,6 @@
 Stylesheet: Blocks Global Stylesheet
 
 *************************************************/
-// .single-employee .content .content-blocks .block{
-//     padding:0;
-// }
 .content .content-blocks{
     .content-blocks-container{
         padding:3.5rem 0 0 0;
@@ -24,16 +21,13 @@ Stylesheet: Blocks Global Stylesheet
     }
     .block{
         padding:0 0 3.5rem 0;
-        // &:last-child{
-        //     border-bottom: .0625rem solid $grey;
-        // }
     }
     .text-block{
         &.half-width{
             max-width:rem-calc(725);
         }
         &.full-width{
-            max-width:none;
+            max-width:75rem;
         }
         margin:0 auto;
         h1{
@@ -122,11 +116,18 @@ Stylesheet: Blocks Global Stylesheet
         span{
             color: $white;
         }
+        .vjs-fullscreen{
+            max-width: none;
+            &:before{
+                display: none;
+            }
+        }
     }
     .box-block{
         background-color: $blue;
         color: $white;
         padding:3.5rem 0;
+        margin-bottom: 3.5rem;
         h1{
             text-align: center;
             color: $white;
@@ -210,7 +211,6 @@ Stylesheet: Blocks Global Stylesheet
         }
     }
     .testimonials-block{
-        padding:3.5rem 0;
         h1{
             text-align: center;
         }
@@ -730,12 +730,16 @@ Stylesheet: Blocks Global Stylesheet
                     padding-right: 0;
                 }
             }
-            &:last-child{
+            &:nth-child(2){
                 padding-left:rem-calc(8);
                 @include breakpoint (small down) {
                     padding-left: 0;
                 }
             }
+        }
+        .gform_wrapper.gf_browser_chrome .gfield_checkbox li input, .gform_wrapper.gf_browser_chrome .gfield_checkbox li input[type=checkbox], .gform_wrapper.gf_browser_chrome .gfield_radio li input[type=radio]{
+            margin:rem-calc(3) rem-calc(8) rem-calc(0) rem-calc(1);
+            float: left;
         }
         .gform_wrapper{
             margin:0 auto !important;
@@ -755,8 +759,12 @@ Stylesheet: Blocks Global Stylesheet
         }
         .gform_body{
             display: flex;
+            display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+            display: -ms-flexbox;  /* TWEENER - IE 10 */
+            display: -webkit-flex;
             align-items: flex-start;
             justify-content: center;
+            flex-wrap: wrap;
             padding:2rem 0 1rem 0;
             @include breakpoint (small down) {
                 display: block;
@@ -766,6 +774,28 @@ Stylesheet: Blocks Global Stylesheet
             width: 50%;
             padding-left: 0;
             padding-right: 0;
+            &.column_3{
+                flex:1;
+                width:100%;
+                padding:rem-calc(5) 0 0 0;
+                li{
+                    text-align: center;
+                }
+                .gfield_checkbox{
+                    padding-left: 0;
+                    width: 100%;
+                }
+                .gfield_error.gfield_contains_required label{
+                    color: #790000;
+                }
+                label{
+                    text-align: left;
+                    float: left;
+                    color: $blue;
+                    font-family: $overpass;
+                    font-weight: 500 !important;
+                }
+            }
         }
         .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]){
             padding:rem-calc(5) rem-calc(9);
@@ -787,7 +817,7 @@ Stylesheet: Blocks Global Stylesheet
             margin-top: 0;
         }
         .gform_wrapper .gform_footer{
-            padding-left: rem-calc(16);
+            padding-left: 0;
             margin-top: 0;
             padding-top: 0;
             padding-bottom: 0;

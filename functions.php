@@ -68,3 +68,10 @@ function my_mce_before_init_insert_formats( $init_array ) {
 }
 // Attach callback to 'tiny_mce_before_init'
 add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );
+
+// Limit WordPress Heartbeat to Reduce Requests
+function wp_heartbeat_settings_3242( $settings ) {
+    $settings['interval'] = 45; //Anything between 15-120
+    return $settings;
+}
+add_filter( 'heartbeat_settings', 'wp_heartbeat_settings_3242' );

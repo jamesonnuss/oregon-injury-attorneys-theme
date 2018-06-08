@@ -69,10 +69,18 @@ header.header{
             top: 2px;
             left: inherit;
             box-shadow: 0 6px 0 $blue, 0 12px 0 $blue;
+            -moz-box-shadow: 0 6px 0 $blue, 0 12px 0 $blue;
+            -ms-box-shadow: 0 6px 0 $blue, 0 12px 0 $blue;
+            -webkit-box-shadow: 0 6px 0 $blue, 0 12px 0 $blue;
+            -o-box-shadow: 0 6px 0 $blue, 0 12px 0 $blue;
         }
         &:hover{
             &:after{
                 box-shadow:0 6px 0 $blue, 0 12px 0 $blue;
+                -moz-box-shadow:0 6px 0 $blue, 0 12px 0 $blue;
+                -ms-box-shadow:0 6px 0 $blue, 0 12px 0 $blue;
+                -webkit-box-shadow:0 6px 0 $blue, 0 12px 0 $blue;
+                -o-box-shadow:0 6px 0 $blue, 0 12px 0 $blue;
                 background-color: $blue;
             }
         }
@@ -97,6 +105,9 @@ header.header{
         opacity: 1;
         @media screen and (min-width: 768px){
             display: flex !important;
+            display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+            display: -ms-flexbox;  /* TWEENER - IE 10 */
+            display: -webkit-flex;
         }
         @include breakpoint (small down) {
             display: none;
@@ -133,7 +144,7 @@ header.header{
                 text-decoration: none;
                 @include breakpoint (small down) {
                     border-bottom: 0;
-                    background-color: $green;
+                    background-color: $blue;
                     color: $white;
                 }
             }
@@ -151,7 +162,7 @@ header.header{
                 font-weight: bold;
                 @include breakpoint (small down) {
                     color: $white;
-                    background-color: $green;
+                    background-color: $blue;
                     border-bottom: none;
                 }
             }
@@ -202,7 +213,7 @@ header.header{
                         -ms-transition:none;
                     }
                     a:hover{
-                        background-color: $green;
+                        background-color: $blue;
                         color: $white;
                         transition:none;
                         -webkit-transition:none;
@@ -214,7 +225,7 @@ header.header{
                         color: $green;
                         @include breakpoint (small down) {
                             color: $white;
-                            background-color: $green;
+                            background-color: $blue;
                         }
                         &:hover{
                             color: $white;
@@ -226,6 +237,9 @@ header.header{
     }
     .top-bar-right{
         display: flex;
+        display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+        display: -ms-flexbox;  /* TWEENER - IE 10 */
+        display: -webkit-flex;
         -ms-flex-pack: center;
         justify-content: center;
         -ms-flex-direction: column;
@@ -288,6 +302,9 @@ header.header{
             a{
                 padding:0;
                 display: flex;
+                display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+                display: -ms-flexbox;  /* TWEENER - IE 10 */
+                display: -webkit-flex;
                 -ms-flex-pack: center;
                 justify-content: center;
                 -ms-flex-direction: column;
