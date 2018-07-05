@@ -87,14 +87,14 @@
 						</div>
 					</div>
 				<?php elseif( get_row_layout() == 'box_block' ): ?>
-					<div class="block box-block">
+					<div class="block box-block" <?php if( get_sub_field('box_block_margin') == 'Small' ): ?>style="margin-bottom:0;"<?php endif; ?>>
 						<div class="row">
 							<div class="large-12 medium-12 small-12 columns">
 								<?php if( get_sub_field('box_block_section_title') ): ?>
 									<h1><?php the_sub_field('box_block_section_title'); ?></h1>
 								<?php endif; ?>
 								<?php if( have_rows('box') ): ?>
-									<div class="row small-up-1 medium-up-3 large-up-3" data-equalizer>
+									<div class="row small-up-1 medium-up-2 large-up-3" data-equalizer>
 									    <?php while ( have_rows('box') ) : the_row(); ?>
 											<div class="column column-block">
 												<div class="column-block-inner-container" data-equalizer-watch>
@@ -150,7 +150,7 @@
 						});
 					</script>
 				<?php elseif( get_row_layout() == 'call_to_action_block' ): ?>
-					<div class="block call-to-action-block-container">
+					<div class="block call-to-action-block-container" <?php if( get_sub_field('call_to_action_block_margin') == 'Small' ): ?>style="margin-bottom:0;"<?php endif; ?>>
 						<?php if( get_sub_field('call_to_action_block_bg_image_overlay_opacity')): ?>
 							<div class="screen" data-opacity="<?php the_sub_field('call_to_action_block_bg_image_overlay_opacity'); ?>"></div>
 						<?php endif; ?>
@@ -189,7 +189,7 @@
 						</div>
 					</div>
 				<?php elseif( get_row_layout() == 'tab_block' ): ?>
-					<div class="block tab-block">
+					<div class="block tab-block <?php if( get_sub_field('tab_block_background_color') == 'Grey' ): ?>grey-bg<?php endif; ?>" <?php if( get_sub_field('tab_block_margin') == 'Small' ): ?>style="margin-bottom:0;"<?php endif; ?>>
 						<div class="row">
 							<div class="large-12 medium-12 small-12 columns">
 								<?php if( get_sub_field('tab_block_section_title') ): ?>
@@ -234,14 +234,19 @@
 						</div>
 					</div>
 				<?php elseif( get_row_layout() == 'employee_block' ): ?>
-					<div class="block team-block">
+					<div class="block team-block <?php if( get_sub_field('team_block_background_color') == 'Grey' ): ?>grey-bg<?php endif; ?>" <?php if( get_sub_field('team_block_margin') == 'Small' ): ?>style="margin-bottom:0;"<?php endif; ?>>
 						<div class="row">
 							<div class="large-12 medium-12 small-12 columns">
 								<?php if( get_sub_field('team_block_title') ): ?>
 									<h1><?php the_sub_field('team_block_title'); ?></h1>
 								<?php endif; ?>
+								<?php $count = count( get_sub_field('team_block_members') ); ?>
 								<?php $members = get_sub_field('team_block_members'); if( $members ): ?>
+									<?php if ($count == 4){ ?>
+									<div class="row small-up-1 medium-up-2 large-up-4" data-equalizer>
+								  	<?php } else { ?>
 									<div class="row small-up-1 medium-up-2 large-up-3" data-equalizer>
+									<?php } ?>
 									    <?php foreach( $members as $member): // variable must be called $member (IMPORTANT) ?>
 									        <?php setup_postdata($member); ?>
 									        <div class="column column-block">

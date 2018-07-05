@@ -13,10 +13,22 @@ Stylesheet: Blocks Global Stylesheet
                     padding:0;
                 }
                 .row{
-                    margin-left: 0;
+                    margin-left: 0bo;
                     margin-right: 0;
                 }
             }
+        }
+    }
+    h1{
+        font-size: rem-calc(36);
+        line-height:rem-calc(42);
+        @include breakpoint (medium down) {
+            font-size: rem-calc(32);
+            line-height: rem-calc(38);
+        }
+        @include breakpoint (small down) {
+            font-size: rem-calc(28);
+            line-height: rem-calc(34);
         }
     }
     .block{
@@ -24,7 +36,7 @@ Stylesheet: Blocks Global Stylesheet
     }
     .text-block{
         &.half-width{
-            max-width:rem-calc(725);
+            max-width:rem-calc(750);
         }
         &.full-width{
             max-width:75rem;
@@ -38,11 +50,14 @@ Stylesheet: Blocks Global Stylesheet
             color: $blue;
             font-weight: 400;
             font-family:$overpass;
+            &:last-child{
+                margin-bottom:0;
+            }
         }
     }
     .video-block{
         .half-width{
-            max-width:rem-calc(725);
+            max-width:rem-calc(750);
             margin:0 auto;
             padding:0 0 2.5rem 0;
         }
@@ -69,9 +84,12 @@ Stylesheet: Blocks Global Stylesheet
         padding:0 0 3.5rem 0;
         margin-bottom: 1.25rem;
         .video-js{
-            max-width:rem-calc(725);
+            max-width:rem-calc(750);
             margin:0 auto;
             position: relative;
+            -webkit-box-shadow: 0px 4px 6px 0px rgba(76,76,77,0.25);
+            -moz-box-shadow: 0px 4px 6px 0px rgba(76,76,77,0.25);
+            box-shadow: 0px 4px 6px 0px rgba(76,76,77,0.25);
             &:before{
                 content:' ';
                 display: block;
@@ -185,7 +203,7 @@ Stylesheet: Blocks Global Stylesheet
             }
         }
         .column-block{
-            margin-bottom: 0;
+            margin-bottom: 1.875rem;
             @include breakpoint (small down) {
                 margin-bottom:$marginBottom;
                 &:last-child{
@@ -272,7 +290,7 @@ Stylesheet: Blocks Global Stylesheet
             -webkit-backface-visibility: hidden;
         }
         .testimonial-slide{
-            max-width:rem-calc(725);
+            max-width:rem-calc(750);
             display:none;
             margin:0 auto;
             padding:0 1.5rem;
@@ -299,18 +317,19 @@ Stylesheet: Blocks Global Stylesheet
     .call-to-action-block-container{
         position: relative;
         padding:0;
+        margin-bottom: 3.5rem;
         .call-to-action-block{
             padding:3.5rem 0;
-            margin-bottom: 3.5rem;
             background-size:cover;
             background-repeat: no-repeat;
             background-position: center center;
+            width:100%;
         }
         .call-to-action-block > div {
             position: relative;
             z-index: 1;
             text-align:center;
-            max-width:rem-calc(725);
+            max-width:rem-calc(750);
             margin:0 auto;
             h1{
                 color:$white;
@@ -324,6 +343,9 @@ Stylesheet: Blocks Global Stylesheet
         }
     }
     .tab-block{
+        &.grey-bg{
+            padding-top: 3.5rem;
+        }
         padding:0 0 3.5rem 0;
         h1{
             text-align: center;
@@ -334,6 +356,7 @@ Stylesheet: Blocks Global Stylesheet
             justify-content: center;
             margin-bottom: 1rem;
             flex-wrap: wrap;
+            background-color: transparent;
         }
         .tabs-panel{
             padding: 0;
@@ -341,6 +364,7 @@ Stylesheet: Blocks Global Stylesheet
         .tabs-content{
             border:0;
             margin-top: 2rem;
+            background-color: transparent;
         }
         .tabs-title{
             float: none !important;
@@ -362,6 +386,7 @@ Stylesheet: Blocks Global Stylesheet
                 text-decoration: none;
                 color: $blue;
                 border-color:$blue;
+                background-color: transparent;
             }
             &:focus{
                 outline:0;
@@ -416,11 +441,12 @@ Stylesheet: Blocks Global Stylesheet
         }
         h3{
             font-size: rem-calc(28);
+            line-height:1.15;
             @include breakpoint (small down) {
                 font-size: rem-calc(24);
             }
             color: $blue;
-            margin-bottom: 0;
+            margin-bottom: rem-calc(7);
         }
         span.team-member-position{
             display: block;
@@ -483,7 +509,7 @@ Stylesheet: Blocks Global Stylesheet
             }
         }
         .column-block{
-            margin-bottom: 0;
+            margin-bottom: 1.875rem;
             @include breakpoint (medium down) {
                 margin-bottom:$marginBottom;
                 &:last-child{
@@ -697,7 +723,7 @@ Stylesheet: Blocks Global Stylesheet
         padding:0 0 3.5rem 0;
         h1{
             text-align: center;
-            max-width:rem-calc(725);
+            max-width:rem-calc(750);
             margin-left: auto;
             margin-right: auto;
         }
@@ -705,7 +731,7 @@ Stylesheet: Blocks Global Stylesheet
             padding:0;
         }
         p{
-            max-width:rem-calc(725);
+            max-width:rem-calc(750);
             margin-left: auto;
             margin-right: auto;
         }
@@ -904,6 +930,15 @@ Stylesheet: Blocks Global Stylesheet
             margin-left: auto;
             margin-right: auto;
             float: none;
+            p{
+                text-overflow: ellipsis;
+            }
+        }
+    }
+    .grey-bg{
+        background-color: $off-white;
+        h1{
+            color: $blue;
         }
     }
 }

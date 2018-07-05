@@ -17,7 +17,9 @@
                                 <span itemprop="name" class="hidden"><?php bloginfo('name'); ?></span>
                                 <span itemprop="city" class="city"><?php the_sub_field('city', 'option'); ?></span>
                                 <span itemprop="telephone" class="phone"><?php the_sub_field('phone_number', 'option'); ?></span>
-                                <span itemprop="email" class="email"><?php the_sub_field('email_address', 'option'); ?></span>
+                                <?php if( get_sub_field('email_address', 'option') ): ?>
+	                                   <span itemprop="email" class="email"><?php the_sub_field('email_address', 'option'); ?></span>
+                                <?php endif; ?>
                                 <p itemprop="streetAddress" class="address">
                                     <?php the_sub_field('address', 'option'); ?>
                                 </p>
