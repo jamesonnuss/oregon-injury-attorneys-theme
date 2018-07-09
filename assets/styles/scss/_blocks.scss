@@ -574,6 +574,9 @@ Stylesheet: Blocks Global Stylesheet
     }
     .faq-block{
         padding:0 0 3.5rem 0;
+        &.grey-bg{
+            padding-top: 3.5rem;
+        }
         h1{
             text-align: center;
         }

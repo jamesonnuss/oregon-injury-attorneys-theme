@@ -271,7 +271,7 @@
 						</div>
 					</div>
 				<?php elseif( get_row_layout() == 'faq_block' ): ?>
-					<div class="block faq-block">
+					<div class="block faq-block <?php if( get_sub_field('faq_block_background_color') == 'Grey' ): ?>grey-bg<?php endif; ?>" <?php if( get_sub_field('faq_block_margin') == 'Small' ): ?>style="margin-bottom:0;"<?php endif; ?>>
 						<div class="row">
 							<div class="large-12 medium-12 small-12 columns">
 								<?php if( get_sub_field('faq_block_title') ): ?>
