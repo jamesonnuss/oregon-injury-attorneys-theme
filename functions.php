@@ -75,3 +75,12 @@ function wp_heartbeat_settings_3242( $settings ) {
     return $settings;
 }
 add_filter( 'heartbeat_settings', 'wp_heartbeat_settings_3242' );
+
+
+
+function my_acf_init() {
+
+	acf_update_setting('google_api_key', 'AIzaSyAI9fVFyOTDVssBFd6UdwUa_HrmK4dWwqs');
+}
+
+add_action('acf/init', 'my_acf_init');

@@ -16,11 +16,16 @@
 			<div class="large-12 medium-12 small-12 columns">
 				<?php if( get_field('custom_page_title') == 'Yes' ): ?>
 					<h1><?php the_field('page_title'); ?></h1>
+				<?php elseif(is_search()): ?>
+					<h1><?php _e( 'Search Results for:', 'jointswp' ); ?> <?php echo esc_attr(get_search_query()); ?></h1>
 				<?php else: ?>
 					<h1><?php the_title(); ?></h1>
 				<?php endif; ?>
 				<?php if( get_field('header_content')): ?>
-					<?php if( get_field('header_content_font_size')): ?>
+					<?php if (get_field('row_values_and_popups_1_row_value') == 'Yes'): ?>
+					   <i class="fa fa-check" aria-hidden="true"></i>
+					<?php endif; ?>
+					<?php if( get_field('header_content_font_sizes') == 'Large' ): ?>
 					<p class="header-content-large">
 					<?php else: ?>
 					<p>

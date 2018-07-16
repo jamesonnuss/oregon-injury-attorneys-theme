@@ -604,6 +604,7 @@ Stylesheet: Blocks Global Stylesheet
             border:0;
             color: $blue;
             font-size: rem-calc(18);
+            line-height: 1.25;
             padding:0;
             margin:4rem 0 0 0;
             font-weight: 700;
@@ -648,6 +649,9 @@ Stylesheet: Blocks Global Stylesheet
                 @include breakpoint (small down) {
                     font-size: rem-calc(16);
                 }
+            }
+            a:before{
+                display: none;
             }
         }
         .row{
@@ -919,6 +923,9 @@ Stylesheet: Blocks Global Stylesheet
     }
     .list-block{
         padding:0 0 3.5rem 0;
+        &.grey-bg{
+            padding-top: 3.5rem;
+        }
         h1{
             text-align: center;
             max-width: rem-calc(1000);
