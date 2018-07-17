@@ -94,6 +94,14 @@ footer.footer{
             color: $green;
         }
     }
+    .menu .active>a, .menu .is-active>a{
+        background: transparent;
+        color: $blue;
+        border:0;
+        &:hover{
+            color: $green;
+        }
+    }
     ul{
         display: flex;
         justify-content: center;

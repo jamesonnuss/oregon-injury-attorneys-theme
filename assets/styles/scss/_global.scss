@@ -28,6 +28,58 @@ Stylesheet: Global Stylesheet
 	}
 }
 
+.single{
+	.byline{
+		text-align: center;
+	}
+}
+
+.site-map{
+	padding:1.5rem 0 3.5rem 0;
+	max-width:rem-calc(750);
+	margin:0 auto;
+	.hide-for-medium-up{
+		display: none;
+	}
+	h3{
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+	}
+	.menu, .menu.horizontal{
+		display: block;
+	}
+	.menu .active>a, .menu .is-active>a{
+		background:transparent;
+		color: $blue;
+		border:0;
+		&:hover{
+			color: $green;
+		}
+	}
+	.menu li a{
+		font-size: rem-calc(19);
+		font-weight: bold;
+		padding-left: 0;
+		padding-right: 0;
+		@include breakpoint (small down) {
+			font-size:rem-calc(17);
+		}
+	}
+	.sub-menu li a{
+		font-size: rem-calc(17);
+		font-weight: 400;
+		@include breakpoint (small down) {
+			font-size:rem-calc(16);
+		}
+	}
+	.sub-menu, .menu{
+		list-style-type: none;
+		li{
+			margin-bottom: .5rem;
+		}
+	}
+}
+
 .align-middle {
 	-webkit-align-items: center;
 	-ms-flex-align: center;
@@ -201,6 +253,12 @@ Stylesheet: Global Stylesheet
 		&:hover{
 			color: $green;
 		}
+	}
+}
+
+.search{
+	h2 a:hover{
+		color: $green;
 	}
 }
 

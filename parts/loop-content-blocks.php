@@ -24,7 +24,7 @@
 						</div>
 					</div>
 				<?php elseif( get_row_layout() == 'list_block' ): ?>
-					<div class="block list-block <?php if( get_sub_field('list_block_background_color') == 'Grey' ): ?>grey-bg<?php endif; ?>" <?php if( get_sub_field('list_block_margin') == 'Small' ): ?>style="margin-bottom:0;"<?php endif; ?>>
+					<div class="block list-block <?php if( get_sub_field('list_block_background_color') == 'Grey' ): ?>grey-bg<?php endif; ?>">
 						<div class="row">
 							<div class="large-12 medium-12 small-12 columns">
 								<?php if( get_sub_field('list_block_title') ): ?>
@@ -87,7 +87,7 @@
 						</div>
 					</div>
 				<?php elseif( get_row_layout() == 'box_block' ): ?>
-					<div class="block box-block" <?php if( get_sub_field('box_block_margin') == 'Small' ): ?>style="margin-bottom:0;"<?php endif; ?>>
+					<div class="block box-block <?php if( get_sub_field('box_block_background_color') == 'Grey' ): ?>grey-bg<?php endif; ?>">
 						<div class="row">
 							<div class="large-12 medium-12 small-12 columns">
 								<?php if( get_sub_field('box_block_section_title') ): ?>
@@ -150,7 +150,7 @@
 						});
 					</script>
 				<?php elseif( get_row_layout() == 'call_to_action_block' ): ?>
-					<div class="block call-to-action-block-container" <?php if( get_sub_field('call_to_action_block_margin') == 'Small' ): ?>style="margin-bottom:0;"<?php endif; ?>>
+					<div class="block call-to-action-block-container">
 						<?php if( get_sub_field('call_to_action_block_bg_image_overlay_opacity')): ?>
 							<div class="screen" data-opacity="<?php the_sub_field('call_to_action_block_bg_image_overlay_opacity'); ?>"></div>
 						<?php endif; ?>
@@ -189,7 +189,7 @@
 						</div>
 					</div>
 				<?php elseif( get_row_layout() == 'tab_block' ): ?>
-					<div class="block tab-block <?php if( get_sub_field('tab_block_background_color') == 'Grey' ): ?>grey-bg<?php endif; ?>" <?php if( get_sub_field('tab_block_margin') == 'Small' ): ?>style="margin-bottom:0;"<?php endif; ?>>
+					<div class="block tab-block <?php if( get_sub_field('tab_block_background_color') == 'Grey' ): ?>grey-bg<?php endif; ?>">
 						<div class="row">
 							<div class="large-12 medium-12 small-12 columns">
 								<?php if( get_sub_field('tab_block_section_title') ): ?>
@@ -234,7 +234,7 @@
 						</div>
 					</div>
 				<?php elseif( get_row_layout() == 'employee_block' ): ?>
-					<div class="block team-block <?php if( get_sub_field('team_block_background_color') == 'Grey' ): ?>grey-bg<?php endif; ?>" <?php if( get_sub_field('team_block_margin') == 'Small' ): ?>style="margin-bottom:0;"<?php endif; ?>>
+					<div class="block team-block <?php if( get_sub_field('team_block_background_color') == 'Grey' ): ?>grey-bg<?php endif; ?>">
 						<div class="row">
 							<div class="large-12 medium-12 small-12 columns">
 								<?php if( get_sub_field('team_block_title') ): ?>
@@ -271,7 +271,7 @@
 						</div>
 					</div>
 				<?php elseif( get_row_layout() == 'faq_block' ): ?>
-					<div class="block faq-block <?php if( get_sub_field('faq_block_background_color') == 'Grey' ): ?>grey-bg<?php endif; ?>" <?php if( get_sub_field('faq_block_margin') == 'Small' ): ?>style="margin-bottom:0;"<?php endif; ?>>
+					<div class="block faq-block <?php if( get_sub_field('faq_block_background_color') == 'Grey' ): ?>grey-bg<?php endif; ?>">
 						<div class="row">
 							<div class="large-12 medium-12 small-12 columns">
 								<?php if( get_sub_field('faq_block_title') ): ?>

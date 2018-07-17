@@ -16,6 +16,14 @@ header.header{
 .main-menu{
     li{
         margin-bottom: 0;
+        &.hide-for-medium-up{
+            display: block;
+        }
+    }
+    @media screen and (min-width: 768px){
+        li.hide-for-medium-up{
+            display: none;
+        }
     }
     .logo-container{
         @media screen and (min-width: 768px) and (max-width:59.375em){
@@ -95,7 +103,7 @@ header.header{
                 background-color: transparent;
                 height: auto;
                 font-size: rem-calc(30);
-                top: -.460rem;
+                top: -.330rem;
             }
         }
     }

@@ -13,7 +13,7 @@ Stylesheet: Blocks Global Stylesheet
                     padding:0;
                 }
                 .row{
-                    margin-left: 0bo;
+                    margin-left: 0;
                     margin-right: 0;
                 }
             }
@@ -32,7 +32,10 @@ Stylesheet: Blocks Global Stylesheet
         }
     }
     .block{
-        padding:0 0 3.5rem 0;
+        padding:3.5rem 0;
+        &:first-child{
+            padding-top: 0;
+        }
     }
     .text-block{
         &.half-width{
@@ -145,7 +148,6 @@ Stylesheet: Blocks Global Stylesheet
         background-color: $blue;
         color: $white;
         padding:3.5rem 0;
-        margin-bottom: 3.5rem;
         h1{
             text-align: center;
             color: $white;
@@ -317,7 +319,7 @@ Stylesheet: Blocks Global Stylesheet
     .call-to-action-block-container{
         position: relative;
         padding:0;
-        margin-bottom: 3.5rem;
+        margin-bottom: 0;
         .call-to-action-block{
             padding:3.5rem 0;
             background-size:cover;
@@ -343,10 +345,7 @@ Stylesheet: Blocks Global Stylesheet
         }
     }
     .tab-block{
-        &.grey-bg{
-            padding-top: 3.5rem;
-        }
-        padding:0 0 3.5rem 0;
+        padding:3.5rem 0;
         h1{
             text-align: center;
         }
@@ -434,7 +433,6 @@ Stylesheet: Blocks Global Stylesheet
         background-color: $blue;
         color: $white;
         padding:3.5rem 0;
-        margin-bottom: 3.5rem;
         h1{
             text-align: center;
             color: $white;
@@ -573,10 +571,7 @@ Stylesheet: Blocks Global Stylesheet
         }
     }
     .faq-block{
-        padding:0 0 3.5rem 0;
-        &.grey-bg{
-            padding-top: 3.5rem;
-        }
+        padding:3.5rem 0;
         h1{
             text-align: center;
         }
@@ -662,7 +657,7 @@ Stylesheet: Blocks Global Stylesheet
         }
     }
     .slider-block{
-        padding:0 0 3.5rem 0;
+        padding:3.5rem 0;
         h1{
             text-align: center;
             padding:0 1.5rem;
@@ -727,7 +722,7 @@ Stylesheet: Blocks Global Stylesheet
         }
     }
     .contact-block{
-        padding:0 0 3.5rem 0;
+        padding:3.5rem 0;
         h1{
             text-align: center;
             max-width:rem-calc(750);
@@ -922,10 +917,7 @@ Stylesheet: Blocks Global Stylesheet
         }
     }
     .list-block{
-        padding:0 0 3.5rem 0;
-        &.grey-bg{
-            padding-top: 3.5rem;
-        }
+        padding:3.5rem 0;
         h1{
             text-align: center;
             max-width: rem-calc(1000);
