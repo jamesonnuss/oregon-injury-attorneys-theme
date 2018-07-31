@@ -38,11 +38,13 @@ Stylesheet: Blocks Global Stylesheet
         }
     }
     .text-block{
-        &.half-width{
+        .half-width{
             max-width:rem-calc(750);
+            margin:0 auto;
         }
-        &.full-width{
+        .full-width{
             max-width:75rem;
+            margin:0 auto;
         }
         margin:0 auto;
         h1{
@@ -335,11 +337,14 @@ Stylesheet: Blocks Global Stylesheet
             margin:0 auto;
             h1{
                 color:$white;
+                text-shadow:0px 3px 0 rgba(0,0,0,.2);
             }
             p{
-                font-size: 1.25rem;
+                font-size: rem-calc(22);
                 color: $white;
                 text-align: center;
+                font-weight: 600;
+                text-shadow:0px 3px 0 rgba(0,0,0,.2);
 
             }
         }
@@ -916,7 +921,7 @@ Stylesheet: Blocks Global Stylesheet
         	}
         }
     }
-    .list-block{
+    .list-block,.awards-block{
         padding:3.5rem 0;
         h1{
             text-align: center;
@@ -932,10 +937,18 @@ Stylesheet: Blocks Global Stylesheet
             margin-left: auto;
             margin-right: auto;
             float: none;
-            p{
+            p,a{
                 text-overflow: ellipsis;
             }
+            a{
+                word-wrap: break-word;
+            }
         }
+    }
+    .awards-block img{
+        display: block;
+        text-align: center;
+        margin:0 auto;
     }
     .grey-bg{
         background-color: $off-white;

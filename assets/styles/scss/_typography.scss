@@ -159,6 +159,10 @@ p,span,li{
     font-family: $overpass;
     color: $blue;
     font-weight: 400;
+    font-size: rem-calc(17);
+    @include breakpoint (small down) {
+        font-size: rem-calc(16);
+    }
 }
 
 li{

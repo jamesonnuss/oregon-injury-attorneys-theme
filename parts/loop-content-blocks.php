@@ -13,13 +13,17 @@
 					<?php else: ?>
 						<?php $tWidth = 'half-width'; ?>
 					<?php endif; ?>
-					<div class="block text-block row <?php echo $tWidth; ?>">
-						<div class="large-12 medium-12 small-12 columns">
-							<?php if( get_sub_field('text_block_title') ): ?>
-								<h1><?php the_sub_field('text_block_title'); ?></h1>
-							<?php endif; ?>
-							<div>
-								<?php the_sub_field('text_block_content'); ?>
+					<div class="block text-block <?php if( get_sub_field('text_block_background_color') == 'Grey' ): ?>grey-bg<?php endif; ?>">
+						<div class="row">
+							<div class="large-12 medium-12 small-12 columns">
+								<div class="<?php echo $tWidth; ?>">
+									<?php if( get_sub_field('text_block_title') ): ?>
+										<h1><?php the_sub_field('text_block_title'); ?></h1>
+									<?php endif; ?>
+									<div>
+										<?php the_sub_field('text_block_content'); ?>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -35,6 +39,29 @@
 										<?php while ( have_rows('list') ) : the_row(); ?>
 											<div class="column column-block">
 												<?php the_sub_field('list_item'); ?>
+											</div>
+										<?php endwhile; ?>
+									</div>
+								<?php endif; ?>
+							</div>
+						</div>
+					</div>
+				<?php elseif( get_row_layout() == 'awards_block' ): ?>
+					<div class="block awards-block <?php if( get_sub_field('awards_block_background_color') == 'Grey' ): ?>grey-bg<?php endif; ?>">
+						<div class="row">
+							<div class="large-12 medium-12 small-12 columns">
+								<?php if( get_sub_field('awards_block_title') ): ?>
+									<h1><?php the_sub_field('awards_block_title'); ?></h1>
+								<?php endif; ?>
+								<?php if( have_rows('awards') ): ?>
+									<div class="row small-up-2 medium-up-3 large-up-3">
+										<?php while ( have_rows('awards') ) : the_row(); ?>
+											<div class="column column-block">
+												<?php
+												$image = get_sub_field('award');
+												if( !empty($image) ): ?>
+													<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+												<?php endif; ?>
 											</div>
 										<?php endwhile; ?>
 									</div>
