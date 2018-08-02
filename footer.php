@@ -16,6 +16,7 @@
                             <div class="column-block-inner" itemscope itemtype="http://schema.org/LocalBusiness">
                                 <span itemprop="name" class="hidden"><?php bloginfo('name'); ?></span>
                                 <span itemprop="city" class="city"><?php the_sub_field('city', 'option'); ?></span>
+                                <span itemprop="title" class="title"><?php the_sub_field('location_title','option'); ?></span>
                                 <span itemprop="telephone" class="phone"><?php the_sub_field('phone_number', 'option'); ?></span>
                                 <?php if( get_sub_field('email_address', 'option') ): ?>
 	                                   <span itemprop="email" class="email"><?php the_sub_field('email_address', 'option'); ?></span>

@@ -53,11 +53,14 @@ Stylesheet: Footer Stylesheet
         }
         span,p{
             font-family: $overpass;
-            font-size: rem-calc(16);
+            font-size: rem-calc(17);
             color: $blue;
             font-weight: 400;
             margin-bottom: 0;
             display: block;
+        }
+        span.title{
+            font-weight: bold;
         }
     }
 }

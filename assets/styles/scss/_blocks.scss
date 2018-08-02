@@ -82,8 +82,8 @@ Stylesheet: Blocks Global Stylesheet
             line-height: rem-calc(26);
             font-family:$overpass;
             @include breakpoint (small down) {
-                font-size: rem-calc(16);
-                line-height: rem-calc(22);
+                font-size: rem-calc(17);
+                line-height: rem-calc(23);
             }
         }
         padding:0 0 3.5rem 0;
@@ -164,7 +164,7 @@ Stylesheet: Blocks Global Stylesheet
         p{
             font-size: rem-calc(17);
             @include breakpoint (small down) {
-                font-size: rem-calc(16);
+                font-size: rem-calc(17);
             }
         }
         a{
@@ -184,7 +184,7 @@ Stylesheet: Blocks Global Stylesheet
             transition: all .2s ease-in-out;
             color: $blue;
             @include breakpoint (small down) {
-                font-size: rem-calc(16);
+                font-size: rem-calc(17);
             }
             &:after{
                 padding-left:rem-calc(10);
@@ -206,7 +206,17 @@ Stylesheet: Blocks Global Stylesheet
                 }
             }
         }
+        .column-block-container{
+            display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+            display: -ms-flexbox;  /* TWEENER - IE 10 */
+            display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
         .column-block{
+            display: block;
             margin-bottom: 1.875rem;
             @include breakpoint (small down) {
                 margin-bottom:$marginBottom;
@@ -458,13 +468,13 @@ Stylesheet: Blocks Global Stylesheet
             font-family: $overpass;
             padding-bottom: 1.25rem;
             @include breakpoint (small down) {
-                font-size: rem-calc(16);
+                font-size: rem-calc(17);
             }
         }
         p{
             font-size: rem-calc(17);
             @include breakpoint (small down) {
-                font-size: rem-calc(16);
+                font-size: rem-calc(17);
             }
         }
         span,a,h3,p{
@@ -488,7 +498,7 @@ Stylesheet: Blocks Global Stylesheet
             text-decoration: none;
             transition: all .2s ease-in-out;
             @include breakpoint (small down) {
-                font-size: rem-calc(16);
+                font-size: rem-calc(17);
             }
             &:after{
                 padding-left:rem-calc(10);
@@ -511,7 +521,17 @@ Stylesheet: Blocks Global Stylesheet
                 }
             }
         }
+        .column-block-container{
+            display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+            display: -ms-flexbox;  /* TWEENER - IE 10 */
+            display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
         .column-block{
+            display: block;
             margin-bottom: 1.875rem;
             @include breakpoint (medium down) {
                 margin-bottom:$marginBottom;
@@ -611,14 +631,14 @@ Stylesheet: Blocks Global Stylesheet
             padding-right: rem-calc(50);
             text-decoration: none;
             @include breakpoint (small down) {
-                font-size: rem-calc(16);
+                font-size: rem-calc(17);
                 margin:3rem 0 0 0;
                 &:before{
                     right: 0;
                 }
             }
             &:before{
-                font-size: rem-calc(16);
+                font-size: rem-calc(17);
                 content: "\e907";
                 font-family: 'icomoon' !important;
             }
@@ -642,12 +662,12 @@ Stylesheet: Blocks Global Stylesheet
             font-size: rem-calc(17);
             color: $blue;
             @include breakpoint (small down) {
-                font-size: rem-calc(16);
+                font-size: rem-calc(17);
             }
             p{
                 font-size: rem-calc(17);
                 @include breakpoint (small down) {
-                    font-size: rem-calc(16);
+                    font-size: rem-calc(17);
                 }
             }
             a:before{

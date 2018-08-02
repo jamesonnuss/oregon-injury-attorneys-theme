@@ -121,7 +121,7 @@
 									<h1><?php the_sub_field('box_block_section_title'); ?></h1>
 								<?php endif; ?>
 								<?php if( have_rows('box') ): ?>
-									<div class="row small-up-1 medium-up-2 large-up-3" data-equalizer>
+									<div class="row small-up-1 medium-up-2 large-up-3 column-block-container" data-equalizer>
 									    <?php while ( have_rows('box') ) : the_row(); ?>
 											<div class="column column-block">
 												<div class="column-block-inner-container" data-equalizer-watch>
@@ -272,7 +272,7 @@
 									<?php if ($count == 4){ ?>
 									<div class="row small-up-1 medium-up-2 large-up-4" data-equalizer>
 								  	<?php } else { ?>
-									<div class="row small-up-1 medium-up-2 large-up-3" data-equalizer>
+									<div class="row small-up-1 medium-up-2 large-up-3 column-block-container" data-equalizer>
 									<?php } ?>
 									    <?php foreach( $members as $member): // variable must be called $member (IMPORTANT) ?>
 									        <?php setup_postdata($member); ?>
