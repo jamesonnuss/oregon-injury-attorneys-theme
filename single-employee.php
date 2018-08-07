@@ -22,6 +22,7 @@
 					</div>
 				</article>
 			</section>
+			
 			<?php get_template_part( 'parts/loop', 'content-blocks' ); ?>
 
 		<?php endwhile; endif; ?>

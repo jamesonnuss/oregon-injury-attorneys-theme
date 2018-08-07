@@ -16,6 +16,8 @@
 			<div class="large-12 medium-12 small-12 columns">
 				<?php if(is_search()): ?>
 					<h1><?php _e( 'Search Results for:', 'jointswp' ); ?> <?php echo esc_attr(get_search_query()); ?></h1>
+				<?php elseif(is_home() && !is_front_page()): ?>
+					<h1>Blog</h1>
 				<?php else: ?>
 					<?php if( get_field('custom_page_title') == 'Yes' ): ?>
 						<h1><?php the_field('page_title'); ?></h1>
@@ -25,7 +27,7 @@
 					<?php if(is_single()): ?>
 						<p class="header-content-large">
 							<?php the_time('F j, Y') ?>
-						</p>	
+						</p>
 					<?php elseif( get_field('header_content')): ?>
 						<?php if (get_field('row_values_and_popups_1_row_value') == 'Yes'): ?>
 						   <i class="fa fa-check" aria-hidden="true"></i>

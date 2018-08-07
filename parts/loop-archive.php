@@ -7,18 +7,27 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article">
-
-	<header class="article-header">
-		<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-	</header> <!-- end article header -->
-
-	<section class="entry-content" itemprop="articleBody">
-		<a href="<?php the_permalink() ?>"><?php the_post_thumbnail('full'); ?></a>
-		<?php the_content('<button class="tiny">' . __( 'Read more...', 'jointswp' ) . '</button>'); ?>
-	</section> <!-- end article section -->
-
-	<footer class="article-footer">
-    	<p class="tags"><?php the_tags('<span class="tags-title">' . __('Tags:', 'jointstheme') . '</span> ', ', ', ''); ?></p>
-	</footer> <!-- end article footer -->
-
+	<div class="block text-block">
+		<div class="row">
+			<div class="large-12 medium-12 small-12 columns">
+				<div class="half-width">
+					<header class="article-header">
+						<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+						<p class="byline">
+							<?php the_time('F j, Y') ?> - <?php the_category(', ') ?>
+						</p>
+					</header> <!-- end article header -->
+					<section class="entry-content" itemprop="articleBody">
+						<a href="<?php the_permalink() ?>"><?php the_post_thumbnail('full'); ?></a>
+						<?php the_excerpt(); ?>
+					</section> <!-- end article section -->
+					<?php if(has_tag()): ?>
+						<footer class="article-footer">
+					    	<p class="tags"><?php the_tags('<span class="tags-title">' . __('Tags:', 'jointstheme') . '</span> ', ', ', ''); ?></p>
+						</footer> <!-- end article footer -->
+					<?php endif; ?>
+				</div>
+			</div>
+		</div>
+	</div>
 </article> <!-- end article -->
