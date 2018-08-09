@@ -5,7 +5,7 @@
 ?>
 <section class="content-header">
 <?php if( get_field('header_image_overlay_opacity')): ?>
-	<div class="screen" data-opacity="<?php the_field('header_image_overlay_opacity'); ?>"></div>
+	<div class="screen <?php if( get_field('header_image_overlay_color') == 'Black' ): ?>black-overlay<?php endif; ?>" data-opacity="<?php the_field('header_image_overlay_opacity'); ?>"></div>
 <?php endif; ?>
 <?php if( get_field('header_image')): ?>
 	<div class="content-header-image <?php if( get_field('header_height') == 'Full Height' ): ?>full-height<?php endif; ?>" style="background-image:url('<?php the_field('header_image'); ?>');">

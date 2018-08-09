@@ -382,6 +382,7 @@ Stylesheet: Blocks Global Stylesheet
         }
         .tabs-title{
             float: none !important;
+            margin-bottom: 0 !important;
         }
         .tabs-title>a{
             color: $blue;
@@ -535,6 +536,8 @@ Stylesheet: Blocks Global Stylesheet
             margin-bottom: 1.875rem;
             @include breakpoint (medium down) {
                 margin-bottom:$marginBottom;
+            }
+            @include breakpoint (small down) {
                 &:last-child{
                     margin-bottom: 0;
                 }
@@ -607,6 +610,7 @@ Stylesheet: Blocks Global Stylesheet
                 padding-left: .9375rem;
                 @include breakpoint (medium down) {
                     padding-left: 0;
+                    margin-bottom: 0;
                 }
             }
         }
@@ -617,6 +621,7 @@ Stylesheet: Blocks Global Stylesheet
                 padding-right: .9375rem;
                 @include breakpoint (medium down) {
                     padding-right: 0;
+                    margin-bottom: 0;
                 }
             }
         }
@@ -913,6 +918,13 @@ Stylesheet: Blocks Global Stylesheet
             padding-top: 2rem;
             padding-bottom: 0;
             margin-bottom: 0;
+        }
+        .gform_confirmation_wrapper {
+            text-align: center;
+            color: $blue;
+            font-size: rem-calc(18);
+            font-weight: 600;
+            padding-top: rem-calc(20);
         }
         .gform_ajax_spinner {
         	border: rem-calc(2) solid rgba(255, 255, 255, 0.3);	/* match with border-left */

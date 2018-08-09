@@ -9,10 +9,12 @@ jQuery( document ).ready(function($) {
         if ($(window).innerWidth() > 752) {
             $('ul#menu-main-menu').superfish();
             $("button.menu-icon").removeClass('active-menu');
+            console.log('true'); 
         } else {
             $('ul#menu-main-menu').superfish('hide');
             $('ul#menu-main-menu').find('li.sfHover').removeClass('sfHover');
             $('ul#menu-main-menu').superfish('destroy');
+            console.log('false');
         }
     }
     $("button.menu-icon").on( "click", function() {

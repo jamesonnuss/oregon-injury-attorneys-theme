@@ -179,7 +179,7 @@
 				<?php elseif( get_row_layout() == 'call_to_action_block' ): ?>
 					<div class="block call-to-action-block-container">
 						<?php if( get_sub_field('call_to_action_block_bg_image_overlay_opacity')): ?>
-							<div class="screen" data-opacity="<?php the_sub_field('call_to_action_block_bg_image_overlay_opacity'); ?>"></div>
+							<div class="screen<?php if( get_sub_field('call_to_action_block_bg_image_overlay_color') == 'Black' ): ?> black-overlay<?php endif; ?>" data-opacity="<?php the_sub_field('call_to_action_block_bg_image_overlay_opacity'); ?>"></div>
 						<?php endif; ?>
 						<div class="call-to-action-block" style="background-image:url('<?php the_sub_field('call_to_action_block_bg_image'); ?>');">
 							<div class="row">

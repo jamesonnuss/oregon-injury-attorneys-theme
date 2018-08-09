@@ -18,7 +18,7 @@
 						</p>
 					</header> <!-- end article header -->
 					<section class="entry-content" itemprop="articleBody">
-						<a href="<?php the_permalink() ?>"><img src="<?php the_field('header_image'); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>"></a>
+						<?php if( get_field('header_image')): ?><a href="<?php the_permalink() ?>"><img src="<?php the_field('header_image'); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>"></a><?php endif; ?>
 						<?php the_excerpt(); ?>
 					</section> <!-- end article section -->
 					<?php if(has_tag()): ?>
