@@ -23,7 +23,7 @@ Stylesheet: Footer Stylesheet
             max-width: rem-calc(250);
             @media #{$medium}{
                 width: auto;
-                max-width:rem-calc(220);
+                max-width:rem-calc(235);
                 margin:0 auto;
             }
         }
@@ -69,6 +69,11 @@ footer.footer{
     padding:1rem 0 2rem 0;
     text-align: center;
     margin-top: 0;
+    @media #{$medium}{
+        .copyright-reserved{
+            display: block;
+        }
+    }
     &:before{
         margin-right: auto;
         margin-left: auto;
@@ -121,6 +126,9 @@ footer.footer{
             font-size: rem-calc(16);
             font-weight: 400;
             padding:0 1.5rem;
+            @include breakpoint (small down) {
+                padding:0 1rem;
+            }
         }
     }
     .social-media{

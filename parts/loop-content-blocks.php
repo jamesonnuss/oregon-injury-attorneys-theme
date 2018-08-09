@@ -399,9 +399,9 @@
 
 									?>
 									<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>">
-										<h6><?php the_sub_field('title'); ?></h6>
+										<h5><?php the_sub_field('title'); ?></h5>
 										<p class="address"><?php echo $location['address']; ?></p>
-										<p><?php the_sub_field('description'); ?></p>
+										<p class="directions"><a href="<?php the_sub_field('directions'); ?>" target="_blank">Get Directions</a></p>
 									</div>
 							<?php endwhile; ?>
 							</div>

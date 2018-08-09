@@ -970,6 +970,12 @@ Stylesheet: Blocks Global Stylesheet
         text-align: center;
         margin:0 auto;
     }
+    .directions{
+        margin-bottom: 0 !important;
+    }
+    .gm-style-mtc {
+        display: none;
+    }
     .grey-bg{
         background-color: $off-white;
         h1{

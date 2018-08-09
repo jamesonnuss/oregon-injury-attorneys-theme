@@ -756,7 +756,9 @@ body.vjs-full-window {
     right: -0.5em;
     top: -0.333333333333333em;
     z-index: 1; }
-
+.vjs-button>.vjs-icon-placeholder:before{
+    font-size: 1.09em;
+}
 .video-js .vjs-load-progress {
   background: #bfc7d3;
   background: rgba(115, 133, 159, 0.5); }

@@ -11,7 +11,15 @@
 					<div class="block text-block">
 						<div class="row">
 							<div class="large-12 medium-12 small-12 columns">
+								<p class="byline">
+									<?php the_category(', ') ?>
+								</p>
 								<?php the_content(); ?>
+								<?php if(has_tag()): ?>
+									<footer class="article-footer">
+								    	<p class="tags"><?php the_tags('<span class="tags-title">' . __('Tags:', 'jointstheme') . '</span> ', ', ', ''); ?></p>
+									</footer> <!-- end article footer -->
+								<?php endif; ?>
 							</div>
 						</div>
 					</div>
