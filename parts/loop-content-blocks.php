@@ -18,7 +18,7 @@
 							<div class="large-12 medium-12 small-12 columns">
 								<div class="<?php echo $tWidth; ?>">
 									<?php if( get_sub_field('text_block_title') ): ?>
-										<h1><?php the_sub_field('text_block_title'); ?></h1>
+										<h2><?php the_sub_field('text_block_title'); ?></h2>
 									<?php endif; ?>
 									<div>
 										<?php the_sub_field('text_block_content'); ?>
@@ -32,7 +32,7 @@
 						<div class="row">
 							<div class="large-12 medium-12 small-12 columns">
 								<?php if( get_sub_field('list_block_title') ): ?>
-									<h1><?php the_sub_field('list_block_title'); ?></h1>
+									<h2><?php the_sub_field('list_block_title'); ?></h2>
 								<?php endif; ?>
 								<?php if( have_rows('list') ): ?>
 									<div class="row small-up-1 medium-up-2 large-up-2">
@@ -51,7 +51,7 @@
 						<div class="row">
 							<div class="large-12 medium-12 small-12 columns">
 								<?php if( get_sub_field('awards_block_title') ): ?>
-									<h1><?php the_sub_field('awards_block_title'); ?></h1>
+									<h2><?php the_sub_field('awards_block_title'); ?></h2>
 								<?php endif; ?>
 								<?php if( have_rows('awards') ): ?>
 									<div class="row small-up-2 medium-up-3 large-up-3">
@@ -74,7 +74,7 @@
 						<div class="row">
 							<div class="large-12 medium-12 small-12 columns">
 								<?php if( get_sub_field('contact_block_title') ): ?>
-									<h1><?php the_sub_field('contact_block_title'); ?></h1>
+									<h2><?php the_sub_field('contact_block_title'); ?></h2>
 								<?php endif; ?>
 								<div class="contact-block-content">
 									<?php the_sub_field('contact_block_content'); ?>
@@ -95,7 +95,7 @@
 							<?php endif; ?>
 							<div class="<?php echo $vWidth; ?>">
 								<?php if( get_sub_field('video_block_title') ): ?>
-									<h1><?php the_sub_field('video_block_title'); ?></h1>
+									<h2><?php the_sub_field('video_block_title'); ?></h2>
 								<?php endif; ?>
 								<?php if( get_sub_field('video_block_content') ): ?>
 									<div>
@@ -118,7 +118,7 @@
 						<div class="row">
 							<div class="large-12 medium-12 small-12 columns">
 								<?php if( get_sub_field('box_block_section_title') ): ?>
-									<h1><?php the_sub_field('box_block_section_title'); ?></h1>
+									<h2><?php the_sub_field('box_block_section_title'); ?></h2>
 								<?php endif; ?>
 								<?php if( have_rows('box') ): ?>
 									<div class="row small-up-1 medium-up-2 large-up-3 column-block-container" data-equalizer>
@@ -144,7 +144,7 @@
 					<div class="block testimonials-block row">
 						<div class="large-12 medium-12 small-12 columns">
 							<?php if( get_sub_field('testimonials_block_title') ): ?>
-								<h1><?php the_sub_field('testimonials_block_title'); ?></h1>
+								<h2><?php the_sub_field('testimonials_block_title'); ?></h2>
 							<?php endif; ?>
 							<?php if( have_rows('testimonial') ): ?>
 								<div class="row testimonial-slide-container">
@@ -185,7 +185,7 @@
 							<div class="row">
 								<div class="large-12 medium-12 small-12 columns">
 									<?php if( get_sub_field('call_to_action_block_title') ): ?>
-										<h1><?php the_sub_field('call_to_action_block_title'); ?></h1>
+										<h2><?php the_sub_field('call_to_action_block_title'); ?></h2>
 									<?php endif; ?>
 									<p>
 										<?php the_sub_field('call_to_action_block_content'); ?>
@@ -220,7 +220,7 @@
 						<div class="row">
 							<div class="large-12 medium-12 small-12 columns">
 								<?php if( get_sub_field('tab_block_section_title') ): ?>
-									<h1><?php the_sub_field('tab_block_section_title'); ?></h1>
+									<h2><?php the_sub_field('tab_block_section_title'); ?></h2>
 								<?php endif; ?>
 								<?php if( have_rows('tab_block_tab') ): $i = 0; ?>
 									<script type="text/javascript">
@@ -265,7 +265,7 @@
 						<div class="row">
 							<div class="large-12 medium-12 small-12 columns">
 								<?php if( get_sub_field('team_block_title') ): ?>
-									<h1><?php the_sub_field('team_block_title'); ?></h1>
+									<h2><?php the_sub_field('team_block_title'); ?></h2>
 								<?php endif; ?>
 								<?php $count = count( get_sub_field('team_block_members') ); ?>
 								<?php $members = get_sub_field('team_block_members'); if( $members ): ?>
@@ -302,7 +302,7 @@
 						<div class="row">
 							<div class="large-12 medium-12 small-12 columns">
 								<?php if( get_sub_field('faq_block_title') ): ?>
-									<h1><?php the_sub_field('faq_block_title'); ?></h1>
+									<h2><?php the_sub_field('faq_block_title'); ?></h2>
 								<?php endif; ?>
 								<?php if( have_rows('faq_block_repeater') ):  $i = 0; ?>
 									<div class="row">
@@ -342,7 +342,7 @@
 					<div class="block slider-block row">
 						<div class="large-12 medium-12 small-12 columns">
 							<?php if( get_sub_field('slider_block_title') ): ?>
-								<h1><?php the_sub_field('slider_block_title'); ?></h1>
+								<h2><?php the_sub_field('slider_block_title'); ?></h2>
 							<?php endif; ?>
 							<?php if( have_rows('slider') ): ?>
 								<div class="row slider-slide-container">
