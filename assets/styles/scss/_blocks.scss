@@ -603,6 +603,12 @@ Stylesheet: Blocks Global Stylesheet
         h2{
             text-align: center;
         }
+        .accordion{
+            list-style-type: none;
+            max-width:rem-calc(750);
+            margin:0 auto;
+            float: none;
+        }
         .left-accordion{
             margin: 0;
             list-style-type: none;
@@ -646,6 +652,7 @@ Stylesheet: Blocks Global Stylesheet
                 font-size: rem-calc(17);
                 content: "\e907";
                 font-family: 'icomoon' !important;
+                margin-top:-.70rem;
             }
             &:hover,&:focus{
                 color: $green;
@@ -992,6 +999,33 @@ Stylesheet: Blocks Global Stylesheet
         background-color: $off-white;
         h2{
             color: $blue;
+        }
+    }
+    .white-bg{
+        background-color: $white;
+        h2{
+            color: $blue;
+        }
+    }
+}
+/* Map Block */
+p.address{
+    margin-bottom: 0;
+}
+p.phone{
+    a{
+        text-decoration: none;
+        font-weight: 600;
+        &:hover{
+            color: $green;
+        }
+    }
+}
+p.directions{
+    a{
+        font-weight: 600;
+        &:hover{
+            color: $green;
         }
     }
 }

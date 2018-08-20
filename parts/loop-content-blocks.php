@@ -261,7 +261,7 @@
 						</div>
 					</div>
 				<?php elseif( get_row_layout() == 'employee_block' ): ?>
-					<div class="block team-block <?php if( get_sub_field('team_block_background_color') == 'Grey' ): ?>grey-bg<?php endif; ?>">
+					<div class="block team-block <?php if( get_sub_field('team_block_background_color') == 'Grey' ): ?>grey-bg<?php elseif( get_sub_field('team_block_background_color') == 'White' ): ?>white-bg<?php endif; ?>">
 						<div class="row">
 							<div class="large-12 medium-12 small-12 columns">
 								<?php if( get_sub_field('team_block_title') ): ?>
@@ -306,6 +306,7 @@
 								<?php endif; ?>
 								<?php if( have_rows('faq_block_repeater') ):  $i = 0; ?>
 									<div class="row">
+										<ul class="accordion large-12 medium-12 small-12 columns" data-accordion="one" data-multi-expand="true" data-allow-all-closed="true">
 										<?php while ( have_rows('faq_block_repeater') ) : the_row(); ?>
 											<li class="accordion-item" data-accordion-item="accordion-item_<?php echo $i; ?>">
 												<a href="#" class="accordion-title"><?php the_sub_field('faq_block_question'); ?></a>
@@ -314,22 +315,23 @@
 											    </div>
 											</li>
 										<?php $i++; endwhile;?>
+										</ul>
 									</div>
 									<script type="text/javascript">
 									jQuery(document).ready(function($) {
 										// Accordion Splitting
-										var $li = $('li.accordion-item');
-										if ($li.length % 2 == 0) {
-											half = Math.floor($li.length/2);
-											$li.filter(function(i){ return i < half; }).wrapAll('<ul class="left-accordion large-6 medium-6 small-12 columns" data-accordion="one" data-multi-expand="true" data-allow-all-closed="true">');
-											$li.filter(function(i){ return i >= half; }).wrapAll('<ul class="right-accordion large-6 medium-6 small-12 columns" data-accordion="two" data-multi-expand="true" data-allow-all-closed="true">');
-										} else {
-											half = Math.floor($li.length/2 + 1);
-											$li.filter(function(i){ return i < half; }).wrapAll('<ul class="left-accordion large-6 medium-6 small-12 columns" data-accordion="one" data-multi-expand="true" data-allow-all-closed="true">');
-											$li.filter(function(i){ return i >= half; }).wrapAll('<ul class="right-accordion large-6 medium-6 small-12 columns" data-accordion="two" data-multi-expand="true" data-allow-all-closed="true">');
-										}
-										$('.left-accordion').foundation();
-										$('.right-accordion').foundation();
+										// var $li = $('li.accordion-item');
+										// if ($li.length % 2 == 0) {
+										// 	half = Math.floor($li.length/2);
+										// 	$li.filter(function(i){ return i < half; }).wrapAll('<ul class="left-accordion large-6 medium-6 small-12 columns" data-accordion="one" data-multi-expand="true" data-allow-all-closed="true">');
+										// 	$li.filter(function(i){ return i >= half; }).wrapAll('<ul class="right-accordion large-6 medium-6 small-12 columns" data-accordion="two" data-multi-expand="true" data-allow-all-closed="true">');
+										// } else {
+										// 	half = Math.floor($li.length/2 + 1);
+										// 	$li.filter(function(i){ return i < half; }).wrapAll('<ul class="left-accordion large-6 medium-6 small-12 columns" data-accordion="one" data-multi-expand="true" data-allow-all-closed="true">');
+										// 	$li.filter(function(i){ return i >= half; }).wrapAll('<ul class="right-accordion large-6 medium-6 small-12 columns" data-accordion="two" data-multi-expand="true" data-allow-all-closed="true">');
+										// }
+										// $('.left-accordion').foundation();
+										// $('.right-accordion').foundation();
 									});
 									</script>
 								<?php endif; ?>
@@ -401,6 +403,9 @@
 									<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>">
 										<h5><?php the_sub_field('title'); ?></h5>
 										<p class="address"><?php echo $location['address']; ?></p>
+										<p class="phone">
+											<a href="tel:+1-<?php the_sub_field('phone_number'); ?>" title="<?php the_field('phone_number_label','option'); ?> - <?php the_sub_field('phone_number'); ?>"><?php the_sub_field('phone_number'); ?></a>
+										</p>
 										<p class="directions"><a href="<?php the_sub_field('directions'); ?>" target="_blank">Get Directions</a></p>
 									</div>
 							<?php endwhile; ?>

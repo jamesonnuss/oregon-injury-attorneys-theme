@@ -42,6 +42,8 @@ iframe{
 	.employee-photo{
 		display: block;
 		margin:0 auto;
+		max-width:rem-calc(500);
+		width: 100%;
 	}
 	.content-blocks-employee .block{
 		padding-bottom: 0 !important;
@@ -75,6 +77,13 @@ iframe{
 			color: $green;
 			text-decoration: none;
 		}
+	}
+}
+
+.page-template-default{
+	.text-block{
+		max-width:rem-calc(750);
+        margin:0 auto;
 	}
 }
 
@@ -216,6 +225,10 @@ iframe{
 			}
 		}
 	}
+}
+
+.page-template-template-our-team .content .content-blocks .content-blocks-container{
+	background-color: $blue;
 }
 
 .align-middle {

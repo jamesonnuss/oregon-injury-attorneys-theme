@@ -17,7 +17,7 @@
 				<h1 itemprop="name"><?php bloginfo('name'); ?></h1>
 				<span><?php the_field('phone_number_label','option'); ?></span>
 				<span itemprop="telephone">
-					<a href="tel:+1-<?php the_field('phone_number','option'); ?>" title=""><?php the_field('phone_number','option'); ?></a>
+					<a href="tel:+1-<?php the_field('phone_number','option'); ?>" title="<?php the_field('phone_number_label','option'); ?> - <?php the_field('phone_number','option'); ?>"><?php the_field('phone_number','option'); ?></a>
 				</span>
 			</div>
 			<span data-responsive-toggle="menu-main-menu" class="mobile-menu-button">

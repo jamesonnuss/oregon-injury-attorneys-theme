@@ -51,13 +51,14 @@ Stylesheet: Footer Stylesheet
             font-weight: 700;
             display: block;
         }
-        span,p{
+        span,p,a{
             font-family: $overpass;
             font-size: rem-calc(17);
             color: $blue;
             font-weight: 400;
             margin-bottom: 0;
             display: block;
+            text-decoration: none;
         }
         span.title{
             font-weight: bold;
