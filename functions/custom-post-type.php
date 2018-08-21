@@ -38,7 +38,7 @@ function cpt_employee() {
 			'query_var' => true,
 			'menu_position' => 20, /* this is what order you want it to appear in on the left hand side menu */
 			'menu_icon' => 'dashicons-groups', /* the icon for the custom post type menu. uses built-in dashicons (CSS class name) */
-			'rewrite'	=> array( 'slug' => 'employee', 'with_front' => false ), /* you can specify its url slug */
+			'rewrite'	=> array( 'slug' => 'team-member', 'with_front' => false ), /* you can specify its url slug */
 			'has_archive' => 'employee', /* you can rename the slug here */
 			'capability_type' => 'post',
 			'hierarchical' => false,
