@@ -38,17 +38,17 @@
                         <ul>
                             <?php if( get_field('facebook_url', 'option') ): ?>
                                 <li>
-                                    <a href="<?php the_field('facebook_url', 'option'); ?>" class="icon-facebook"></a>
+                                    <a href="<?php the_field('facebook_url', 'option'); ?>" class="icon-facebook" target="_blank"></a>
                                 </li>
                             <?php endif; ?>
                             <?php if( get_field('instagram_url', 'option') ): ?>
                                 <li>
-                                    <a href="<?php the_field('instagram_url', 'option'); ?>" class="icon-instagram"></a>
+                                    <a href="<?php the_field('instagram_url', 'option'); ?>" class="icon-instagram" target="_blank"></a>
                                 </li>
                             <?php endif; ?>
                             <?php if( get_field('linkedin_url', 'option') ): ?>
                                 <li>
-                                    <a href="<?php the_field('linkedin_url', 'option'); ?>" class="icon-linkedin"></a>
+                                    <a href="<?php the_field('linkedin_url', 'option'); ?>" class="icon-linkedin" target="_blank"></a>
                                 </li>
                             <?php endif; ?>
                         </ul>

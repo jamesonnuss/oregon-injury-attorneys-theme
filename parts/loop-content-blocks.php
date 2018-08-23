@@ -104,12 +104,14 @@
 								<?php endif; ?>
 							</div>
 							<div class="video-js-container">
-								<video class="video-js" controls preload="auto" width="100%" poster="<?php the_sub_field('video_poster'); ?>" data-setup="{}">
-									<source src="<?php the_sub_field('video_block_url'); ?>" type="video/mp4">
-									<p class="vjs-no-js">
-										Your browser does not support HTML5 video.
-									</p>
-								</video>
+								<div class="video-js-inner-container">
+									<video class="video-js" controls preload="auto" width="100%" poster="<?php the_sub_field('video_poster'); ?>" data-setup="{}">
+										<source src="<?php the_sub_field('video_block_url'); ?>" type="video/mp4">
+										<p class="vjs-no-js">
+											Your browser does not support HTML5 video.
+										</p>
+									</video>
+								</div>
 							</div>
 						</div>
 					</div>

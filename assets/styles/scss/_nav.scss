@@ -143,6 +143,9 @@ header.header{
                 @media only screen and (max-width:60.938rem){
                     font-size:rem-calc(16);
                 }
+                @media only screen and (min-width: 768px) and (max-width:50.625em){
+                    font-size:rem-calc(14);
+                }
                 @include breakpoint (small down) {
                     padding:1rem;
                     border-bottom: 0;
@@ -222,6 +225,9 @@ header.header{
                         -moz-transition:none;
                         -o-transition:none;
                         -ms-transition:none;
+                        @media only screen and (min-width: 768px) and (max-width:50.625em){
+                            font-size:rem-calc(14);
+                        }
                     }
                     a:hover{
                         background-color: $blue;
