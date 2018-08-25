@@ -20,18 +20,18 @@ header.header{
             display: block;
         }
     }
-    @media screen and (min-width: 768px){
+    @media screen and (min-width: 769px){
         li.hide-for-medium-up{
             display: none;
         }
     }
     .logo-container{
-        @media screen and (min-width: 768px) and (max-width:67.250em){
+        @media screen and (min-width: 768px) and (max-width:67.813em){
             width: 100%;
         }
     }
     .navigation-container{
-        @media screen and (min-width: 768px) and (max-width:67.250em){
+        @media screen and (min-width: 769px) and (max-width:67.813em){
             width: 100%;
             margin-top: rem-calc(-80);
             .top-bar-right{
@@ -45,12 +45,12 @@ header.header{
                 margin:0 auto;
             }
         }
-        @include breakpoint (small down) {
+        @media screen and (max-width: 768px){
             padding:0;
         }
     }
     .mobile-menu-button{
-        @include breakpoint (small down) {
+        @media screen and (max-width: 769px){
             display: block;
             padding-right: 1rem;
             position: relative;
@@ -71,7 +71,7 @@ header.header{
         color: $blue;
         font-weight: 700;
         font-family: $overpass;
-        @include breakpoint (small down) {
+        @media screen and (max-width: 769px){
             display: block;
         }
         &:after{
@@ -114,13 +114,13 @@ header.header{
         -moz-transform: translateY(0px);
         -o-transform: translateY(0px);
         opacity: 1;
-        @media screen and (min-width: 768px){
-            display: flex !important;
+        @media screen and (min-width: 769px){
+            display: flex;
             display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
             display: -ms-flexbox;  /* TWEENER - IE 10 */
             display: -webkit-flex;
         }
-        @include breakpoint (small down) {
+        @media screen and (max-width: 768px){
             display: none;
             transform: translateY(0px);
             -webkit-transform: translateY(0px);
@@ -146,7 +146,7 @@ header.header{
                 @media only screen and (min-width: 768px) and (max-width:50.625em){
                     font-size:rem-calc(14);
                 }
-                @include breakpoint (small down) {
+                @media screen and (max-width: 768px){
                     padding:1rem;
                     border-bottom: 0;
                     font-size:rem-calc(17);
@@ -156,7 +156,7 @@ header.header{
                 color: $green;
                 border-bottom:3px solid transparent;
                 text-decoration: none;
-                @include breakpoint (small down) {
+                @media screen and (max-width: 768px){
                     border-bottom: 0;
                     background-color: $blue;
                     color: $white;
@@ -167,14 +167,14 @@ header.header{
             }
             a.sf-with-ul:after{
                 display: none;
-                @include breakpoint (small down) {
+                @media screen and (max-width: 768px){
                     display: block;
                 }
             }
             &.current-menu-item a{
                 color: $green;
                 font-weight: bold;
-                @include breakpoint (small down) {
+                @media screen and (max-width: 768px){
                     color: $white;
                     background-color: $blue;
                     border-bottom: none;
@@ -184,7 +184,7 @@ header.header{
                 padding-right: 1rem;
                 &:after{
                     display: none;
-                    @include breakpoint (small down) {
+                    @media screen and (max-width: 768px){
                         display: block;
                     }
                 }
@@ -207,7 +207,7 @@ header.header{
                 -o-transform: translate(-50%, 0);
                 z-index: -1;
                 background-color:$white;
-                @include breakpoint (small down) {
+                @media screen and (max-width: 768px){
                     z-index: 1;
                     position: relative;
                     display: none;
@@ -240,7 +240,7 @@ header.header{
                     }
                     &.current-menu-item a{
                         color: $green;
-                        @include breakpoint (small down) {
+                        @media screen and (max-width: 768px){
                             color: $white;
                             background-color: $blue;
                         }
@@ -264,7 +264,7 @@ header.header{
         text-align: center;
         height: 135px;
         float: right;
-        @include breakpoint (small down) {
+        @media screen and (max-width: 768px){
             width: 100%;
             display: block;
             float: none;
@@ -274,7 +274,7 @@ header.header{
             padding-top:1.35rem;
             padding-bottom:rem-calc(10);
             padding-right: 1rem;
-            @include breakpoint (small down) {
+            @media screen and (max-width: 768px){
                 position: absolute;
                 top: 0;
                 right: 0;
@@ -333,7 +333,7 @@ header.header{
                 height: rem-calc(135);
                 z-index: 1;
                 position: relative;
-                @include breakpoint (small down) {
+                @media screen and (max-width: 768px){
                     height: rem-calc(110);
                     padding-top: rem-calc(18)
                 }
@@ -341,7 +341,7 @@ header.header{
             img{
                 width: 100%;
                 max-width: rem-calc(300);
-                @include breakpoint (small down) {
+                @media screen and (max-width: 768px){
                     max-width:16rem;
                     position: relative;
                     left: -.5rem;
@@ -368,4 +368,76 @@ header.header{
     content: "\e908";
     transform: rotate(0);
     transform-origin: 0;
+}
+body.windows-navigation{
+    @media screen and (min-width:768px) and (max-width: 769px){
+        .main-menu #menu-main-menu li .submenu{
+            z-index: 1;
+            position: relative;
+            display: none;
+            top: 0;
+        }
+        .top-bar-right{
+            width: 100%;
+            display: block;
+            float: none;
+            height: auto;
+        }
+        .main-menu .top-bar-right .top-menu{
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .main-menu #menu-main-menu li.menu-item-has-children a::after{
+            display: block;
+        }
+        .main-menu .top-bar-left .menu a{
+            height: rem-calc(110);
+            padding-top: rem-calc(18)
+        }
+        .main-menu .top-bar-left .menu img{
+            max-width:16rem;
+            position: relative;
+            left: -.5rem;
+        }
+        .main-menu #menu-main-menu li a{
+            padding:1rem;
+            border-bottom: 0;
+            font-size:rem-calc(17);
+        }
+        .main-menu #menu-main-menu li.current-menu-item a{
+            background-color:$blue;
+            color: $white;
+            border-bottom:none;
+        }
+        .main-menu #menu-main-menu li a:hover{
+            background-color:$blue;
+            color: $white;
+            border-bottom:none;
+        }
+        .main-menu #menu-main-menu li .submenu li a{
+            padding:1rem;
+            border-bottom: 0;
+            background-color: $light-gray;
+            color: $blue;
+            font-size: rem-calc(16);
+            transition:none;
+            -webkit-transition:none;
+            -moz-transition:none;
+            -o-transition:none;
+            -ms-transition:none;
+            &:hover{
+                background-color:$blue;
+                color: $white;
+                border-bottom:none;
+            }
+        }
+        .main-menu #menu-main-menu li .submenu li.current-menu-item a{
+            background-color:$blue;
+            color: $white;
+        }
+        .main-menu .navigation-container{
+            padding:0;
+        }
+    }
 }
