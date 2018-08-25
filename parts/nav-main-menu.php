@@ -20,9 +20,19 @@
 					<a href="tel:+1-<?php the_field('phone_number','option'); ?>" title="<?php the_field('phone_number_label','option'); ?> - <?php the_field('phone_number','option'); ?>"><?php the_field('phone_number','option'); ?></a>
 				</span>
 			</div>
-			<span data-responsive-toggle="menu-main-menu" class="mobile-menu-button">
+
+			<!-- <span data-responsive-toggle="menu-main-menu" class="mobile-menu-button">
 		    	<button class="menu-icon dark" type="button" data-toggle>MENU</button>
-		    </span>
+		    </span> -->
+
+			<!-- <a class="mobile-menu-button"><div class="mobile-menu-icon">MENU </div></a> -->
+
+			<span class="mobile-menu-button">
+				<a id="header__button" class="hamburger" href="#">
+					<span>MENU</span> <div class="hamburger__inner"></div>
+				</a>
+			</span>
+
 			<?php joints_top_nav(); ?>
 		</div>
 	</div>

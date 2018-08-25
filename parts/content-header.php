@@ -13,7 +13,7 @@
 	<div class="content-header-image <?php if( get_field('header_height') == 'Full Height' ): ?>full-height<?php endif; ?>" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/oia-bg-fallback.jpg');">
 <?php endif; ?>
 		<div class="row content-header-image-row <?php if( get_field('header_height') == 'Full Height' ): ?>full-height<?php endif; ?>">
-			<div class="large-12 medium-12 small-12 columns">
+			<div class="large-12 medium-12 small-12 columns TEST">
 				<?php if(is_search()): ?>
 					<h1><?php _e( 'Search Results for:', 'jointswp' ); ?> <?php echo esc_attr(get_search_query()); ?></h1>
 				<?php elseif(is_home() && !is_front_page()): ?>

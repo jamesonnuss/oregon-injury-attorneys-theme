@@ -52,6 +52,11 @@ iframe{
 	.content-blocks-employee .block{
 		padding-bottom: 0 !important;
 	}
+	.content .content-blocks .block{
+		@include breakpoint (small down) {
+			padding-top:0;
+		}
+	}
 }
 
 .single{
@@ -194,6 +199,11 @@ iframe{
 	}
 	.article-header{
 		margin-bottom:rem-calc(20);
+		@media only screen and (max-width: 48.0625em){
+			.h3, h3{
+				font-size:1.4rem;
+			}
+		}
 	}
 	.article-footer{
 		margin-top:rem-calc(40);

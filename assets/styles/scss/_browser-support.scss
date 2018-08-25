@@ -1,0 +1,83 @@
+body.windows-navigation{
+    @media screen and (min-width:768px) and (max-width: 769px){
+        .main-menu #menu-main-menu li .submenu{
+            z-index: 1;
+            position: relative;
+            display: none;
+            top: 0;
+        }
+        .top-bar-right{
+            width: 100%;
+            display: block;
+            float: none;
+            height: auto;
+        }
+        .main-menu .top-bar-right .top-menu{
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .main-menu #menu-main-menu li.menu-item-has-children a::after{
+            display: block;
+        }
+        .main-menu .top-bar-left .menu a{
+            height: rem-calc(110);
+            padding-top: rem-calc(18)
+        }
+        .main-menu .top-bar-left .menu img{
+            max-width:16rem;
+            position: relative;
+            left: -.5rem;
+        }
+        .main-menu #menu-main-menu li a{
+            padding:1rem;
+            border-bottom: 0;
+            font-size:rem-calc(17);
+        }
+        .main-menu #menu-main-menu li.current-menu-item a{
+            background-color:$blue;
+            color: $white;
+            border-bottom:none;
+        }
+        .main-menu #menu-main-menu li a:hover{
+            background-color:$blue;
+            color: $white;
+            border-bottom:none;
+        }
+        .main-menu #menu-main-menu li .submenu li a{
+            padding:1rem;
+            border-bottom: 0;
+            background-color: $light-gray;
+            color: $blue;
+            font-size: rem-calc(16);
+            transition:none;
+            -webkit-transition:none;
+            -moz-transition:none;
+            -o-transition:none;
+            -ms-transition:none;
+            &:hover{
+                background-color:$blue;
+                color: $white;
+                border-bottom:none;
+            }
+        }
+        .main-menu #menu-main-menu li .submenu li.current-menu-item a{
+            background-color:$blue;
+            color: $white;
+        }
+        .main-menu .navigation-container{
+            padding:0;
+        }
+    }
+}
+body.internet-explorer{
+    input#gform_submit_button_1{
+        padding:rem-calc(21) rem-calc(25) rem-calc(17) rem-calc(25);
+    }
+    .button,input[type=submit]{
+        padding-bottom:rem-calc(17);
+    }
+    .content .content-blocks .tab-block .tabs-title>a{
+        padding-bottom:rem-calc(16);
+    }
+}

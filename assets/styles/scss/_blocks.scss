@@ -7,6 +7,7 @@ Stylesheet: Blocks Global Stylesheet
     .content-blocks-container{
         padding:3.5rem 0 0 0;
         @include breakpoint (small down) {
+            padding:2.5rem 0 0 0;
             .column, .columns{
                 padding:$columnPadding;
                 .column,.columns{
@@ -35,6 +36,9 @@ Stylesheet: Blocks Global Stylesheet
         padding:3.5rem 0;
         &:first-child{
             padding-top: 0;
+        }
+        @include breakpoint (small down) {
+            padding:2.5rem 0;
         }
     }
     .text-block{
@@ -241,6 +245,9 @@ Stylesheet: Blocks Global Stylesheet
                     text-align: center;
                     color:$blue;
                     padding:5.25rem 1.25rem;
+                    @include breakpoint (small down) {
+                        padding:3.25rem 1.25rem;
+                    }
                 }
             }
         }
@@ -256,6 +263,8 @@ Stylesheet: Blocks Global Stylesheet
             }
             text-align: center;
             position: relative;
+            -webkit-font-smoothing: antialiased;
+            transform:translate3d( 0, 0, 0);
             &:before{
                 content:' ';
                 width:rem-calc(16);
@@ -806,8 +815,8 @@ Stylesheet: Blocks Global Stylesheet
             }
         }
         .gform_wrapper.gf_browser_chrome .gfield_checkbox li input, .gform_wrapper.gf_browser_chrome .gfield_checkbox li input[type=checkbox], .gform_wrapper.gf_browser_chrome .gfield_radio li input[type=radio]{
-            margin:rem-calc(3) rem-calc(8) rem-calc(0) rem-calc(1);
-            float: left;
+            // margin:rem-calc(3) rem-calc(8) rem-calc(0) rem-calc(1);
+            // float: left;
         }
         .gform_wrapper{
             margin:0 auto !important;
@@ -836,6 +845,7 @@ Stylesheet: Blocks Global Stylesheet
             padding:2rem 0 1rem 0;
             @include breakpoint (small down) {
                 display: block;
+                padding-top:0;
             }
         }
         .gform_fields{
@@ -889,6 +899,9 @@ Stylesheet: Blocks Global Stylesheet
         .gform_wrapper.gf_browser_chrome .gfield_error input[type=email], .gform_wrapper.gf_browser_chrome .gfield_error input[type=number], .gform_wrapper.gf_browser_chrome .gfield_error input[type=password], .gform_wrapper.gf_browser_chrome .gfield_error input[type=tel], .gform_wrapper.gf_browser_chrome .gfield_error input[type=text], .gform_wrapper.gf_browser_chrome .gfield_error input[type=url], .gform_wrapper.gf_browser_chrome .gfield_error select, .gform_wrapper.gf_browser_chrome .gfield_error textarea, .gform_wrapper.gf_browser_chrome li.gfield_error.field_sublabel_above .ginput_complex input[type=text]{
             margin-bottom: 1rem;
         }
+        .gform_wrapper.gf_browser_chrome .gfield_checkbox li input, .gform_wrapper.gf_browser_chrome .gfield_checkbox li input[type=checkbox], .gform_wrapper.gf_browser_chrome .gfield_radio li input[type=radio]{
+            margin-top:0;
+        }
         .gform_wrapper ul li.gfield{
             margin-top: 0;
         }
@@ -936,6 +949,9 @@ Stylesheet: Blocks Global Stylesheet
             padding-top: 2rem;
             padding-bottom: 0;
             margin-bottom: 0;
+            @include breakpoint (small down) {
+                padding-top:1rem;
+            }
         }
         .gform_confirmation_wrapper {
             text-align: center;
@@ -943,6 +959,18 @@ Stylesheet: Blocks Global Stylesheet
             font-size: rem-calc(18);
             font-weight: 600;
             padding-top: rem-calc(20);
+        }
+        ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            color: $medium-gray !important;
+        }
+        ::-moz-placeholder { /* Firefox 19+ */
+            color: $medium-gray !important;
+        }
+        :-ms-input-placeholder { /* IE 10+ */
+            color: $medium-gray !important;
+        }
+        :-moz-placeholder { /* Firefox 18- */
+            color: $medium-gray !important;
         }
         .gform_ajax_spinner {
         	border: rem-calc(2) solid rgba(255, 255, 255, 0.3);	/* match with border-left */
@@ -973,6 +1001,9 @@ Stylesheet: Blocks Global Stylesheet
     }
     .list-block,.awards-block{
         padding:3.5rem 0;
+        @include breakpoint (small down) {
+            padding:2.5rem 0;
+        }
         h2{
             text-align: center;
             max-width: rem-calc(1000);
@@ -1024,6 +1055,9 @@ p.address{
     margin-bottom: 0;
     @include breakpoint (small down) {
         max-width:rem-calc(300);
+    }
+    @media only screen and (max-width:340px){
+        max-width:rem-calc(250);
     }
 }
 p.phone{

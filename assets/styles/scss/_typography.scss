@@ -81,7 +81,7 @@ a{
     }
     &:visited{
         color: $blue;
-    } 
+    }
 }
 
 a[href^="tel:"] {
@@ -114,7 +114,7 @@ a[href^="tel:"] {
     -webkit-border-radius: rem-calc(3);
     -moz-border-radius: rem-calc(3);
     -ms-border-radius: rem-calc(3);
-    padding:rem-calc(20) rem-calc(25) rem-calc(22) rem-calc(25);
+    padding:rem-calc(21) rem-calc(25) rem-calc(22) rem-calc(25);
     margin:0;
     text-decoration: none;
     &:hover{
