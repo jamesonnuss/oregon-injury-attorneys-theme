@@ -80,4 +80,13 @@ body.internet-explorer{
     .content .content-blocks .tab-block .tabs-title>a{
         padding-bottom:rem-calc(16);
     }
+    .video-js .vjs-control-bar span{
+        font-size:rem-calc(10);
+    }
+    .content .content-blocks .contact-block .gform_fields.column_3{
+        flex:none;
+    }
+    .content .content-blocks .contact-block .gform_fields.column_3 .gfield_checkbox li label{
+        line-height:1.5;
+    }
 }

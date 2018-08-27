@@ -55,7 +55,7 @@ header.header{
     $hamburger__colour: $blue;
     .mobile-menu-button{
         display: none;
-        @media screen and (max-width: 769px){
+        @media screen and (max-width: 768px){
             display: block;
             // padding-right: 1rem;
             position: relative;
@@ -409,16 +409,22 @@ header.header{
                     padding-top: rem-calc(18)
                 }
             }
-            img{
-                width: 100%;
-                max-width: rem-calc(300);
+            img,svg{
+                // width: 100%;
+                // max-width: rem-calc(300);
+                width:rem-calc(270);
+                height:rem-calc(108);
+                display: block;
                 @media screen and (max-width: 768px){
-                    max-width:16rem;
+                    // max-width:16rem;
+                    width:rem-calc(256);
+                    height:rem-calc(102);
                     position: relative;
                     left: -.5rem;
                 }
                 @media only screen and (max-width: 25.000rem){
-                    max-width: rem-calc(220);
+                    width:rem-calc(220);
+                    height:rem-calc(88);
                 }
                 @media only screen and (max-width: 22.000rem){
                     left: -.75rem;
