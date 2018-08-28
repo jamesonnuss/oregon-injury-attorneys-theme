@@ -772,6 +772,15 @@ Stylesheet: Blocks Global Stylesheet
             }
         }
     }
+    .spacer-block{
+        background-color: $white;
+        &.grey-bg{
+            background-color: $off-white;
+        }
+        &.blue-bg{
+            background-color: $blue;
+        }
+    }
     .contact-block{
         padding:3.5rem 0;
         h2{

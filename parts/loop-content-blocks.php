@@ -341,7 +341,7 @@
 						</div>
 					</div>
 				<?php elseif( get_row_layout() == 'spacer_block' ): ?>
-					<div class="block spacer-block"></div>
+					<div class="block spacer-block <?php if( get_sub_field('spacer_block_background_color') == 'Grey' ): ?>grey-bg<?php elseif( get_sub_field('spacer_block_background_color') == 'Blue'):?>blue-bg<?php endif; ?>"></div>
 				<?php elseif( get_row_layout() == 'slider_block' ): ?>
 					<div class="block slider-block row">
 						<div class="large-12 medium-12 small-12 columns">
