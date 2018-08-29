@@ -57,7 +57,6 @@ header.header{
         display: none;
         @media screen and (max-width: 768px){
             display: block;
-            // padding-right: 1rem;
             position: relative;
             top:rem-calc(-23.31);
             height:$hamburger__height;
@@ -128,56 +127,6 @@ header.header{
             }
         }
     }
-    // .mobile-menu-icon{
-    //     outline:0;
-    //     width:auto;
-    //     height:auto;
-    //     padding-right: 25px;
-    //     font-size: rem-calc(18);
-    //     margin-left: auto;
-    //     display: block;
-    //     color: $blue;
-    //     font-weight: 700;
-    //     font-family: $overpass;
-    //     width:100px;
-    //     @media screen and (max-width: 769px){
-    //         display: block;
-    //     }
-    //     &:after{
-    //         content:'';
-    //         display: block;
-    //         width: 20px;
-    //         right: 0;
-    //         top: 2px;
-    //         left: inherit;
-    //         box-shadow: 0 6px 0 $blue, 0 12px 0 $blue;
-    //         -moz-box-shadow: 0 6px 0 $blue, 0 12px 0 $blue;
-    //         -ms-box-shadow: 0 6px 0 $blue, 0 12px 0 $blue;
-    //         -webkit-box-shadow: 0 6px 0 $blue, 0 12px 0 $blue;
-    //         -o-box-shadow: 0 6px 0 $blue, 0 12px 0 $blue;
-    //     }
-    //     &:hover{
-    //         &:after{
-    //             box-shadow:0 6px 0 $blue, 0 12px 0 $blue;
-    //             -moz-box-shadow:0 6px 0 $blue, 0 12px 0 $blue;
-    //             -ms-box-shadow:0 6px 0 $blue, 0 12px 0 $blue;
-    //             -webkit-box-shadow:0 6px 0 $blue, 0 12px 0 $blue;
-    //             -o-box-shadow:0 6px 0 $blue, 0 12px 0 $blue;
-    //             background-color: $blue;
-    //         }
-    //     }
-    //     &.active-menu{
-    //         &:after{
-    //             color: $blue;
-    //             content:'\d7';
-    //             box-shadow: none;
-    //             background-color: transparent;
-    //             height: auto;
-    //             font-size: rem-calc(30);
-    //             top: -.330rem;
-    //         }
-    //     }
-    // }
     #menu-main-menu{
         transform: translateY(0px);
         -webkit-transform: translateY(0px);
@@ -186,7 +135,7 @@ header.header{
         -o-transform: translateY(0px);
         opacity: 1;
         @media screen and (min-width: 769px){
-            display: flex;
+            display: flex !important;
             display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
             display: -ms-flexbox;  /* TWEENER - IE 10 */
             display: -webkit-flex;
