@@ -378,6 +378,21 @@ Stylesheet: Blocks Global Stylesheet
         h2{
             text-align: center;
         }
+        .section-introduction{
+            margin: 0 auto 2rem auto;
+            @include breakpoint (medium down) {
+                margin: 0 auto 1.5rem auto;
+            }
+            &.half-width{
+                max-width:rem-calc(750);
+            }
+            &.full-width{
+                max-width:75rem;
+            }
+            p:last-child{
+                margin-bottom: 0;
+            }
+        }
         .tabs{
             border:0;
             display: flex;
@@ -388,6 +403,9 @@ Stylesheet: Blocks Global Stylesheet
         }
         .tabs-panel{
             padding: 0;
+            .full-width .column-block{
+                width:100%;
+            }
         }
         .tabs-content{
             border:0;
@@ -1037,10 +1055,30 @@ Stylesheet: Blocks Global Stylesheet
             }
         }
     }
-    .awards-block img{
-        display: block;
-        text-align: center;
-        margin:0 auto;
+    .awards-block{
+        img{
+            display: block;
+            text-align: center;
+            margin:0 auto;
+        }
+        .awards-content{
+            margin:0 auto;
+            &.half-width{
+                max-width:rem-calc(750);
+            }
+            &.full-width{
+                max-width:75rem;
+            }
+            p:last-child{
+                margin-bottom: 0;
+            }
+            &.multiple-award-types{
+                margin: 0 auto 3.5rem auto;
+                @include breakpoint (medium down) {
+                    margin: 0 auto 2rem auto;
+                }
+            }
+        }
     }
     .directions{
         margin-bottom: 0 !important;

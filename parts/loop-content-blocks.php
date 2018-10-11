@@ -53,6 +53,23 @@
 								<?php if( get_sub_field('awards_block_title') ): ?>
 									<h2><?php the_sub_field('awards_block_title'); ?></h2>
 								<?php endif; ?>
+								<?php if( get_sub_field('awards_block_content')): ?>
+									<?php if( get_sub_field('awards_block_content_width') == 'full-width' ): ?>
+										<?php $awardsContent = 'full-width'; ?>
+									<?php else: ?>
+										<?php $awardsContent = 'half-width'; ?>
+									<?php endif; ?>
+									<div class="awards-content <?php echo $awardsContent; ?>">
+										<?php the_sub_field('awards_block_content'); ?>
+									</div>
+								<?php endif; ?>
+								<?php if( get_sub_field('awards_block_content') && have_rows('awards')): ?>
+									<script type="text/javascript">
+										jQuery(document).ready(function($) {
+											jQuery('.awards-content').addClass('multiple-award-types');
+										});
+									</script>
+								<?php endif; ?>
 								<?php if( have_rows('awards') ): ?>
 									<div class="row small-up-2 medium-up-3 large-up-3">
 										<?php while ( have_rows('awards') ) : the_row(); ?>
@@ -224,6 +241,21 @@
 								<?php if( get_sub_field('tab_block_section_title') ): ?>
 									<h2><?php the_sub_field('tab_block_section_title'); ?></h2>
 								<?php endif; ?>
+								<?php if( get_sub_field('tab_block_section_introduction')): ?>
+									<?php if( get_sub_field('tab_block_intro_width') == 'full-width' ): ?>
+										<?php $tabIntroWidth = 'full-width'; ?>
+									<?php else: ?>
+										<?php $tabIntroWidth = 'half-width'; ?>
+									<?php endif; ?>
+									<div class="section-introduction <?php echo $tabIntroWidth; ?>">
+										<?php the_sub_field('tab_block_section_introduction'); ?>
+									</div>
+								<?php endif; ?>
+								<?php if( get_sub_field('tab_block_width') == 'full-width' ): ?>
+									<?php $tabWidth = 'full-width'; ?>
+								<?php else: ?>
+									<?php $tabWidth = 'half-width'; ?>
+								<?php endif; ?>
 								<?php if( have_rows('tab_block_tab') ): $i = 0; ?>
 									<script type="text/javascript">
 										jQuery(document).ready(function($) {
@@ -246,7 +278,7 @@
 										<?php while ( have_rows('tab_block_tab') ) : the_row(); ?>
 											<div class="tabs-panel <?php if (!$i) { ?>is-active<?php } ?>" id="tabs-panel-<?php echo $i; ?>">
 												<?php if( have_rows('tab_block_content_repeater') ): ?>
-													<div class="row small-up-1 medium-up-2 large-up-2">
+													<div class="row small-up-1 medium-up-2 large-up-2 <?php echo $tabWidth; ?>">
 														<?php while ( have_rows('tab_block_content_repeater') ) : the_row(); ?>
 															<div class="column column-block">
 																<?php the_sub_field('tab_block_title'); ?>
