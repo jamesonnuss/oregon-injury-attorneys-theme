@@ -221,7 +221,6 @@ Stylesheet: Blocks Global Stylesheet
             display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
             display: flex;
             flex-wrap: wrap;
-            align-items: center;
             justify-content: center;
         }
         .column-block{
@@ -259,7 +258,7 @@ Stylesheet: Blocks Global Stylesheet
             text-align: center;
         }
         p{
-            font-size: rem-calc(24);
+            font-size: rem-calc(22);
             @include breakpoint (small down) {
                 font-size: rem-calc(20);
             }
@@ -560,7 +559,6 @@ Stylesheet: Blocks Global Stylesheet
             display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
             display: flex;
             flex-wrap: wrap;
-            align-items: center;
             justify-content: center;
         }
         .column-block{

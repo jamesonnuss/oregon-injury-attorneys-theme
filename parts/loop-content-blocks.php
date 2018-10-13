@@ -47,7 +47,7 @@
 						</div>
 					</div>
 				<?php elseif( get_row_layout() == 'awards_block' ): ?>
-					<div class="block awards-block <?php if( get_sub_field('awards_block_background_color') == 'Grey' ): ?>grey-bg<?php endif; ?>">
+					<div class="block awards-block <?php if( get_sub_field('award_block_background_color') == 'Grey' ): ?>grey-bg<?php endif; ?>">
 						<div class="row">
 							<div class="large-12 medium-12 small-12 columns">
 								<?php if( get_sub_field('awards_block_title') ): ?>
