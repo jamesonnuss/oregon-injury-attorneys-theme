@@ -630,6 +630,11 @@
 		jQuery(document).ready(function($){
 			if ($('.block').length && $('.block').length <= 2 && $('.faq-block').length){
 				$('.content-blocks-container').css( "padding-top", "0" );
+			} else if ($('.text-block').length && $('.block').length <= 3 && $('.faq-block').length && $('body').hasClass('page-child')){
+				$('.content-blocks-container').children('.text-block').css({
+				   'padding-bottom' : '0',
+				   'margin-bottom' : '-32px'
+				});
 			}
 		});
 	</script>
