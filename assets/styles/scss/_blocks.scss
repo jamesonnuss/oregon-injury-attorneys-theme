@@ -306,6 +306,7 @@ Stylesheet: Blocks Global Stylesheet
         span.author{
             margin-top: 2rem;
             font-weight: 600;
+            font-size:1.15rem;
         }
         span.author-title{
             padding-bottom: 2rem;
@@ -592,12 +593,13 @@ Stylesheet: Blocks Global Stylesheet
                     img{
                         border-top-left-radius: 3px;
                         border-top-right-radius: 3px;
+                        margin-top: -25px;
                     }
                     a.team-member-profile-img-link{
                         display: block;
                         position: relative;
                         padding:0;
-                        max-height:14.75rem;
+                        max-height:16.25rem;
                         overflow: hidden;
                         &:before{
                             content:' ';
