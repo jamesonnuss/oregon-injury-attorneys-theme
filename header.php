@@ -43,6 +43,5 @@
 
     	</header> <!-- end .header -->
 
-        <div class="live-chat">
-            <a href="#">Live Chat</a>
-        </div>
+        <!-- Live Chat -->
+        <script src="http://www.apexchat.net/scripts/invitation.ashx?company=andersenlaw"></script>
