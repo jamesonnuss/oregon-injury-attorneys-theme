@@ -34,6 +34,11 @@
 								<?php if( get_sub_field('list_block_title') ): ?>
 									<h2><?php the_sub_field('list_block_title'); ?></h2>
 								<?php endif; ?>
+								<?php if( get_sub_field('list_block_section_introduction')): ?>
+									<div class="section-introduction">
+										<?php the_sub_field('list_block_section_introduction'); ?>
+									</div>
+								<?php endif; ?>
 								<?php if( have_rows('list') ): ?>
 									<div class="row small-up-1 medium-up-2 large-up-2">
 										<?php while ( have_rows('list') ) : the_row(); ?>
@@ -71,13 +76,17 @@
 									</script>
 								<?php endif; ?>
 								<?php if( have_rows('awards') ): ?>
-									<div class="row small-up-2 medium-up-3 large-up-3">
+									<div class="row small-up-2 medium-up-3 large-up-3 awards-image-container">
 										<?php while ( have_rows('awards') ) : the_row(); ?>
 											<div class="column column-block">
 												<?php
 												$image = get_sub_field('award');
 												if( !empty($image) ): ?>
-													<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+													<?php if (get_sub_field('award_link')) { ?>
+														<a href="<?php the_sub_field('award_link'); ?>" target="_blank"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /></a>
+													<?php } else { ?>
+														<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+													<?php } ?>
 												<?php endif; ?>
 											</div>
 										<?php endwhile; ?>

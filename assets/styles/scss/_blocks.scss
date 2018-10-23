@@ -258,9 +258,9 @@ Stylesheet: Blocks Global Stylesheet
             text-align: center;
         }
         p{
-            font-size: rem-calc(22);
+            font-size: rem-calc(20);
             @include breakpoint (small down) {
-                font-size: rem-calc(20);
+                font-size: rem-calc(18);
             }
             text-align: center;
             position: relative;
@@ -1028,6 +1028,17 @@ Stylesheet: Blocks Global Stylesheet
         	}
         }
     }
+    .list-block{
+        .section-introduction{
+            margin: 0 auto 2.5rem auto;
+            @include breakpoint (medium down) {
+                margin: 0 auto 2rem auto;
+            }
+            p:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
     .list-block,.awards-block{
         padding:3.5rem 0;
         @include breakpoint (small down) {
@@ -1060,6 +1071,15 @@ Stylesheet: Blocks Global Stylesheet
             display: block;
             text-align: center;
             margin:0 auto;
+            max-width:rem-calc(200);
+        }
+        .awards-image-container{
+            display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+            display: -ms-flexbox;  /* TWEENER - IE 10 */
+            display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         .awards-content{
             margin:0 auto;
