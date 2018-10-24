@@ -60,70 +60,14 @@ jQuery( document ).ready(function($) {
         var menuWidth = 768;
     }
 
-    function mainMenu(){
-
-        if (window.innerWidth > menuWidth) {
-            // $('ul#menu-main-menu').superfish();
-            // $("button.menu-icon").removeClass('active-menu');
-        } else {
-            // $('ul#menu-main-menu').superfish('hide');
-            // $('ul#menu-main-menu').find('li.sfHover').removeClass('sfHover');
-            // $('ul#menu-main-menu').superfish('destroy');
-        }
-    }
-    // $("button.menu-icon").on( "click", function() {
-    //     console.log('test');
-    //     // event.stopImmediatePropagation();
-    //     $(this).toggleClass('active-menu');
-    //     $('#menu-main-menu').slideToggle('medium', function() {
-    //         console.log(this);
-    //         // // if ($(this).is(':visible'))
-    //         // //     $(this).css('display','flex');
-    //         // if ($(this).hasClass('mui-enter-active')){
-    //         //     console.log('true');
-    //         // } else {
-    //         //     console.log('false');
-    //         // }
-    //     });
-    // });
-
     $('.mobile-menu-button').on("click",function(e) {
         e.preventDefault();
         $(this).toggleClass("hamburger--open");
         $('#menu-main-menu').slideToggle('medium');
     });
 
-    // $("#header__button").click(function() {
-    //
-    // });
-
-
     $("li.menu-item-has-children").each(function() {
          $(this).attr('data-is-click', 'true')
     });
 
-    mainMenu();
-	var resizeTimer;
-	jQuery(window).on('resize', function(e) {
-	    clearTimeout(resizeTimer);
-	    var windowsize = jQuery(window).width();
-	    resizeTimer = setTimeout(function() {
-	           mainMenu();
-	    }, 250);
-	});
-    // function liveChat(){
-    //     var headerHeight = $('.content-header').height();
-    //     var navHeight = $('header.header').height();
-    //     var showPosition = headerHeight + navHeight;
-    //     var scrollPosition = window.pageYOffset;
-    //     if (scrollPosition >= navHeight) {
-    //         $('.live-chat').fadeIn();
-    //     } else {
-    //         $('.live-chat').fadeOut();
-    //     }
-    // }
-    // liveChat();
-    // $(window).scroll(function() {
-    //     liveChat();
-    // });
 });

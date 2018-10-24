@@ -245,7 +245,7 @@ Stylesheet: Blocks Global Stylesheet
                 div{
                     text-align: center;
                     color:$blue;
-                    padding:5.25rem 1.25rem;
+                    padding:5.25rem 1rem;
                     @include breakpoint (small down) {
                         padding:3.25rem 1.25rem;
                     }
