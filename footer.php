@@ -66,7 +66,7 @@
     <?php wp_footer(); ?>
 
     <!-- Live Chat -->
-    <script src="http://www.apexchat.net/scripts/invitation.ashx?company=andersenlaw"></script>
+    <script src="https://www.apexchat.net/scripts/invitation.ashx?company=andersenlaw"></script>
 
 	</body>
 

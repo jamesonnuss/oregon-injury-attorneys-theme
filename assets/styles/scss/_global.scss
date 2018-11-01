@@ -243,6 +243,10 @@ iframe{
 	background-color: $blue;
 }
 
+.page-id-14 .text-block li a{
+	word-wrap: break-word;
+}
+
 .align-middle {
 	-webkit-align-items: center;
 	-ms-flex-align: center;
@@ -468,6 +472,20 @@ video{
 	}
 }
 
+/* Live Chat Apex Overrides */
+#apexchat_static_button #apexchat_chatbar_sidebar{
+	background-color:$white !important;
+	box-shadow: 0px 5px 7px 4px rgba(0,0,0,0.35) !important;
+	-webkit-box-shadow: 0px 5px 7px 4px rgba(0,0,0,0.35) !important;
+	-moz-box-shadow: 0px 5px 7px 4px rgba(0,0,0,0.35) !important;
+	-ms-box-shadow: 0px 5px 7px 4px rgba(0,0,0,0.35) !important;
+	#apexchat_chatbar_text #apexchat_chatbar_chat_text{
+		font-size:20px !important;
+		color:$blue !important;
+		background-color: $white !important;
+		font-family: $overpass !important;
+	}
+}
 /*********************
 ANIMATION
 *********************/
