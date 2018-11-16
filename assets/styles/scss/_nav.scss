@@ -149,6 +149,9 @@ header.header{
             -o-transform: translateY(0px);
         }
         li{
+            @media screen and (min-width: 769px){
+                height:100%;
+            }
             a{
                 background-color: $white;
                 color: $blue;
@@ -234,6 +237,7 @@ header.header{
                     top: 0;
                 }
                 li{
+                    height:auto;
                     a{
                         padding:1rem;
                         border-bottom: 0;
@@ -284,6 +288,7 @@ header.header{
         flex-direction: column;
         text-align: center;
         height: 135px;
+        height: auto;
         float: right;
         @media screen and (max-width: 768px){
             width: 100%;
